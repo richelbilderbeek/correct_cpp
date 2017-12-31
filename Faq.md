@@ -31,7 +31,26 @@ This file contains the commands that Travis CI needs to run.
 To keep the chapters' GitHubs clean, the scripts to build and test
 are usually downloaded from this GitHub, made excutable and then executed.
 
-## How to test if my code is correct locally?
+## How to correct my code without a pull request?
+
+There are two ways:
+
+ * Correct your code locally, see 'How to test if my code is correct locally?'
+ * Let Travis CI correct your GitHub, see 'How to let Travis CI correct my GitHub?'
+
+Correcting your code locally is fastest, but only works under GNU/Linux with an Ubuntu-like distro.
+
+Letting Travis CI correct your GitHub is slower (you again have to wait for Travis CI to do its analysis), 
+but always works. This requires a Travis CI account, which is free/gratis, and you can use your GitHub account to log in.
+
+## How to let Travis CI correct my GitHub?
+
+Activate Travis CI for your GitHub.
+
+You will need a Travis CI account for this. A Travis CI is free/gratis, and
+you can use your GitHub account to log in.
+
+## How to correct my code locally?
 
 The scripts of any chapter, can be found in this GitHub, in a folder
 with the same name as the chapter. For example, the scripts for 
