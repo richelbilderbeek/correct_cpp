@@ -13,6 +13,8 @@ explained in detail below.
 
 On GitHub, go to the repository of the chapter and click `Fork` at the top-right.
 
+![Click here to fork a GitHub](pics/create_fork.png)
+
 You will need a GitHub account to do so.
 
 ## Download your fork
@@ -50,6 +52,8 @@ git push
 
 On your fork's GitHub page, click on `Pull request`, which is directly 
 below the green `Clone or download` button.
+
+![Click here to submit a pull request](pics/submit_pull_request.png)
 
 One the chapter's (*not* your fork's) GitHub, at Pull Requests (directly
 below the GitHub's title) you can see how well your code did. 
