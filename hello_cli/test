@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Create expected result
+echo "Hello" > expected_0.txt
+echo "Hello Richel" > expected_1.txt
+echo "Hello Richel Bilderbeek" > expected_2.txt
+
+# Create the actual result
+./hello_cli > created_0.txt
+./hello_cli Richel > created_1.txt
+./hello_cli Richel Bilderbeek > created_2.txt
+
+# Compare
+if ! cmp --silent created_0.txt expected_0.txt; then
+  echo "Incorrect: call without arguments does not give correct result"
+  exit 1
+fi
+
+# Compare the two
+if ! cmp --silent created_1.txt expected_1.txt; then
+  echo "Incorrect: call with one argument does not give correct result"
+  exit 1
+fi
+
+# Compare the two
+if ! cmp --silent created_2.txt expected_2.txt; then
+  echo "Incorrect: call with two arguments does not give correct result"
+  exit 1
+fi
+
+echo "Correct"
