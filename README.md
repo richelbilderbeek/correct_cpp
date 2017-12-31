@@ -8,7 +8,7 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp.svg?
 Correct C++ is a free, libre and open-source course that corrects
 exercises for both correct results and good practices.
 
-See [how_this_course_works](how_this_course_works.md).
+See [how this course works](how_this_course_works.md).
 
 Chapter name|Goal
 ---|---
