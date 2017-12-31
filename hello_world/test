@@ -4,7 +4,7 @@
 echo "Hello world" > expected.txt
 
 # Create the actual result
-./hello_world > created.txt
+./main > created.txt
 
 # Compare the two
 if cmp --silent created.txt expected.txt; then
