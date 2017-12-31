@@ -1,4 +1,4 @@
-# Correct C++
+# :heavy_check_mark: Correct C++
 
 Correct C++ is a free, libre and open-source course that corrects
 exercises for both correct results and good practices.
