@@ -4,6 +4,10 @@
 
 See [how this course works](how_this_course_works.md).
 
+## What are all those chapters' files?
+
+
+
 ## Why the name of the course?
 
 The word 'Correct' is used in two ways:

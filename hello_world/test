@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Create expected result
+echo "Hello world" > expected.txt
+
+# Create the actual result
+./hello_world > created.txt
+
+# Compare the two
+if cmp --silent created.txt expected.txt; then
+  echo "Correct"
+  exit 0
+else
+  echo "Incorrect: files are different"
+  exit 1
+fi
