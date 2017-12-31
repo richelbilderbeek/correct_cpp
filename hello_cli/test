@@ -6,9 +6,9 @@ echo "Hello Richel" > expected_1.txt
 echo "Hello Richel Bilderbeek" > expected_2.txt
 
 # Create the actual result
-./hello_cli > created_0.txt
-./hello_cli Richel > created_1.txt
-./hello_cli Richel Bilderbeek > created_2.txt
+./main > created_0.txt
+./main Richel > created_1.txt
+./main Richel Bilderbeek > created_2.txt
 
 # Compare
 if ! cmp --silent created_0.txt expected_0.txt; then
