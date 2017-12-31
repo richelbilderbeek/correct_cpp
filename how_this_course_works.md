@@ -57,4 +57,6 @@ below the GitHub's title) you can see how well your code did.
 If your solution was correct, the build status of your pull request will
 become green, red otherwise.
 
-Your code will always be rejected. 
+Your code will be rejected if it contains a solution (this is a course, remember?).
+If your Pull Request improves the (text of the) chapter, 
+your suggestions are merged after a positive review. 
