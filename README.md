@@ -11,5 +11,3 @@ is_odd|First function
 
 See [FAQ](Faq.md).
 
- * [How does this course work?](how_this_course_works.md)
-
