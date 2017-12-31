@@ -31,9 +31,13 @@ Replace `yourname` by your GitHub username.
 
 ## Do the exercise
 
-Each chapter describes an exercise and supplies a project (`.pro`) file. Open that
-project file in the free C++ IDE Qt Creator. All projects have a file 
-called `main.cpp`. `main.cpp` is where you must put your code. 
+Each chapter describes an exercise (in `README.md`) 
+and has a file called `main.cpp`. 
+`main.cpp` is where you must put your code. 
+
+Usually `main.cpp` contains already some incomplete code to get you started.
+
+You can use any editor or IDE to build and run your code.
 
 ## Upload your proposed solution
 
