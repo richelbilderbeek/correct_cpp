@@ -47,7 +47,9 @@ g++ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror -std=c+
 
 ## Compile and run your code from Qt Creator
 
-Each chapter has a link to a Qt Creator project file with the name `main.pro`. Download it in the same folder as the chapter.
+Each chapter has a link to a Qt Creator project file with the name `main.pro`. 
+This link can be found in its `README.md`, section 'External links'.
+Download this project file, `main.pro`, in the same folder as the chapter.
 
 ![Location of the main.pro file](pics/pro_file.png)
 
@@ -81,3 +83,5 @@ At the left, in the 'Project' section, click the drop-down arrow to view the fir
 Then click the drop-down arrow on 'Sources' to view the source files. Double-click on `main.cpp` to start editing.
 
 ![Qt Creator editing main.cpp](pics/qt_creator_main.png)
+
+Edit the `main.cpp` file to fullfill the exercise. In the `hello`
