@@ -6,7 +6,7 @@ Each chapter describes an exercise (in `README.md`)
 and has a file called `main.cpp`. 
 `main.cpp` is where you must put your code. 
 
-![Content of the 'hello' chapter's folder](hello_folder.png)
+![Content of the 'hello' chapter's folder](pics/hello_folder.png)
 
 To do an exercise, edit the `main.cpp` file. 
 Usually `main.cpp` contains already some incomplete code to get you started, or dictate some structure. 
