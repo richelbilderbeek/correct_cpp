@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Tests the test script.
-for filename in `ls main_*.cpp`; do
+for filename in `ls reject_*.cpp`; do
 
   # Remove main iff present
   if [[ -f main ]]; then rm main; fi

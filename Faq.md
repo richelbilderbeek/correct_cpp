@@ -78,7 +78,7 @@ consider sending the example code to the developers of those tools.
 If you think this project would improve by rejecting your non-evil code,
 you can help improve it by submitting a Pull Request on the `develop` branch. 
 
-Your `main.cpp` must be put in the chapter's name folder and renamed to `main_[number].cpp`, 
+Your `main.cpp` must be put in the chapter's name folder and renamed to `reject_[number].cpp`, 
 where `[number]` should be a number. 
 
 If your incorrect non-evil code is accepted, this will break this project's build.
