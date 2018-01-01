@@ -7,10 +7,14 @@ echo "Hello world" > expected.txt
 ./main > created.txt
 
 # Compare the two
-if cmp --silent created.txt expected.txt; then
-  echo "Correct"
-  exit 0
-else
+if ! cmp --silent created.txt expected.txt; then
   echo "Incorrect: files are different"
+  exit 1
+fi
+
+# Avoid endls
+n=`cat main.cpp | egrep "endl" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
   exit 1
 fi

@@ -2,13 +2,13 @@
 
 # Create expected result
 echo "Hello" > expected_0.txt
-echo "Hello Richel" > expected_1.txt
-echo "Hello Richel Bilderbeek" > expected_2.txt
+echo "Hello world" > expected_1.txt
+echo "Hello world" > expected_2.txt
 
 # Create the actual result
 ./main > created_0.txt
-./main Richel > created_1.txt
-./main Richel Bilderbeek > created_2.txt
+./main world > created_1.txt
+./main world i_am_ignored > created_2.txt
 
 # Compare
 if ! cmp --silent created_0.txt expected_0.txt; then
@@ -25,6 +25,13 @@ fi
 # Compare the two
 if ! cmp --silent created_2.txt expected_2.txt; then
   echo "Incorrect: call with two arguments does not give correct result"
+  exit 1
+fi
+
+# Avoid endls
+n=`cat main.cpp | egrep "endl" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
   exit 1
 fi
 
