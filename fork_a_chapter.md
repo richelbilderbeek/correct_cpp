@@ -11,7 +11,7 @@
 
  * Wait while the repository is copied
 
-![GitHub busy forking a repo](fork-a-repo.gif)
+![GitHub busy forking a repo](pics/fork-a-repo.gif)
 
 Next step is [cloning your fork](clone_your_fork.md).
 
