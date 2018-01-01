@@ -40,8 +40,7 @@ There are two ways:
 
 Correcting your code locally is fastest, but only works under GNU/Linux with an Ubuntu-like distro.
 
-Letting Travis CI correct your GitHub is slower (you again have to wait for Travis CI to do its analysis), 
-but always works. This requires a Travis CI account, which is free/gratis, and you can use your GitHub account to log in.
+Letting Travis CI correct your GitHub is slower (you again have to wait for Travis CI to do its analysis), but always works. This requires a Travis CI account, which is free/gratis, and you can use your GitHub account to log in.
 
 ## How to let Travis CI correct my GitHub?
 
@@ -66,11 +65,29 @@ For example, your code will compiled with maximum warning levels.
 
 ## My incorrect code is accepted
 
-Sure, in your code you can disable all warnings and do all
-other evil things. The tools protect against Murphy, not against Machiavelli.
+Sure, in code one can disable all warnings and do all
+other evil things. This course corrections protects against Murphy, not against Machiavelli.
 
-If you think you code should have been rejected, consider sending the example
-code to the developers of those tools.
+If your code is not evil, see 'My incorrect evil code is accepted'
+
+Additionnally, if you think you code should have been rejected by the tools used, 
+consider sending the example code to the developers of those tools.
+
+## My incorrect non-evil code is accepted
+
+If you think this project would improve by rejecting your non-evil code,
+you can help improve it by submitting a Pull Request on the `develop` branch. 
+
+Your `main.cpp` must be put in the chapter's name folder and renamed to `main_[number].cpp`, 
+where `[number]` should be a number. 
+
+If your incorrect non-evil code is accepted, this will break this project's build.
+
+The maintainers of this project will take a look at your code.
+
+If the code is found non-evil indeed, your code will be accepted and a fix will be added. 
+
+If the code is found evil, your code will be rejected. Sorry!
 
 ## Why the name of the course?
 

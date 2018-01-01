@@ -1,9 +1,9 @@
 # :heavy_check_mark: Correct C++
 
-Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
----|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp.svg?branch=master)](https://travis-ci.org/richelbilderbeek/correct_cpp)|[![codecov.io](https://codecov.io/github/richelbilderbeek/correct_cpp/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/correct_cpp/branch/master)
-develop|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/correct_cpp)|[![codecov.io](https://codecov.io/github/richelbilderbeek/correct_cpp/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/correct_cpp/branch/develop)
+Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
+---|---
+master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp.svg?branch=master)](https://travis-ci.org/richelbilderbeek/correct_cpp)
+develop|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/correct_cpp)
 
 Correct C++ is a free, libre and open-source course that corrects (hence the name) exercises for both the right results and good practices.
 
@@ -13,7 +13,7 @@ Chapter name|Goal
 ---|---
 [hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
 [hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
-[is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|CLI application that may fail
+[is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|CLI application with exceptions
 
 ## FAQ
 
