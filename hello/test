@@ -1,20 +1,6 @@
 #!/bin/bash
 
-# Create expected result
-echo "Hello world" > expected.txt
-
-# Create the actual result
-./main > created.txt
-
-# Compare the two
-if ! cmp --silent created.txt expected.txt; then
-  echo "Incorrect: files are different"
-  exit 1
-fi
-
-# Avoid endls
-n=`cat main.cpp | egrep "endl" | wc -l`
-if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
+if [[ ! -f main ]]; then 
+  echo "Incorrect: main.cpp does not compile"
   exit 1
 fi
