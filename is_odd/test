@@ -86,5 +86,13 @@ if [ ! "$n" -eq "0" ]; then
   exit 1
 fi
 
+# Catch by reference
+n=`cat main.cpp | egrep "std::exception\s*\w*\s*)" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  exit 1
+fi
+
+# Reference should be const
 
 echo "Correct"

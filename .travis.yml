@@ -4,3 +4,5 @@ install:
 script: 
   - proselint README.md
   - proselint Faq.md
+  - cd hello_world
+  - ./test_tests
