@@ -11,7 +11,7 @@ There are multiple ways to clone your fork:
 
  * Start your terminal or Git Bash
 
-![lxterminal](pics/bash.png)
+![lxterminal](pics/lxterminal.png)
 
  * Use `git clone` from the command-line to download your fork. 
    For example, you can download the chapter [hello](https://github.com/richelbilderbeek/correct_cpp_hello) using the command below.
