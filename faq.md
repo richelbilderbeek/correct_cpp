@@ -104,3 +104,27 @@ A solution is correct, if it cannot be corrected by tools.
 If these tools cannot detect a flaw, the solution 
 is called correct. This does not mean a human may see
 imperfections in these solutions.
+
+## What is the course's philophy?
+
+ * A student should learn how to write correct code from the start
+ * A student should be able to check if his/her code is correct easily, without a human involved
+ * Prefer a learning curve that is too gentle, over one that is too steep
+ * The course is pragmatic: an exercise is stated to be correct, when all scripts and tools
+   suggest no improvement. 
+
+## Which tools are used?
+
+ * [GitHub](https://github.com/)
+ * [Travis CI](https://travis-ci.org/)
+ * [Codecov](https://codecov.io/)
+ * GCC
+ * `gcov`
+ * [Qt Creator](https://www.qt.io)
+ * OCLint
+ * `cppcheck`
+ * UBSAN
+ * `helgrind`
+ * `memcheck`
+ * `gprof`
+
