@@ -11,7 +11,7 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
 
 Chapter name|Goal
 ---|---
-[hello](https://github.com/richelbilderbeek/correct_cpp)|Experience [how this course works](how_this_course_works.md)
+[hello](https://github.com/richelbilderbeek/correct_cpp_hello)|Experience [how this course works](how_this_course_works.md)
 [hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
 [hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
 [is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|Handle exceptions
