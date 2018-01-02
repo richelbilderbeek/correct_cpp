@@ -35,3 +35,6 @@
 */created*.txt
 */expected*.txt
 */main
+*.pro.user
+*/*.pro.user
+build-*
