@@ -14,6 +14,7 @@ script:
   - ./test_tests
   - cd ..
   - cd is_odd
+  - cp accept_0.cpp main.cpp; ./build; ./test
   - ./test_tests
   - cd ..
 
