@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) 
 {
-  if (argc == 1) return 1;
+  if (argc != 2) return 1;
   try
   {
     const int i{std::stoi(argv[1])};
@@ -25,11 +25,7 @@ int main(int argc, char* argv[])
     }
     std::cout << "true\n";
   }
-  catch (const std::invalid_argument) // caught by value
-  {
-    return 1;
-  }
-  catch (const std::out_of_range& e)
+  catch (const std::exception&)
   {
     return 1;
   }
