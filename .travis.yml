@@ -18,7 +18,7 @@ script:
   - |
     for folder in `ls -d */`; do
       cd $folder
-      if [ -f test_tests]; then 
+      if [ -f test_tests ]; then 
         ./test_tests 
       fi 
       cd ..
