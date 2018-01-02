@@ -107,7 +107,7 @@ imperfections in these solutions.
 
 ## What is the course's philophy?
 
- * A student should learn how to write correct code from the start
+ * A student should learn how to write code following all best practices from the start
  * A student should be able to check if his/her code is correct easily, without a human involved
  * Prefer a learning curve that is too gentle, over one that is too steep
  * The course is pragmatic: an exercise is stated to be correct, when all scripts and tools
