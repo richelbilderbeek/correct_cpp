@@ -1,6 +1,6 @@
 # Contributing
 
-Awesome that you are reading this!
+Awesome that you are reading this :+1:
 
  * For questions, you can create an Issue
  * Changes go via Pull Requests
@@ -33,7 +33,7 @@ The maintainers of this project will take a look at your code.
 
 If the code is found correct indeed, your code will be accepted and a fix will be added. 
 
-If the code is found incorrect, your code will be rejected. Sorry!
+If the code is found incorrect, your code will be rejected. Sorry :bowtie:
 
 ## My incorrect non-evil code is accepted, but should be rejected
 
@@ -49,7 +49,7 @@ The maintainers of this project will take a look at your code.
 
 If the code is found non-evil indeed, your code will be accepted and a fix will be added. 
 
-If the code is found evil, your code will be rejected. Sorry!
+If the code is found evil, your code will be rejected. Sorry  :bowtie:
 
 ## Improving text
 
@@ -61,4 +61,4 @@ Click 'Edit' when viewing any text.
 
 Click 'Commit' when done.
 
-If the text is found to be changed for the worse, your suggestion will be rejected. Sorry!
+If the text is found to be changed for the worse, your suggestion will be rejected. Sorry  :bowtie:

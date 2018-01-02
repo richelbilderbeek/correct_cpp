@@ -3,7 +3,7 @@
 After [doing the exercise using GCC](do_the_exercise_gcc.md) you get an executable called `a.out` by default.
 
 You can run your program with arguments by typing these after the call to the excutable, seperated by spaces.
-If you want to supply a single argument with spaces, surround it with quotes (`"`).
+If you want to supply a single argument with spaces, surround it with quotes.
 
 ## Examples
 
