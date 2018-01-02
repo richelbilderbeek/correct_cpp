@@ -57,6 +57,18 @@ chapter `hello_world` are found in the `hello_world` folder.
 
 These scripts work on Travis CI, which uses a Ubuntu GNU/Linux distro.
 
+## Why don't you put the `.pro` files in each chapter's GitHub?
+
+Advantages of putting the `.pro` files I use in the GitHub:
+
+ * It would help all those that use Qt Creator and have a C++ compiler that supports C++17. This just happens to be most of my students
+
+Disadvantages of putting the `.pro` files I use in the GitHub:
+
+ * It would be in the way of all those that do not use Qt Creator
+
+I chose to keep it out, as Qt Creator is not the most used C++ IDE around.
+
 ## My code 'just works', but is not accepted
 
 'it just works' is not good enough for this course.
