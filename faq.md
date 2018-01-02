@@ -6,14 +6,22 @@ See [how this course works](how_this_course_works.md).
 
 ## Where are the teaching materials?
 
-There is plenty of material about C++ online, which you'll have to find and use.
-
-Recommended online resources are:
+For C++ syntax, there is plenty of material about C++ online, which you'll have to find and use. Recommended online resources are:
 
  * [isocpp.org](https://isocpp.org/): excellent starting point
  * [C++ core guidelines](https://github.com/isocpp/CppCoreGuidelines): guidelines to write correct code
  * [cplusplus.com](http://www.cplusplus.com/): C++ tutorials
  * [cppreference.com](http://en.cppreference.com/w/cpp): C++ reference
+
+Next to this, each chapter refers to articles needed. Some of these articles are:
+
+ * [How to fork a chapter](fork_a_chapter.md)
+ * [How to clone your fork](clone_your_fork.md)
+ * [How to do the exercise](do_the_exercise.md)
+ * [How to [ush your code](push_your_code.md)
+ * [How to do a pull request](do_a_pull_request.md)
+ * [How to get 100% code coverage](get_100_percent_code_coverage.md)
+ * [How to lower cyclomatic complexity](lower_cyclomatic_complexity.md)
 
 ## Do I need a GitHub account?
 
