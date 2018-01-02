@@ -37,6 +37,7 @@ void test_do_main()
   assert(do_main( { "main" } ) == 1);
   assert(do_main( { "main", "too", "many" } ) == 1);
   assert(do_main( { "main", "0" } ) == 1);
+  assert(do_main( { "main", "1" } ) == 0);
   assert(do_main( { "main", "7" } ) == 1);
 }
 
