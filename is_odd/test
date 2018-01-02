@@ -68,6 +68,8 @@ if ! cmp --silent created_2.txt expected_2.txt; then
   exit 1
 fi
 
+rm expected_*.txt
+rm created_*.txt
 #####################
 # Test misc
 #####################
@@ -79,20 +81,50 @@ if [ ! "$n" -eq "0" ]; then
   exit 1
 fi
 
-# Catch by reference
-n=`cat main.cpp | egrep "std::invalid_argument\s*\w*\s*)" | wc -l`
+# Catch exceptions by reference
+n=`cat main.cpp | egrep "invalid_argument\s*\w*\s*)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
   exit 1
 fi
 
-# Catch by reference
-n=`cat main.cpp | egrep "std::exception\s*\w*\s*)" | wc -l`
+n=`cat main.cpp | egrep "out_of_range\s*\w*\s*)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
   exit 1
 fi
 
-# Reference should be const
+n=`cat main.cpp | egrep "exception\s*\w*\s*)" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  exit 1
+fi
+
+# Exceptions should be const
+n=`cat main.cpp | egrep "\(\w*(std::)?invalid_argument" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  exit 1
+fi
+
+n=`cat main.cpp | egrep "\(\w*(std::)?out_of_range" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  exit 1
+fi
+
+n=`cat main.cpp | egrep "\(\w*(std::)?exception" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  exit 1
+fi
+
+# Do not use ellipsis
+n=`cat main.cpp | egrep "\(\w*\.\.\.\w*\)" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Error: do not use ellipsis"
+  exit 1
+fi
+
 
 echo "Correct"
