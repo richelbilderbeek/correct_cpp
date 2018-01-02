@@ -69,37 +69,33 @@ Disadvantages of putting the `.pro` files I use in the GitHub:
 
 I chose to keep it out, as Qt Creator is not the most used C++ IDE around.
 
-## My code 'just works', but is not accepted
+## My code 'just works', but is rejected
 
 'it just works' is not good enough for this course.
 Your code will be corrected in many ways.
 For example, your code will compiled with maximum warning levels.
 
-## My incorrect code is accepted
+If you think your code is correct, see 'My correct code is rejected'
+
+## My correct code is rejected, but should be accepted
+
+If you would like to [contribute](CONTRIBUTING.md) by submitting an example of correct code that is rejected, 
+see [contribute](CONTRIBUTING.md), section 'My correct code is rejected'.
+
+## My incorrect code is accepted, but should be rejected
 
 Sure, in code one can disable all warnings and do all
 other evil things. This course corrections protects against Murphy, not against Machiavelli.
 
-If your code is not evil, see 'My incorrect evil code is accepted'
+If your code is not evil, see 'My incorrect evil code is accepted, but should be rejected'
 
 Additionnally, if you think you code should have been rejected by the tools used, 
 consider sending the example code to the developers of those tools.
 
-## My incorrect non-evil code is accepted
+## My incorrect non-evil code is accepted, but should be rejected
 
-If you think this project would improve by rejecting your non-evil code,
-you can help improve it by submitting a Pull Request on the `develop` branch. 
-
-Your `main.cpp` must be put in the chapter's name folder and renamed to `reject_[number].cpp`, 
-where `[number]` should be a number. 
-
-If your incorrect non-evil code is accepted, this will break this project's build.
-
-The maintainers of this project will take a look at your code.
-
-If the code is found non-evil indeed, your code will be accepted and a fix will be added. 
-
-If the code is found evil, your code will be rejected. Sorry!
+If you would like to [contribute](CONTRIBUTING.md) by submitting an example of incorrect non-evil code that is accepted, 
+see [contribute](CONTRIBUTING.md), section 'My incorrect non-evil code is accepted'.
 
 ## Why the name of the course?
 
