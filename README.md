@@ -15,7 +15,7 @@ Chapter name|Goal
 [hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
 [hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
 [is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|CLI application with exceptions
-:construction: [number_to_word](https://github.com/richelbilderbeek/correct_cpp_number_to_word)|Code coverage
+:construction: [int_to_word](https://github.com/richelbilderbeek/correct_cpp_int_to_word)|Code coverage
 :construction: [is_even](https://github.com/richelbilderbeek/correct_cpp_is_even)|CLI application with regular expression
 
 ## FAQ
