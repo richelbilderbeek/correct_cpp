@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Tests the test script.
+
+# Files starting with 'rejected_' should be rejected
 for filename in `ls reject_*.cpp`; do
 
   # Remove main iff present
@@ -12,6 +14,23 @@ for filename in `ls reject_*.cpp`; do
   exit_code=`echo $?`
   if [[ ! $exit_code -eq 1 ]]; then
     echo "Incorrect: file with name '"$filename" ' should fail"
+    exit 1
+  fi
+  rm main.cpp
+done
+
+# Files starting with 'accepted_' should be rejected
+for filename in `ls accept_*.cpp`; do
+
+  # Remove main iff present
+  if [[ -f main ]]; then rm main; fi
+
+  cp $filename main.cpp
+  ./build &> /dev/null
+  ./test &> /dev/null
+  exit_code=`echo $?`
+  if [[ ! $exit_code -eq 0 ]]; then
+    echo "Incorrect: file with name '"$filename" ' should be accepted"
     exit 1
   fi
   rm main.cpp
