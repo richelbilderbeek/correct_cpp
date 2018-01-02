@@ -14,7 +14,7 @@ install:
   - sudo pip install proselint
 
 script: 
-  - for filename in `ls *.md`; proselint $filename; done
+  - for filename in `ls *.md`; do proselint $filename; done
   - proselint Faq.md
   - cd hello
   - ./test_tests
