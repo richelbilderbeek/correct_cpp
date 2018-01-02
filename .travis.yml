@@ -15,18 +15,5 @@ install:
 
 script: 
   - for filename in `ls *.md`; do proselint $filename; done
-  - proselint Faq.md
-  - cd hello
-  - ./test_tests
-  - cd ..
-  - cd hello_world
-  - ./test_tests
-  - cd ..
-  - cd hello_cli
-  - ./test_tests
-  - cd ..
-  - cd is_odd
-  - cp accept_0.cpp main.cpp; ./build; ./test
-  - ./test_tests
-  - cd ..
+  - for folder in `ls -d */`; cd $folder; if [ -f test_tests]; then ./test_tests; fi; cd ..; done
 
