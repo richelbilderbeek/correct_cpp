@@ -1,5 +1,12 @@
 #!/bin/bash
 
+qmake
+
+##########################################
+# Test release version
+##########################################
+make release
+
 #####################
 # Test exit states
 #####################
@@ -153,6 +160,12 @@ if [ ! "$n" -eq "0" ]; then
   echo "Error: do not use ellipsis"
   exit 1
 fi
+
+##########################################
+# Test debug version
+##########################################
+make debug
+./main
 
 #####################
 # Test code coverage
