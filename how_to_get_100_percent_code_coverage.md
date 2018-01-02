@@ -126,3 +126,5 @@ int main(int argc, char* argv[])
 }
 ```
 
+Note that the test produces output. This is no problem in the context of this course: code coverage in checked in debug mode, output is checked in release mode. 
+In release mode, all asserts are removed from the code.

@@ -23,4 +23,9 @@ Some examples:
  * [Using GCC/`g++` from the command line](do_the_exercise_gcc.md)
  * [Using Qt Creator](do_the_exercise_qt_creator.md)
 
-For some exercise, you will also need to [run your program with arguments](run_your_program_with_arguments.md).
+For some exercises, you will also need to:
+
+ * [run your program with arguments](run_your_program_with_arguments.md).
+ * [get 100% code coverage](how_to_get_100_percent_code_coverage.md)
+ * [get a lower cyclomatic complexity](how_to_lower_cyclomatic_complexity.md)
+

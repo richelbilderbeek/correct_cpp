@@ -143,3 +143,11 @@ Still the question is: why write code that is unused or untestable?
  * `memcheck`
  * `gprof`
 
+
+## How to get a 100% code coverage?
+
+See [how to get 100% code coverage](how_to_get_100_percent_code_coverage.md)
+
+## How to lower cyclomatic complexity?
+
+See [how to lower cyclomatic complexity](how_to_lower_cyclomatic_complexity.md)

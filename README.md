@@ -16,6 +16,7 @@ Chapter name|Goal
 [hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
 [is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|CLI application with exceptions
 :construction: [int_to_word](https://github.com/richelbilderbeek/correct_cpp_int_to_word)|Code coverage
+:construction: [is_perfect](https://github.com/richelbilderbeek/correct_cpp_is_perfect)|Code complexity
 :construction: [is_even](https://github.com/richelbilderbeek/correct_cpp_is_even)|CLI application with regular expression
 
 ## FAQ
