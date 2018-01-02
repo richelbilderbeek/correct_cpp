@@ -1,15 +1,8 @@
-# How this course works
+# Run your program with arguments
 
-To use and finish a chapter, one needs to the following steps,
-explained in detail in their sections
+To [do the exercises](do_the_exercise.md) will need to run your programs with arguments.
 
- * [Fork a chapter](fork_a_chapter.md)
- * [Clone your fork](clone_your_fork.md)
- * [Do the exercise](do_the_exercise.md)
- * [Push your code](push_your_code.md)
- * [Do a pull request](do_a_pull_request.md)
+Some examples:
 
-If your pull request gives a clean build, you've submitted a correct solution. Congratulations! 
-
-In this context, your pull request will always be rejected :+1:
-
+ * [using GCC/`g++`](run_your_program_with_arguments_gcc.md).
+ * [using Qt Creator](run_your_program_with_arguments_qt_creator.md).

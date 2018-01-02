@@ -18,66 +18,11 @@ main() {}
 
 You can use any editor or IDE to build and run your code. 
 
-To compile and run your code, ther are many ways. The ways I will describe:
+Some examples:
 
- * From a terminal, compile with `g++` and run locally
- * Compile and run your code from Qt Creator
+ * [Using GCC/`g++` from the command line](do_the_exercise_gcc.md)
+ * [Using Qt Creator](do_the_exercise_qt_creator.md)
 
-Think you are done? Time to [push your code](push_your_code.md)!
+For some exercise, you will also need to [run your program with arguments](run_your_program_with_arguments.md).
 
-## Compile and run your code from a terminal using `g++`
-
-From a terminal, do:
-
-```
-g++ main.cpp
-```
-
-To run the created executable, which as the name `a.out` by default, type:
-
-```
-./a.out
-```
-
-The course compiles with C++17 with highest warning levels. To do so yourself, instead use:
-
-```
-g++ -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror -std=c++17 main.cpp
-```
-
-## Compile and run your code from Qt Creator
-
-Each chapter has a link to a Qt Creator project file with the name `main.pro`. Download it in the same folder as the chapter.
-
-![Location of the main.pro file](pics/pro_file.png)
-
-You could also re-create a lighter version of it: create a file called `main.pro` with the content below:
-
-```
-# Files
-SOURCES += main.cpp
-
-# C++17
-CONFIG += c++17
-QMAKE_CXXFLAGS += -std=c++17
-
-# High warnings levels
-QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
-```
-
-Open that project file using Qt Creator.
-
-![Open the main.pro file using Qt Creator](pics/open_pro_file.png)
-
-If Qt Creator asks you to configure the project, click on 'Configure project'
-
-![Let Qt Creator configure the project](pics/qt_creator_configure_project.png)
-
-Qt Creator will show you its first screen.
-
-![Qt Creator first screen](pics/qt_creator_first.png)
-
-At the left, in the 'Project' section, click the drop-down arrow to view the first sections of the project.
-Then click the drop-down arrow on 'Sources' to view the source files. Double-click on `main.cpp` to start editing.
-
-![Qt Creator editing main.cpp](pics/qt_creator_main.png)
+Think you are done with the exercise? Time to [push your code](push_your_code.md)!
