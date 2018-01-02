@@ -107,11 +107,26 @@ imperfections in these solutions.
 
 ## What is the course's philophy?
 
- * A student should learn how to write code following all best practices from the start
+ * A student should learn how to write code following all best practices from the start:
+    * clean compile under high warning levels
+    * low cyclomatic complexity
+    * 100% code coverage
+    * it should follow the specifications :-)
  * A student should be able to check if his/her code is correct easily, without a human involved
  * Prefer a learning curve that is too gentle, over one that is too steep
  * The course is pragmatic: an exercise is stated to be correct, when all scripts and tools
    suggest no improvement. 
+
+## Why so strict?
+
+If a student has never learned how to write correct code for simple code, he/she
+will probably not do it for larger code bases either.
+
+This especially applies for code coverage. Code coverage should ideally be 100% (why write code
+that is unused or untestable?), so in these exercises it is required to be 100%. 
+
+In some other contexts, less than 100% may be considered correct as well.
+Still the question is: why write code that is unused or untestable?
 
 ## Which tools are used?
 
