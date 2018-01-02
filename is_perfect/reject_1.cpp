@@ -3,65 +3,54 @@
 #include <string>
 #include <vector>
 
-std::string int_to_word(const int i)
+int main(int argc, char* argv[])
 {
-  switch (i)
-  {
-    case 1: return "one";
-    case 2: return "two";
-    case 3: return "three";
-    case 4: return "four";
-    case 5: return "five";
-    case 6: return "six";
-    default: throw std::invalid_argument("i must be in range [1, 6]");
-  }
-}
-
-int do_main(const std::vector<std::string>& args)
-{
-  if (args.size() != 2) 
-  {
-    return 1;
-  }
+  if (argc != 2) return 1;
   try
   {
-    const int i{std::stoi(args[1])};
-    std::cout << int_to_word(i) << '\n';
+    const int i{std::stoi(argv[1])};
+    if (i == 0)
+    {
+      std::cout << "false\n";
+      return 0;
+    }
+    //Collect the proper divisors
+    std::vector<int> v;
+    if (i < 2)
+    {
+      //v is okay as it is
+    }
+    else if (i == 2)
+    {
+      v.push_back(1);
+    }
+    else
+    {
+      for (int j=1; j!=i-1; ++j)
+      {
+        if (i % j == 0)
+        {
+          v.push_back(j);
+        }
+      }
+    }
+    //sum the proper divisors
+    int sum{0};
+    for (const int j: v) { sum += j; }
+    //is it perfect?
+    const bool is_perfect{sum == i};
+    //show
+    if (is_perfect)
+    {
+      std::cout << "true\n";
+    }
+    else
+    {
+      std::cout << "false\n";
+    }
   }
   catch (const std::exception&)
   {
     return 1;
   }
-  return 0;
-}
-
-void test_do_main()
-{
-  assert(do_main( { "main" } ) == 1);
-  assert(do_main( { "main", "too", "many" } ) == 1);
-  assert(do_main( { "main", "0" } ) == 1);
-  assert(do_main( { "main", "7" } ) == 1);
-}
-
-void test_int_to_word()
-{
-  assert(int_to_word(1) == "one");
-  assert(int_to_word(2) == "two");
-  assert(int_to_word(3) == "three");
-  assert(int_to_word(4) == "four");
-  assert(int_to_word(5) == "five");
-  assert(int_to_word(6) == "six");
-}
-
-void test()
-{
-  test_do_main();
-  test_int_to_word();
-}
-
-int main(int argc, char* argv[]) 
-{
-  // test();  // incomplete code coverage
-  const std::vector<std::string> args(argv, argv + argc);
-  return do_main(args);
 }
