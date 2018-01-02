@@ -97,6 +97,7 @@ fi
 
 rm expected_*.txt
 rm created_*.txt
+
 #####################
 # Test misc
 #####################
@@ -150,6 +151,17 @@ fi
 n=`cat main.cpp | egrep "\(\w*\.\.\.\w*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: do not use ellipsis"
+  exit 1
+fi
+
+#####################
+# Test code coverage
+#####################
+
+n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Error: must have 100% code coverage. Current code coverage:"
+  gcov-7 -i -n -o debug main.cpp | head -n 2
   exit 1
 fi
 
