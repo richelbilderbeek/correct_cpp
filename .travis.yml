@@ -15,5 +15,12 @@ install:
 
 script: 
   - for filename in `ls *.md`; do proselint $filename; done
-  - for folder in `ls -d */`; cd $folder; if [ -f test_tests]; then ./test_tests; fi; cd ..; done
+  - |
+    for folder in `ls -d */`; do
+      cd $folder
+      if [ -f test_tests]; then 
+        ./test_tests 
+      fi 
+      cd ..
+    done
 
