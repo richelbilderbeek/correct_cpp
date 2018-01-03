@@ -151,6 +151,13 @@ Still the question is: why write code that is unused or untestable?
  * `memcheck`
  * `gprof`
 
+## How do I view my build status?
+
+See [view your build status and code coverage](view_status.md)
+
+## How do I view my code coverage?
+
+See [view your build status and code coverage](view_status.md)
 
 ## How to get a 100% code coverage?
 

@@ -1,133 +1,113 @@
 # How to get a 100% code coverage?
 
-This article describes how to get 100% code coverage, illustrated by solving of a simple exercise.
+In all chapters your code coverage needs to be 100%.
 
-## Exercise
+## Achieving 100% code coverage is easy
 
-Write a command-line interface (CLI) program, that gives the following results:
-
-Call to `hello_cli`|Output|Exit status
----|---|---
-`./bool_to_coin`|Any|1
-`./bool_to_coin true`|`heads` (with newline)|0
-`./bool_to_coin false`|`tails` (with newline)|0
-`./bool_to_coin nonsense`|Any|1
-`./bool_to_coin 1 2`|Any|1
-
-## Naive solution
-
-A solution that does fulfill the desired output is this:
+Already your first code must have 100% code coverage. For the first chapters, this is easy. Here is the solution for the first chapter:
 
 ```c++
-#include <iostream>
+int main() {}
+```
 
-int main(int argc, char* argv[]) 
+Code coverage is 100%, as all (zero) lines of code are used.
+
+## Losing 100% code coverage by doing something needlessly complex
+
+Here is an example that does not have 100% code coverage:
+
+```c++
+int main() 
 {
-  if (argc != 2) 
+  if (1 + 1 == 3)
   {
-    return 1;
-  }
-  if (argv[1] == "true") 
-  { 
-    std::cout << "heads\n";   
-  }
-  else if (argv[1] == "false") 
-  { 
-    std::cout << "tails\n"; 
-  }
-  else 
-  {
-    return 1;
+    //Line that is never executed
   }
 }
 ```
 
-As there are four different ways to go through `main`, 100% code coverage can never be achieved from a single call to the application.
+This course will correct you if you write such code. If for the first simple exercises you do not get 100% code coverage, you did something needlessly complex.
 
-The trick is to put the program's logic in another function, then test that function before calling it.
+## Achieve 100% code coverage by testing `main`
 
-## Step 1: put the program's logic in another function
-
-Simply move the content of `main` to another function:
+Here is an example that does not have 100% code coverage:
 
 ```c++
 #include <iostream>
-#include <string>
-#include <vector>
 
-int do_main(const std::vector<std::string>& args) 
+int main(int argc, char*[]) 
 {
-  if (args.size() != 2) 
+  if (argc == 1)
   {
-    return 1;
+    std::cout << "Program called without arguments\n";
   }
-  if (args[1] == "true") 
-  { 
-    std::cout << "heads\n";   
-  }
-  else if (args[1] == "false") 
-  { 
-    std::cout << "tails\n"; 
-  }
-  else 
+  else
   {
-    return 1;
+    std::cout << "Program called with arguments\n";
   }
-}
-
-int main(int argc, char* argv[])
-{
-  const std::vector<std::string> args(argv, argv + argc);
-  return do_main(args);
 }
 ```
 
-Notice that the C-style raw array of raw character pointers is converted to a C++ `std::vector<std::string>`.
-This will make it easier to write tests for `do_main`.
-
-## Step 2: test `do_main` before calling it
-
-By adding `assert`s in the first lines of `main`, `do_main` is fully tested:
+To achieve 100% code coverage, put the content of `main` in another function, and test that function:
 
 ```c++
 #include <cassert>
 #include <iostream>
-#include <string>
-#include <vector>
 
-int do_main(const std::vector<std::string>& args) 
+int do_main(const int argc) noexcept
 {
-  if (args.size() != 2) 
+  if (argc == 1)
   {
-    return 1;
+    std::cout << "Program called without arguments\n";
   }
-  if (args[1] == "true") 
-  { 
-    std::cout << "heads\n";   
-  }
-  else if (args[1] == "false") 
-  { 
-    std::cout << "tails\n"; 
-  }
-  else 
+  else
   {
-    return 1;
+    std::cout << "Program called with arguments\n";
   }
+  return 0;
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char*[]) 
 {
-  assert(do_main( { "bool_to_coin" } ) == 1);
-  assert(do_main( { "bool_to_coin", "true" } ) == 0);
-  assert(do_main( { "bool_to_coin", "false" } ) == 0);
-  assert(do_main( { "bool_to_coin", "nonsense" } ) == 1);
-  assert(do_main( { "bool_to_coin", "true", "false" } ) == 1);
-  return do_main(argc, argv);
+  assert(do_main(1) == 1);
+  assert(do_main(2) == 1);
+  return do_main(argc);
 }
 ```
 
-These tests produce output (as std::cout is called). 
-This is no problem in the context of this course: code coverage in checked in debug mode, output is checked in release mode. 
-In release mode, all asserts are removed from the code.
+In debug mode, the `assert`s ensure all code is run.
+In release mode, the `assert`s are removed, and the program runs cleanly.
 
-This test produces output (it should not) and feels clumsy (it is). It is good enough, however, until testing frameworks are dicussed.
+The tests do produce output when correct. A test that passes should produce no output. This can be done by only testing the logic:
+
+```c++
+#include <cassert>
+#include <iostream>
+
+std::string get_text(const int argc)
+{
+  if (argc == 1)
+  {
+    return "Program called without arguments";
+  }
+  else
+  {
+    return "Program called with arguments";
+  }
+}
+
+int do_main(const int argc) noexcept
+{
+  std::cout << get_text(argc) << '\n';
+  return 0;
+}
+
+int main(int argc, char*[]) 
+{
+  assert(get_text(1) != get_text(2));
+  return do_main(argc);
+}
+```
+
+Note that now the code written to trigger 100% code coverage actually test something useful.
+
