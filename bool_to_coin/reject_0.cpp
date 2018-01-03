@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 int main(int argc, char* argv[]) 
 {
@@ -6,11 +7,11 @@ int main(int argc, char* argv[])
   {
     return 1;
   }
-  if (argv[1] == "true") 
+  if (std::string(argv[1]) == "true") 
   { 
     std::cout << "heads\n";   
   }
-  else if (argv[1] == "false") 
+  else if (std::string(argv[1]) == "false") 
   { 
     std::cout << "tails\n"; 
   }

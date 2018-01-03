@@ -75,6 +75,9 @@ if [ ! "$n" -eq "0" ]; then
   exit 1
 fi
 
+rm expected_*.txt
+rm created_*.txt
+
 ##########################################
 # Test debug version
 ##########################################
