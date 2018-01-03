@@ -115,18 +115,20 @@ imperfections in these solutions.
 
 ## What is the course's philophy?
 
- * A student should learn how to write code following all best practices from the start:
-    * clean compile under high warning levels
-    * low cyclomatic complexity
+ * Follow the best practices of the literature
+ * A student should learn how to write code following all best practices from the start [1]:
+    * clean compile under high warning levels [2,3]
+    * low cyclomatic complexity [4]
     * 100% code coverage
+    * no memory leaks
     * it should follow the specifications :-)
  * A student should be able to check if his/her code is correct easily, without a human involved
  * Prefer a learning curve that is too gentle, over one that is too steep
- * The course is pragmatic: an exercise is stated to be correct, when all scripts and tools
-   suggest no improvement. 
+ * The course is pragmatic: an exercise is stated to be correct, when all scripts and tools suggest no improvement. 
 
 ## Why so strict?
 
+A student should do it right directly [1]. 
 If a student has never learned how to write correct code for simple code, he/she
 will probably not do it for larger code bases either.
 
@@ -170,3 +172,10 @@ See [how to lower cyclomatic complexity](lower_cyclomatic_complexity.md)
 ## All your chapters' builds fail, shouldn't they pass?
 
 No, this is a course, in which each chapter holds an exercise. That exercise should be *made* to pass, on the student's fork.
+
+## References
+
+ * [1] Trevor Misfeldt, Gregory Bumgardner, Andrew Gray. The elements of C++ style. 2004. ISBN: 978-0-521-89308-4. Chapter 2.3, page 5: 'Do it right the first time'
+ * [2] Herb Sutter, Andrei Alexandrescu. C++ coding standards: 101 rules, guidelines, and best practices. ISBN: 0-32-111358-6. Item 1: 'Compile cleanly at high warning levels'.
+ * [3] Linus Torvalds. [Re:[PATCH] Don't compare unsigned variable for &lt;0 in sys\_prctl()](http://linux.derkeiler.com/Mailing-Lists/Kernel/2006-11/msg08325.html). 2006-11-28. Retrieved on 2010-09-20. 'Friends don't let friends use [gcc] "-W"'
+ * [4] Bjarne Stroustrup. The C++ Programming Language (4th edition). 2013. ISBN: 978-0-321-56384-2. Page 32, 1.5 'Advice', item 16: 'C++ is not just C with a few extensions'
