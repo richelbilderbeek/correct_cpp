@@ -1,4 +1,10 @@
 #!/bin/bash
+qmake
+
+##########################################
+# Test release version
+##########################################
+make release
 
 #####################
 # Test exit states
@@ -126,5 +132,27 @@ if [ ! "$n" -eq "0" ]; then
   exit 1
 fi
 
+##########################################
+# Test debug version
+##########################################
+make debug
+
+./main
+./main 1
+./main 2
+./main nonsense
+./main 123456789012345678901234567890
+./main 1 2
+
+#####################
+# Test code coverage
+#####################
+
+n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Error: must have 100% code coverage. Current code coverage:"
+  gcov-7 -i -n -o debug main.cpp | head -n 2
+  exit 1
+fi
 
 echo "Correct"

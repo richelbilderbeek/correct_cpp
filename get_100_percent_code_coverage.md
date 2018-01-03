@@ -126,5 +126,8 @@ int main(int argc, char* argv[])
 }
 ```
 
-Note that the test produces output. This is no problem in the context of this course: code coverage in checked in debug mode, output is checked in release mode. 
+These tests produce output (as std::cout is called). 
+This is no problem in the context of this course: code coverage in checked in debug mode, output is checked in release mode. 
 In release mode, all asserts are removed from the code.
+
+This test produces output (it should not) and feels clumsy (it is). It is good enough, however, until testing frameworks are dicussed.
