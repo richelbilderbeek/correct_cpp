@@ -3,9 +3,11 @@ for folder in `ls -d */`; do
   echo $folder
   cd $folder
   if [ -f test ]; then 
-    cp ../scripts/test_tests .
+    cp ../shared/test_tests .
+    cp ../shared/main.pro .
     ./test_tests
-    rm  test_tests
+    rm test_tests
+    rm main.pro
   fi 
   cd ..
 done

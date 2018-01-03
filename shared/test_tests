@@ -35,3 +35,11 @@ for filename in `ls accept_*.cpp`; do
   fi
   rm main.cpp
 done
+
+rm -rf debug
+rm -rf release
+rm gmon.out
+rm Makefile
+rm Makefile.Release
+rm Makefile.Debug
+rm main
