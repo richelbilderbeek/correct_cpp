@@ -1,5 +1,45 @@
 #!/bin/bash
 
+qmake
+
+##########################################
+# Test release version
+##########################################
+make release
+
+#####################
+# Test exit states
+#####################
+
+./main > /dev/null
+state_zero=`echo $?`
+
+./main hello > /dev/null
+state_one=`echo $?`
+
+./main hello i_am_ignored > /dev/null
+state_two=`echo $?`
+
+
+if [[ ! $state_zero -eq 0 ]]; then
+  echo "Incorrect: call without arguments must result in an exit state of 0"
+  exit 1
+fi
+
+if [[ ! $state_one -eq 0 ]]; then
+  echo "Incorrect: call with one argument must result in an exit state of 0"
+  exit 1
+fi
+
+if [[ ! $state_two -eq 0 ]]; then
+  echo "Incorrect: call with two arguments must result in an exit state of 0"
+  exit 1
+fi
+
+#####################
+# Test output
+#####################
+
 # Create expected result
 echo "Hello" > expected_0.txt
 echo "Hello world" > expected_1.txt
@@ -35,4 +75,22 @@ if [ ! "$n" -eq "0" ]; then
   exit 1
 fi
 
-echo "Correct"
+##########################################
+# Test debug version
+##########################################
+make debug
+
+./main
+./main hello
+./main hello i_am_ignored
+
+#####################
+# Test code coverage
+#####################
+
+n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Error: must have 100% code coverage. Current code coverage:"
+  gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
+  exit 1
+fi
