@@ -1,18 +1,19 @@
 #!/bin/bash
 
 ./oclint-0.10.3/bin/oclint -o oclint.log \
-  -disable-rule ShortVariableName \
   main.cpp \
   -- \
   -c -std=c++17 \
   -I/usr/include/c++/7 \
   -I/usr/include/x86_64-linux-gnu/c++/7
 
+# Will be 1 if success
+# Will be 0 if fail
 success=`egrep "FilesWithViolations=0 P1=0 P2=0 P3=0" oclint.log | wc -l`
 
 if [ ! $success -eq 1 ]; 
 then
-  echo "Incorrect: OCLint:"
+  echo "OCLint: Fail"
   cat oclint.log
   exit 1
 fi
