@@ -173,6 +173,17 @@ See [how to lower cyclomatic complexity](lower_cyclomatic_complexity.md)
 
 No, this is a course, in which each chapter holds an exercise. That exercise should be *made* to pass, on the student's fork.
 
+## Where do you teach this course?
+
+I this course at:
+
+ * the [Dojo](https://github.com/richelbilderbeek/Dojo) of [De Jonge Onderzoekers](http://www.djog.nl/) in the city of Groningen, The Netherlands 
+ * the [Arduino course](https://github.com/richelbilderbeek/ArduinoCourse) of [De Jonge Onderzoekers](http://www.djog.nl/) in the city of Groningen, The Netherlands
+
+## How to write my own `.travis.yml` files?
+
+See [my Travis CI tutorial](https://github.com/richelbilderbeek/travis_cpp_tutorial).
+
 ## References
 
  * [1] Trevor Misfeldt, Gregory Bumgardner, Andrew Gray. The elements of C++ style. 2004. ISBN: 978-0-521-89308-4. Chapter 2.3, page 5: 'Do it right the first time'
