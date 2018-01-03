@@ -18,7 +18,7 @@ Next to this, each chapter refers to articles needed. Some of these articles are
  * [How to fork a chapter](fork_a_chapter.md)
  * [How to clone your fork](clone_your_fork.md)
  * [How to do the exercise](do_the_exercise.md)
- * [How to [ush your code](push_your_code.md)
+ * [How to push your code](push_your_code.md)
  * [How to do a pull request](do_a_pull_request.md)
  * [How to get 100% code coverage](get_100_percent_code_coverage.md)
  * [How to lower cyclomatic complexity](lower_cyclomatic_complexity.md)
