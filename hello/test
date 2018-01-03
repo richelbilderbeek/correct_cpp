@@ -7,9 +7,12 @@ qmake
 ##########################################
 make release
 
-./main
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels"
+  exit 1
+fi
 
-if [[ ! -f main ]]; then exit 1; fi
+./main
 
 ##########################################
 # Test debug version

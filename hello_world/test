@@ -7,6 +7,11 @@ qmake
 ##########################################
 make release
 
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels"
+  exit 1
+fi
+
 # Create expected result
 echo "Hello world" > expected.txt
 
