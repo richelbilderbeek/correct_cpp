@@ -27,7 +27,7 @@ See [FAQ](faq.md).
 
 ## Statuses
 
-All chapter's statuses should fail and have a code coverage below 100%.
+All chapter's statuses should fail and the later chapters must have a code coverage below 100%.
 
 Chapter|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Codecov logo](Codecov.png)](https://www.codecov.io)
 ---|---|---
