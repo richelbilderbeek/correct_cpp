@@ -2,17 +2,43 @@ language: cpp
 compiler: gcc
 
 before_install:
+  # Get my folder
+  - my_github=${PWD##*/}  
   # C++17
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
+  # Codecov
+  - sudo pip install codecov
+  # OCLint
+  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install_oclint
+  - chmod +x install_oclint 
+  - ./install_oclint
 
-install:
+install: 
   # C++17
   - sudo apt-get install -qq g++-7
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
-  # proselint
-  - sudo pip install proselint
+  # Codecov
+  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90
+  # cppcheck
+  - sudo apt-get install -qq cppcheck
 
 script: 
-  - for filename in `ls *.md`; do proselint $filename; done
-  - ./test_tests
+  # cppcheck
+  - cppcheck --quiet --error-exitcode=1 . 
+  # OCLint
+  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/do_oclint
+  - chmod +x do_oclint
+  - ./do_oclint
+  # Build, run and test the release version
+  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
+  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/test
+  - chmod +x test
+  - ./test
+
+after_script:
+  # Get code coverage badge
+  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/get_code_cov
+  - chmod +x get_code_cov
+  - ./get_code_cov
+  - codecov
