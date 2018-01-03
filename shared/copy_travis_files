@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Copy the shared .travis.yml files to all Correct C++ chapters
+
+cd ~/GitHubs
+
+for folder in `ls | egrep "correct_cpp_"`; do
+  echo $folder
+  cp ~/GitHubs/correct_cpp/shared/.travis.yml $folder
+done

@@ -1,3 +1,7 @@
+# Correct C++ chapter's .travis.yml file
+# For all chapters, these are identical
+# Do not edit by hand
+
 language: cpp
 compiler: gcc
 
