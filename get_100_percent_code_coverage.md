@@ -84,7 +84,7 @@ The tests do produce output when correct. A test that passes should produce no o
 #include <cassert>
 #include <iostream>
 
-std::string get_text(const int argc)
+std::string get_text(const int argc) noexcept
 {
   if (argc == 1)
   {
@@ -109,5 +109,4 @@ int main(int argc, char*[])
 }
 ```
 
-Note that now the code written to trigger 100% code coverage actually test something useful.
-
+As a bonus, the tests are now actually doing something useful.
