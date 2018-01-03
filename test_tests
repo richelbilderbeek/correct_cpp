@@ -1,0 +1,11 @@
+#!/bin/bash
+for folder in `ls -d */`; do
+  echo $folder
+  cd $folder
+  if [ -f test ]; then 
+    cp ../scripts/test_tests .
+    ./test_tests
+    rm  test_tests
+  fi 
+  cd ..
+done
