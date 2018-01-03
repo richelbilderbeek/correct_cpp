@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Copy the accepted_0.cpp of each chapter to the folder of that chapter, to see if it is indeed accepted
+
+cd ~/GitHubs
+
+for folder in `ls | egrep "correct_cpp_"`; do
+  echo $folder
+  chapter=`echo $folder | sed 's/correct_cpp_//'`
+  cp ~/GitHubs/correct_cpp/$chapter/reject_0.cpp $folder/main.cpp
+done
