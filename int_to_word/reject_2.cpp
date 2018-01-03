@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
     switch (i)
     {
       case 1: std::cout << "one\n"; break;
-      case 2: std::cout << "two"; break;
+      case 2: std::cout << "two\n"; break;
       case 3: std::cout << "three\n"; break;
       case 4: std::cout << "four\n"; break;
       case 5: std::cout << "five\n"; break;
@@ -26,5 +26,4 @@ int main(int argc, char* argv[])
   {
     return 1;
   }
-  return 0;
 }
