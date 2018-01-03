@@ -1,5 +1,12 @@
 #!/bin/bash
 
+qmake
+
+##########################################
+# Test release version
+##########################################
+make release
+
 # Create expected result
 echo "Hello world" > expected.txt
 
@@ -16,5 +23,22 @@ fi
 n=`cat main.cpp | egrep "endl" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
+  exit 1
+fi
+
+##########################################
+# Test debug version
+##########################################
+make debug
+./main
+
+#####################
+# Test code coverage
+#####################
+
+n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Error: must have 100% code coverage. Current code coverage:"
+  gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
   exit 1
 fi
