@@ -166,7 +166,7 @@ make debug
 n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then
   echo "Error: must have 100% code coverage. Current code coverage:"
-  gcov-7 -i -n -o debug main.cpp | head -n 2
+  gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
   exit 1
 fi
 

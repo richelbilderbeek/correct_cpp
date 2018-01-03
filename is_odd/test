@@ -155,5 +155,3 @@ if [ ! "$n" -eq "1" ]; then
   gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
   exit 1
 fi
-
-echo "Correct"
