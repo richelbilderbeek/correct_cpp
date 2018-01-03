@@ -65,6 +65,11 @@ chapter `hello_world` are found in the `hello_world` folder.
 
 These scripts work on Travis CI, which uses a Ubuntu GNU/Linux distro.
 
+## Why do you prefer a command-line interface over an interactive interface?
+
+Because a command-line interface can be used in scripts.
+And you program will be tested by scripts.
+
 ## Why don't you put the `.pro` files in each chapter's GitHub?
 
 Advantages of putting the `.pro` files I use in the GitHub:

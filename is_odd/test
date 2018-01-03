@@ -7,9 +7,16 @@ qmake
 ##########################################
 make release
 
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels"
+  exit 1
+fi
+
 #####################
 # Test exit states
 #####################
+
+n_errors=0
 
 ./main > /dev/null
 state_zero=`echo $?`
@@ -29,27 +36,27 @@ state_two_one=`echo $?`
 
 if [[ ! $state_zero -eq 1 ]]; then
   echo "Incorrect: call without arguments must result in an exit state of 1"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_one -eq 0 ]]; then
   echo "Incorrect: call with one valid argument must result in an exit state of 0"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_two -eq 0 ]]; then
   echo "Incorrect: call with one valid argument must result in an exit state of 0"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_nonsense -eq 1 ]]; then
   echo "Incorrect: call with one invalid argument must result in an exit state of 1"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_two_one -eq 0 ]]; then
   echo "Incorrect: call with one valid first argument (out of multiple) must result in an exit state of 0"
-  exit 1
+  ((++n_errors))
 fi
 
 #####################
@@ -67,12 +74,12 @@ echo "false" > expected_2.txt
 # Compare results
 if ! cmp --silent created_1.txt expected_1.txt; then
   echo "Incorrect: call with odd argument does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 if ! cmp --silent created_2.txt expected_2.txt; then
   echo "Incorrect: call with even argument does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 rm expected_*.txt
@@ -84,53 +91,54 @@ rm created_*.txt
 # Avoid endls
 n=`cat main.cpp | egrep "endl" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
-  exit 1
+  echo "Incorrect: C++ Core Guidelines: SL.io.50: Avoid endl"
+  ((++n_errors))
 fi
 
 # Catch exceptions by reference
 n=`cat main.cpp | egrep "invalid_argument\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
-  exit 1
+  echo "Incorrect: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "out_of_range\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
-  exit 1
+  echo "Incorrect: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "exception\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  echo "Incorrect: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  ((++n_errors))
   exit 1
 fi
 
 # Exceptions should be const
 n=`cat main.cpp | egrep "\(\w*(std::)?invalid_argument" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
-  exit 1
+  echo "Incorrect: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "\(\w*(std::)?out_of_range" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
-  exit 1
+  echo "Incorrect: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "\(\w*(std::)?exception" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
-  exit 1
+  echo "Incorrect: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  ((++n_errors))
 fi
 
 # Do not use ellipsis
 n=`cat main.cpp | egrep "\(\w*\.\.\.\w*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: do not use ellipsis"
-  exit 1
+  echo "Incorrect: do not use ellipsis"
+  ((++n_errors))
 fi
 
 ##########################################
@@ -151,7 +159,9 @@ make debug
 
 n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then
-  echo "Error: must have 100% code coverage. Current code coverage:"
+  echo "Incorrect: must have 100% code coverage. Current code coverage:"
   gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
-  exit 1
+  ((++n_errors))
 fi
+
+exit $n_errors
