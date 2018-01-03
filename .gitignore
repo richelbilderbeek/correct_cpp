@@ -39,3 +39,5 @@
 */*.pro.user
 build-*
 debug/
+hello_world/main.cpp
+hello_world/main.pro
