@@ -110,3 +110,43 @@ int main(int argc, char*[])
 ```
 
 As a bonus, the tests are now actually doing something useful.
+
+## Codecov shows some lines in yellow
+
+![Codecov shows some lines in yellow](pics/partial_code_cov.png)
+
+Yellow lines means that you have partial code coverage.
+
+Partial code coverage is caused by, among others, `if` statements that do not have both results checked.
+
+Here is a simple example:
+
+```c++
+constexpr bool is_one(const int i) noexcept
+{
+  if (i == 1) return true;
+  if (i != 1) return false;
+}
+```
+
+In this example, the second if statement results in partical code coverage, because it will always be true. 
+If an if statement is always true, the if statement should be removed. As an internal form of documentation,
+an assert may be added:
+
+```c++
+constexpr bool is_one(const int i) noexcept
+{
+  if (i == 1) return true;
+  assert(i != 1);
+  return false;
+}
+```
+
+Note that an experienced programmer would remove the problem altoghether and use:
+
+```c++
+constexpr bool is_one(const int i) noexcept
+{
+  return i == 1;
+}
+```
