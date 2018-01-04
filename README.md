@@ -9,7 +9,7 @@ Correct C++ is a free, libre and open-source course that corrects (hence the nam
 
 The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), shows [how this course works](how_this_course_works.md).
 
-Chapter name|Goal
+#|Chapter name|Goal
 ---|---|---
 1|[hello](https://github.com/richelbilderbeek/correct_cpp_hello)|Experience [how this course works](how_this_course_works.md)
 2|[hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
