@@ -10,8 +10,3 @@ explained in detail in their sections
  * [Correct your code](correct_your_code.md)
    * [Do a pull request](do_a_pull_request.md)
    * [Correct your GitHub](correct_your_github.md)
-
-If your pull request gives a clean build, you've submitted a correct solution. Congratulations! 
-
-In this context, your pull request will always be rejected :+1:
-
