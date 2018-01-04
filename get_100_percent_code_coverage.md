@@ -125,6 +125,28 @@ int main(int argc, char*[])
 }
 ```
 
+Tip: if you need to also test the `argv`, use the following:
+
+```c++
+int do_main(const std::vector<std::string>& args) noexcept
+{
+  // The code
+  // Instead of argc, use args.size()
+}
+
+int main(int argc, char* argv[])
+{
+  //Test exit statuses
+  assert( do_main( { "bool_to_coin" } ) == 1);
+  assert( do_main( { "bool_to_coin", "true" } ) == 0);
+  assert( do_main( { "bool_to_coin", "false" } ) == 0);
+  assert( do_main( { "bool_to_coin", "nonsense" } ) == 1);
+  assert( do_main( { "bool_to_coin", "true", "true"} ) == 1);
+
+  return do_main(argv, argv + argc);
+}
+````
+
 ## Codecov shows some lines in yellow
 
 ![Codecov shows some lines in yellow](pics/partial_code_cov.png)
