@@ -1,6 +1,12 @@
 # Do a pull request
 
-After [pushing your code](push_your_code.md), [do a pull request](do_a_pull_request.md) to correct your solution.
+After [pushing your code](push_your_code.md), there are two ways to [correct your code](correct_your_code.md).
+
+[do a pull request](do_a_pull_request.md) is the way that features:
+
+  * No need for a Travis CI account
+  * Pull requests must be created
+  * Pull requests will be rejected
 
 On your fork's GitHub page, click on `Pull request`, which is directly 
 below the green `Clone or download` button.
