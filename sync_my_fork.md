@@ -13,6 +13,15 @@ If you care about those changes, you will need to:
 In your fork's location, do once [1]:
 
 ```
+git remote add upstream https://github.com/REPO_OWNER/YOUR_REPO_NAME
+```
+
+ * Replace `REPO_OWNER` by the owner of the original owner. In this course, this is always `richelbilderbeek`.
+ * Replace `YOUR_REPO_NAME` by the repository's name
+
+For example, for [the correct_cpp_scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard), use this line:
+
+```
 git remote add upstream https://github.com/richelbilderbeek/correct_cpp_scoreboard
 ```
 
