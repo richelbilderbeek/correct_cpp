@@ -19,7 +19,6 @@ Chapter name|Goal
 [int_to_word](https://github.com/richelbilderbeek/correct_cpp_int_to_word)|Achieve 100% code coverage (hard)
 [is_prime](https://github.com/richelbilderbeek/correct_cpp_is_prime)|Lower code complexity (easy)
 [is_perfect](https://github.com/richelbilderbeek/correct_cpp_is_perfect)|Lower code complexity (hard)
-:construction: [is_even](https://github.com/richelbilderbeek/correct_cpp_is_even)|Use a regular expression
 
 ## FAQ
 
