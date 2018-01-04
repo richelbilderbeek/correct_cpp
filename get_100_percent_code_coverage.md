@@ -137,13 +137,13 @@ int do_main(const std::vector<std::string>& args) noexcept
 int main(int argc, char* argv[])
 {
   //Test exit statuses
-  assert(do_main( { "bool_to_coin" } ) == 1);
-  assert(do_main( { "bool_to_coin", "true" } ) == 0);
-  assert(do_main( { "bool_to_coin", "false" } ) == 0);
-  assert(do_main( { "bool_to_coin", "nonsense" } ) == 1);
-  assert(do_main( { "bool_to_coin", "true", "true"} ) == 1);
+  assert(do_main( { "is_odd" } ) == 1);
+  assert(do_main( { "is_odd", "1" } ) == 0);
+  assert(do_main( { "is_odd", "2" } ) == 0);
+  assert(do_main( { "is_odd", "nonsense" } ) == 1);
 
-  return do_main(argv, argv + argc);
+  const std::vector<std::string> args(argv, argv + argc);
+  return do_main(args);
 }
 ````
 
