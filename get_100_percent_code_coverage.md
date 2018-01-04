@@ -69,8 +69,10 @@ int do_main(const int argc) noexcept
 
 int main(int argc, char*[]) 
 {
-  assert(do_main(1) == 1);
-  assert(do_main(2) == 1);
+  //Calling with one or two arguments should result in an exit code of zero
+  assert(do_main(1) == 0);
+  assert(do_main(2) == 0);
+
   return do_main(argc);
 }
 ```
@@ -110,6 +112,18 @@ int main(int argc, char*[])
 ```
 
 As a bonus, the tests are now actually doing something useful.
+
+If the exact wording of the output is important, consider more the test more precise:
+
+```c++
+int main(int argc, char*[]) 
+{
+  assert(get_text(1) == "Program called without arguments");
+  assert(get_text(2) == "Program called with arguments");
+
+  // ...
+}
+```
 
 ## Codecov shows some lines in yellow
 
