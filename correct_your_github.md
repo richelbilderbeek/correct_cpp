@@ -27,7 +27,7 @@ To make Travis CI work on your GitHub:
 
 To acticate Travis CI, go to [https://travis-ci.org/](https://travis-ci.org/), sign in using your GitHub, and click on 'Accounts'. 
 
-![Activate your repository](TravisAccountsBordered.png)
+![Activate your repository](pics/TravisAccountsBordered.png)
 
 Activate your repository by clicking the slider.
 
