@@ -111,9 +111,9 @@ int main(int argc, char*[])
 }
 ```
 
-As a bonus, the tests are now actually doing something useful.
+As a bonus, the tests are now actually doing something useful: it would be incorrect if both texts are the same.
 
-If the exact wording of the output is important, consider more the test more precise:
+If the exact wording of the output is important, consider testing this as well:
 
 ```c++
 int main(int argc, char*[]) 
