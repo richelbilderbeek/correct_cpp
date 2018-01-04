@@ -29,3 +29,4 @@ For some exercises, you will also need to:
  * [get 100% code coverage](how_to_get_100_percent_code_coverage.md)
  * [get a lower cyclomatic complexity](how_to_lower_cyclomatic_complexity.md)
 
+After having [done the exercise](do_the_exercise.md), [push your code](push_your_code.md) to let `git` upload your proposed solution.

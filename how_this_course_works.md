@@ -8,5 +8,3 @@ explained in detail in their sections
  * [Do the exercise](do_the_exercise.md)
  * [Push your code](push_your_code.md)
  * [Correct your code](correct_your_code.md)
-   * [Do a pull request](do_a_pull_request.md)
-   * [Correct your GitHub](correct_your_github.md)

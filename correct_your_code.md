@@ -2,12 +2,12 @@
 
 There are two ways to correct your code:
 
- * [Do a pull request](do_a_pull_request.md)
-    * No need for a Travis CI account
-    * Pull requests must be created
-    * Pull requests will be rejected
  * [Correct your GitHub](correct_your_github.md)
-    * Need to create a Travis CI account (which is free/gratis)
-    * Travis CI works on your GitHub
-    * You can [use the scoreboard](use_the_scoreboard.md)
+    * :expressionless: Need to create a Travis CI account (which is free/gratis)
+    * :relaxed: Travis CI works on your GitHub
+    * :sunglasses: You can [use the scoreboard](use_the_scoreboard.md)
+ * [Do a pull request](do_a_pull_request.md)
+    * :simple_smile: No need for a Travis CI account
+    * :expressionless: Pull requests must be created
+    * :unamused: Pull requests will be rejected
 

@@ -15,4 +15,6 @@ git push
 
 ![Push your code](pics/push.png)
 
-Your code is now uploaded to your GitHub, where you can now [do a pull request](do_a_pull_request.md).
+Your code is uploaded to your GitHub.
+
+Now [correct your code](correct_your_code.md).
