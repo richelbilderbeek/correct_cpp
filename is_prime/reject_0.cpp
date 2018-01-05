@@ -6,18 +6,18 @@ int main(int argc, char* argv[])
   if (argc != 2) return 1;
   try
   {
-    const int i{std::stoi(argv[1])};
-    if (i < 2)
+    const int value{std::stoi(argv[1])};
+    if (value < 2)
     {
       std::cout << "false\n"; return 0;
     }
-    if (i == 2)
+    if (value == 2)
     {
       std::cout << "true\n"; return 0;
     }
-    for (int j=2; j!=i-1; ++j)
+    for (int denominator=2; denominator!=value-1; ++denominator)
     {
-      if (i % j == 0)
+      if (value % denominator == 0)
       {
         std::cout << "false\n";
         return 0;
