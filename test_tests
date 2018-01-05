@@ -11,6 +11,7 @@ for folder in `ls -d */`; do
     test_exit_state=`echo $?`
     if [[ ! $test_exit_state -eq 0 ]]; then
       echo "Incorrect: tests in folder '"$folder"' fail"
+      ./test_tests
       ((++n_errors))
     fi
 
