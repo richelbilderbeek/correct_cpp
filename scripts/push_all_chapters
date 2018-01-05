@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Push all chapters to GitHub
+
 cd ~/GitHubs
 
 for folder in `ls -d correct_cpp_*`
