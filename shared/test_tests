@@ -13,7 +13,7 @@ for filename in `ls reject_*.cpp`; do
   cp $filename main.cpp
   ./test &> /dev/null
   exit_code=`echo $?`
-  if [[ ! $exit_code -eq 1 ]]; then
+  if [[ $exit_code -eq 0 ]]; then
     echo "Incorrect: file with name '"$filename" ' should fail"
     ((++n_errors))
   fi
