@@ -29,7 +29,7 @@ fi
 # Avoid endls
 n=`cat main.cpp | egrep "endl" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
+  echo "Incorrect: C++ Core Guidelines: SL.io.50: Avoid endl"
   ((++n_errors))
 fi
 
@@ -45,7 +45,7 @@ make debug
 
 n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then
-  echo "Error: must have 100% code coverage. Current code coverage:"
+  echo "Incorrect: must have 100% code coverage. Current code coverage:"
   gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
   ((++n_errors))
 fi
