@@ -1,11 +1,9 @@
 #!/bin/bash
 
-cpp_files=`ls *.cpp`
-h_files=`ls *.h`
+my_files=`ls {*.cpp,*.h}`
 
 ./oclint-0.10.3/bin/oclint -o oclint.log \
-  $cpp_files \
-  $h_files \
+  $my_files \
   -- \
   -c -std=c++17 \
   -I/usr/include/c++/7 \

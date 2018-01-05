@@ -189,6 +189,17 @@ I this course at:
 
 See [my Travis CI tutorial](https://github.com/richelbilderbeek/travis_cpp_tutorial).
 
+## Why don't you use the latest GCC?
+
+If I like Travis CI install the latest version GCC, my students would have access to the latest and greatest.
+Installing `g++-7` on Travis CI, however, takes around 8 minutes on Travis CI. 
+In [a 'hello' build](https://travis-ci.org/richelbilderbeek/correct_cpp_hello/builds/325027943) installing `g++-7` takes 433 seconds out of 
+the total 494, which is 88% of the build time.
+
+Travis CI uses GCC 4.8.4, which does give access to C++11.
+
+I decided to trade off fast results for all my students, over access to the latest and greatest for the few that appreciate (and may even need) it.
+
 ## References
 
  * [1] Trevor Misfeldt, Gregory Bumgardner, Andrew Gray. The elements of C++ style. 2004. ISBN: 978-0-521-89308-4. Chapter 2.3, page 5: 'Do it right the first time'
