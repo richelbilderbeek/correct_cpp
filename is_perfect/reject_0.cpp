@@ -8,37 +8,37 @@ int main(int argc, char* argv[])
   if (argc != 2) return 1;
   try
   {
-    const int i{std::stoi(argv[1])};
-    if (i == 0)
+    const int value{std::stoi(argv[1])};
+    if (value == 0)
     {
       std::cout << "false\n";
       return 0;
     }
     //Collect the proper divisors
-    std::vector<int> v;
-    if (i < 2)
+    std::vector<int> proper_divisors;
+    if (value < 2)
     {
-      //v is okay as it is
+      //proper_divisors is okay as it is
     }
-    else if (i == 2)
+    else if (value == 2)
     {
-      v.push_back(1);
+      proper_divisors.push_back(1);
     }
     else
     {
-      for (int j=1; j!=i-1; ++j)
+      for (int denominator=1; denominator!=value-1; ++denominator)
       {
-        if (i % j == 0)
+        if (value % denominator == 0)
         {
-          v.push_back(j);
+          proper_divisors.push_back(j);
         }
       }
     }
     //sum the proper divisors
     int sum{0};
-    for (const int j: v) { sum += j; }
+    for (const int proper_divisor: proper_divisors) { sum += proper_divisor; }
     //is it perfect?
-    const bool is_perfect{sum == i};
+    const bool is_perfect{sum == value};
     //show
     if (is_perfect)
     {
