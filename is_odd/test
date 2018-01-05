@@ -35,27 +35,27 @@ state_two_one=`echo $?`
 
 
 if [[ ! $state_zero -eq 1 ]]; then
-  echo "Incorrect: call without arguments must result in an exit state of 1"
+  echo "Incorrect: './is_odd' must return an exit state of 1, as there are too few arguments"
   ((++n_errors))
 fi
 
 if [[ ! $state_one -eq 0 ]]; then
-  echo "Incorrect: call with one valid argument must result in an exit state of 0"
+  echo "Incorrect: './is_odd 1' must return an exit state of 0"
   ((++n_errors))
 fi
 
 if [[ ! $state_two -eq 0 ]]; then
-  echo "Incorrect: call with one valid argument must result in an exit state of 0"
+  echo "Incorrect: './is_odd 2' must return an exit state of 0"
   ((++n_errors))
 fi
 
 if [[ ! $state_nonsense -eq 1 ]]; then
-  echo "Incorrect: call with one invalid argument must result in an exit state of 1"
+  echo "Incorrect: './is_odd nonsense' must return an exit state of 1, as 'nonsense' is no integer"
   ((++n_errors))
 fi
 
 if [[ ! $state_two_one -eq 0 ]]; then
-  echo "Incorrect: call with one valid first argument (out of multiple) must result in an exit state of 0"
+  echo "Incorrect: './is_odd 2 1 ' must return an exit state of 1, as there are too many arguments"
   ((++n_errors))
 fi
 
@@ -73,12 +73,12 @@ echo "false" > expected_2.txt
 
 # Compare results
 if ! cmp --silent created_1.txt expected_1.txt; then
-  echo "Incorrect: call with odd argument does not give correct result"
+  echo "Incorrect: 'is_odd 1' should display literally 'true', followed by a newline"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_2.txt expected_2.txt; then
-  echo "Incorrect: call with even argument does not give correct result"
+  echo "Incorrect: 'is_odd 2' should display literally 'false', followed by a newline"
   ((++n_errors))
 fi
 

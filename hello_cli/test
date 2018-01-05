@@ -59,19 +59,19 @@ echo "Hello world" > expected_2.txt
 
 # Compare
 if ! cmp --silent created_0.txt expected_0.txt; then
-  echo "Incorrect: call without arguments does not give correct result"
+  echo "Incorrect: './hello_cli' literally say 'Hello'"
   ((++n_errors))
 fi
 
 # Compare the two
 if ! cmp --silent created_1.txt expected_1.txt; then
-  echo "Incorrect: call with one argument does not give correct result"
+  echo "Incorrect: './hello_cli world' literally say 'Hello world'"
   ((++n_errors))
 fi
 
 # Compare the two
 if ! cmp --silent created_2.txt expected_2.txt; then
-  echo "Incorrect: call with two arguments does not give correct result"
+  echo "Incorrect: './hello_cli world i_am_ignored' literally say 'Hello world' and ignore the second argument"
   ((++n_errors))
 fi
 

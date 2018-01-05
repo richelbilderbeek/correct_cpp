@@ -31,22 +31,22 @@ state_nonsense=`echo $?`
 state_one_two=`echo $?`
 
 if [[ ! $state_zero -eq 1 ]]; then
-  echo "Incorrect: call without arguments must result in an exit state of 1"
+  echo "Incorrect: './is_prime' should return an exit state of 1, as there are too few arguments"
   ((++n_errors))
 fi
 
 if [[ ! $state_one -eq 0 ]]; then
-  echo "Incorrect: call with one valid argument must result in an exit state of 0"
+  echo "Incorrect: './is_prime 1' should return an exit state of 0"
   ((++n_errors))
 fi
 
 if [[ ! $state_nonsense -eq 1 ]]; then
-  echo "Incorrect: call with one nonsense argument must result in an exit state of 1"
+  echo "Incorrect: './is_prime nonsense' should return an exit state of 1, as 'nonsense' is no integer"
   ((++n_errors))
 fi
 
 if [[ ! $state_one_two -eq 1 ]]; then
-  echo "Incorrect: call with two arguments must result in an exit state of 1"
+  echo "Incorrect: './is_prime 1 2' should return an exit state of 1, as there are too many arguments"
   ((++n_errors))
 fi
 
@@ -72,32 +72,32 @@ echo "true"  > expected_5.txt
 
 # Compare results
 if ! cmp --silent created_0.txt expected_0.txt; then
-  echo "Incorrect: call with 0 does not give correct result"
+  echo "Incorrect: './is_prime 0' should display 'false'"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_1.txt expected_1.txt; then
-  echo "Incorrect: call with 1 does not give correct result"
+  echo "Incorrect: './is_prime 1' should display 'false'"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_2.txt expected_2.txt; then
-  echo "Incorrect: call with 2 does not give correct result"
+  echo "Incorrect: './is_prime 2' should display 'true'"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_3.txt expected_3.txt; then
-  echo "Incorrect: call with 3 does not give correct result"
+  echo "Incorrect: './is_prime 3' should display 'true'"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_4.txt expected_4.txt; then
-  echo "Incorrect: call with 4 does not give correct result"
+  echo "Incorrect: './is_prime 4' should display 'false'"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_5.txt expected_5.txt; then
-  echo "Incorrect: call with 5 does not give correct result"
+  echo "Incorrect: './is_prime 5' should display 'true'"
   ((++n_errors))
 fi
 
@@ -111,52 +111,52 @@ rm created_*.txt
 # Avoid endls
 n=`cat main.cpp | egrep "endl" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
+  echo "Incorrect: C++ Core Guidelines: SL.io.50: Avoid endl"
   ((++n_errors))
 fi
 
 # Catch exceptions by reference
 n=`cat main.cpp | egrep "invalid_argument\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  echo "Incorrect: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
   ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "out_of_range\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  echo "Incorrect: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
   ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "exception\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
+  echo "Incorrect: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
   ((++n_errors))
 fi
 
 # Exceptions should be const
 n=`cat main.cpp | egrep "\(\w*(std::)?invalid_argument" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  echo "Incorrect: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
   ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "\(\w*(std::)?out_of_range" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  echo "Incorrect: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
   ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "\(\w*(std::)?exception" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
+  echo "Incorrect: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
   ((++n_errors))
 fi
 
 # Do not use ellipsis
 n=`cat main.cpp | egrep "\(\w*\.\.\.\w*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Error: do not use ellipsis"
+  echo "Incorrect: do not use ellipsis"
   ((++n_errors))
 fi
 
@@ -172,7 +172,7 @@ make debug
 
 n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then
-  echo "Error: must have 100% code coverage. Current code coverage:"
+  echo "Incorrect: must have 100% code coverage. Current code coverage:"
   gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
   ((++n_errors))
 fi

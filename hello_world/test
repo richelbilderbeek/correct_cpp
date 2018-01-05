@@ -22,7 +22,7 @@ echo "Hello world" > expected.txt
 
 # Compare the two
 if ! cmp --silent created.txt expected.txt; then
-  echo "Incorrect: files are different"
+  echo "Incorrect: output should literally be 'Hello world'"
   ((++n_errors))
 fi
 
