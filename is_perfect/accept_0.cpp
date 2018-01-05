@@ -5,31 +5,31 @@
 #include <string>
 #include <vector>
 
-std::vector<int> get_proper_divisors(const int i) noexcept
+std::vector<int> get_proper_divisors(const int value) noexcept
 {
-  if (i < 2) return {};
-  if (i == 2) return { 1 };
+  if (value < 2) return {};
+  if (value == 2) return { 1 };
 
-  std::vector<int> v;
-  for (int j=1; j!=i-1; ++j)
+  std::vector<int> proper_divisors;
+  for (int divisor=1; divisor!=value-1; ++divisor)
   {
-    if (!(i % j))
+    if (!(value % divisor))
     {
-      v.push_back(j);
+      proper_divisors.push_back(divisor);
     }
   }
-  return v;
+  return proper_divisors;
 }
 
-int sum(const std::vector<int>& v) noexcept
+int sum(const std::vector<int>& values) noexcept
 {
-  return std::accumulate(std::begin(v), std::end(v), 0);
+  return std::accumulate(std::begin(values), std::end(values), 0);
 }
 
-bool is_perfect(const int i) noexcept
+bool is_perfect(const int value) noexcept
 {
-  if (i == 0) return false;
-  return sum(get_proper_divisors(i)) == i;
+  if (value == 0) return false;
+  return sum(get_proper_divisors(value)) == value;
 }
 
 void test_get_proper_divisors() noexcept
