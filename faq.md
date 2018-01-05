@@ -143,6 +143,23 @@ that is unused or untestable?), so in these exercises it is required to be 100%.
 In some other contexts, less than 100% may be considered correct as well.
 Still the question is: why write code that is unused or untestable?
 
+Note that I do allow partial matches in code coverage:
+
+```c++
+bool is_prime(const int i) noexcept
+{
+  // ...
+  for (int j=2; j!=i-1; ++j)
+  {
+    if (i % j == 0) //Partial code coverage
+    {
+      return false;
+    }
+  }
+  // ...
+}
+```
+
 ## Which tools are used?
 
  * [GitHub](https://github.com/)
