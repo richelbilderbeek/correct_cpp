@@ -13,7 +13,7 @@ install:
   # shared install
   - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install
   - chmod +x install
-  - ./install
+  - sudo ./install
   # test
   - wget $test_path
   - chmod +x test
