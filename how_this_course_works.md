@@ -18,4 +18,4 @@ Golden road|Silver road
 ---|---
 :expressionless: Need to create a Travis CI account (which is free/gratis)|:relaxed: No need for a Travis CI account
 :relaxed: Travis CI works on your GitHub|:expressionless: Pull requests must be created
-:smirk: You can [use the scoreboard](use_the_scoreboard.md)|:unamused: Pull requests will be rejected
+:sunglasses: You can [use the scoreboard](use_the_scoreboard.md)|:unamused: Pull requests will be rejected
