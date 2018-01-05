@@ -3,19 +3,19 @@
 #include <iostream>
 #include <vector>
 
-bool is_prime(const int i) noexcept
+bool is_prime(const int value) noexcept
 {
-  if (i < 2)
+  if (value < 2)
   {
     return false;
   }
-  if (i == 2)
+  if (value == 2)
   {
     return true;
   }
-  for (int j=2; j!=i-1; ++j)
+  for (int denominator=2; denominator!=value-1; ++denominator)
   {
-    if (i % j == 0)
+    if (value % denominator == 0)
     {
       return false;
     }
