@@ -134,7 +134,7 @@ imperfections in these solutions.
 
 ## Why so strict?
 
-A student should do it right directly [1]. 
+A student should do it right directly [1,5]. 
 If a student has never learned how to write correct code for simple code, he/she
 will probably not do it for larger code bases either.
 
@@ -248,3 +248,5 @@ In the chapter's `.travis.yml`, replace `g++-5` and `gcov-5` by `g++-7` and `gco
  * [2] Herb Sutter, Andrei Alexandrescu. C++ coding standards: 101 rules, guidelines, and best practices. ISBN: 0-32-111358-6. Item 1: 'Compile cleanly at high warning levels'.
  * [3] Linus Torvalds. [Re:[PATCH] Don't compare unsigned variable for &lt;0 in sys\_prctl()](http://linux.derkeiler.com/Mailing-Lists/Kernel/2006-11/msg08325.html). 2006-11-28. Retrieved on 2010-09-20. 'Friends don't let friends use [gcc] -W'
  * [4] Bjarne Stroustrup. The C++ Programming Language (4th edition). 2013. ISBN: 978-0-321-56384-2. Page 32, 1.5 'Advice', item 16: 'C++ is not just C with a few extensions'
+ * [5] Maureen A. Carey, Jason A. Papin. Ten simple rules for biologists learning to program. 2018. PLOS Computational Biology 14(1): e1005871. https://doi.org/10.1371
+
