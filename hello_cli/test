@@ -7,9 +7,11 @@ qmake
 ##########################################
 make release
 
+n_errors=0
+
 if [[ ! -f main ]]; then 
   echo "Incorrect: code does not compile cleanly with high warning levels"
-  exit 1
+  ((++n_errors))
 fi
 
 #####################
@@ -28,17 +30,17 @@ state_two=`echo $?`
 
 if [[ ! $state_zero -eq 0 ]]; then
   echo "Incorrect: call without arguments must result in an exit state of 0"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_one -eq 0 ]]; then
   echo "Incorrect: call with one argument must result in an exit state of 0"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_two -eq 0 ]]; then
   echo "Incorrect: call with two arguments must result in an exit state of 0"
-  exit 1
+  ((++n_errors))
 fi
 
 #####################
@@ -58,26 +60,26 @@ echo "Hello world" > expected_2.txt
 # Compare
 if ! cmp --silent created_0.txt expected_0.txt; then
   echo "Incorrect: call without arguments does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 # Compare the two
 if ! cmp --silent created_1.txt expected_1.txt; then
   echo "Incorrect: call with one argument does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 # Compare the two
 if ! cmp --silent created_2.txt expected_2.txt; then
   echo "Incorrect: call with two arguments does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 # Avoid endls
 n=`cat main.cpp | egrep "endl" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
-  exit 1
+  ((++n_errors))
 fi
 
 rm expected_*.txt
@@ -100,5 +102,7 @@ n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | w
 if [ ! "$n" -eq "1" ]; then
   echo "Error: must have 100% code coverage. Current code coverage:"
   gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
-  exit 1
+  ((++n_errors))
 fi
+
+exit $n_errors

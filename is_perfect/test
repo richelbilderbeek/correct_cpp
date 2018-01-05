@@ -7,9 +7,11 @@ qmake
 ##########################################
 make release
 
+n_errors=0
+
 if [[ ! -f main ]]; then 
   echo "Incorrect: code does not compile cleanly with high warning levels"
-  exit 1
+  ((++n_errors))
 fi
 
 #####################
@@ -30,22 +32,22 @@ state_one_two=`echo $?`
 
 if [[ ! $state_zero -eq 1 ]]; then
   echo "Incorrect: call without arguments must result in an exit state of 1"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_one -eq 0 ]]; then
   echo "Incorrect: call with one valid argument must result in an exit state of 0"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_nonsense -eq 1 ]]; then
   echo "Incorrect: call with one nonsense argument must result in an exit state of 1"
-  exit 1
+  ((++n_errors))
 fi
 
 if [[ ! $state_one_two -eq 1 ]]; then
   echo "Incorrect: call with two arguments must result in an exit state of 1"
-  exit 1
+  ((++n_errors))
 fi
 
 #####################
@@ -71,32 +73,32 @@ echo "true" > expected_28.txt
 # Compare results
 if ! cmp --silent created_0.txt expected_0.txt; then
   echo "Incorrect: call with 0 does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 if ! cmp --silent created_1.txt expected_1.txt; then
   echo "Incorrect: call with 1 does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 if ! cmp --silent created_2.txt expected_2.txt; then
   echo "Incorrect: call with 2 does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 if ! cmp --silent created_6.txt expected_6.txt; then
   echo "Incorrect: call with 6 does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 if ! cmp --silent created_12.txt expected_12.txt; then
   echo "Incorrect: call with 12 does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 if ! cmp --silent created_28.txt expected_28.txt; then
   echo "Incorrect: call with 28 does not give correct result"
-  exit 1
+  ((++n_errors))
 fi
 
 rm expected_*.txt
@@ -110,52 +112,52 @@ rm created_*.txt
 n=`cat main.cpp | egrep "endl" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
-  exit 1
+  ((++n_errors))
 fi
 
 # Catch exceptions by reference
 n=`cat main.cpp | egrep "invalid_argument\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
-  exit 1
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "out_of_range\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
-  exit 1
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "exception\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
-  exit 1
+  ((++n_errors))
 fi
 
 # Exceptions should be const
 n=`cat main.cpp | egrep "\(\w*(std::)?invalid_argument" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
-  exit 1
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "\(\w*(std::)?out_of_range" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
-  exit 1
+  ((++n_errors))
 fi
 
 n=`cat main.cpp | egrep "\(\w*(std::)?exception" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: Con.4: Use const to define objects with values that do not change after construction"
-  exit 1
+  ((++n_errors))
 fi
 
 # Do not use ellipsis
 n=`cat main.cpp | egrep "\(\w*\.\.\.\w*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: do not use ellipsis"
-  exit 1
+  ((++n_errors))
 fi
 
 ##########################################
@@ -172,5 +174,7 @@ n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | w
 if [ ! "$n" -eq "1" ]; then
   echo "Error: must have 100% code coverage. Current code coverage:"
   gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
-  exit 1
+  ((++n_errors))
 fi
+
+exit $n_errors

@@ -7,16 +7,16 @@ qmake
 ##########################################
 make release
 
+n_errors=0
+
 if [[ ! -f main ]]; then 
   echo "Incorrect: code does not compile cleanly with high warning levels"
-  exit 1
+  ((++n_errors))
 fi
 
 #####################
 # Test exit states
 #####################
-
-n_errors=0
 
 ./main > /dev/null
 state_zero=`echo $?`
@@ -112,7 +112,7 @@ n=`cat main.cpp | egrep "exception\s*\w*\s*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Incorrect: C++ Core Guidelines: E.15: Catch exceptions from a hierarchy by reference"
   ((++n_errors))
-  exit 1
+  ((++n_errors))
 fi
 
 # Exceptions should be const

@@ -7,9 +7,11 @@ qmake
 ##########################################
 make release
 
+n_errors=0
+
 if [[ ! -f main ]]; then 
   echo "Incorrect: code does not compile cleanly with high warning levels"
-  exit 1
+  ((++n_errors))
 fi
 
 # Create expected result
@@ -21,14 +23,14 @@ echo "Hello world" > expected.txt
 # Compare the two
 if ! cmp --silent created.txt expected.txt; then
   echo "Incorrect: files are different"
-  exit 1
+  ((++n_errors))
 fi
 
 # Avoid endls
 n=`cat main.cpp | egrep "endl" | wc -l`
 if [ ! "$n" -eq "0" ]; then
   echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
-  exit 1
+  ((++n_errors))
 fi
 
 ##########################################
@@ -45,5 +47,7 @@ n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | w
 if [ ! "$n" -eq "1" ]; then
   echo "Error: must have 100% code coverage. Current code coverage:"
   gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
-  exit 1
+  ((++n_errors))
 fi
+
+exit $n_errors
