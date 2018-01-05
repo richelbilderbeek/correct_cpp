@@ -12,7 +12,7 @@ Golden road|Silver road|Chapter
 :white_check_mark:|:white_check_mark:|[Do the exercise](do_the_exercise.md)
 :white_check_mark:|:white_check_mark:|[Push your code](push_your_code.md)
 :white_check_mark:|:white_check_mark:|[Correct your GitHub](correct_your_github.md)
-:white_check_mark:|:white_check_mark:|[Do a pull request](do_a_pull_request.md)
+:white_large_square:|:white_check_mark:|[Do a pull request](do_a_pull_request.md)
 
 Golden road|Silver road
 :expressionless: Need to create a Travis CI account (which is free/gratis)|:relaxed: No need for a Travis CI account
