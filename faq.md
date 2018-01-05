@@ -191,23 +191,37 @@ See [my Travis CI tutorial](https://github.com/richelbilderbeek/travis_cpp_tutor
 
 ## Why do you use GCC 5?
 
- * UBSAN is worth the 2 minutes
- * C++14 and C++17 features are not worth the 7 minutes
+I had to make a trade-off between all features:
 
-## Why don't you use the latest GCC?
+Feature|GCC 4|GCC 5| GCC 7
+Installation time (mins)|0|2|7
+UBSAN|No|Yes|Yes
+C++11|Yes|Yes|Yes
+C++14|No|Yes|Yes
+C++17|No|No|Yes
 
-If I like Travis CI install the latest version GCC, my students would have access to the latest and greatest.
-Installing `g++-7` on Travis CI, however, takes around 8 minutes on Travis CI. 
-In [a 'hello' build](https://travis-ci.org/richelbilderbeek/correct_cpp_hello/builds/325027943) installing `g++-7` takes 433 seconds out of 
-the total 494, which is 88% of the build time.
+I picked GCC 5, as
 
-Travis CI uses GCC 4.8.4, which does give access to C++11.
+  * UBSAN benefits all my students
+  * C++17 benefits only a few
 
-I decided to trade off fast results for all my students, over access to the latest and greatest for the few that appreciate (and may even need) it.
+## Why don't you use GCC 4?
 
-## Why don't you use GCC 4.8.4?
+ * Pro: GCC 4.8.4 is already installed on Travis CI
+ * Con: UBSAN is absent
 
-As UBSAN is absent there. Installing g++-5 only takes 67 seconds.
+I think the benefits of UBSAN outweight the 2 minutes of installation of GCC 5.
+
+## Why don't you use GCC 7?
+
+ * Pro: GCC 7 gives my students access to C++14 and C++17.
+ * Con: Installing GCC 7 on Travis CI takes [around 7 minutes](https://travis-ci.org/richelbilderbeek/correct_cpp_hello/builds/325027943). 
+
+I think the cost of 7 minutes waiting time for all my students outweight those great C++17 features for some of my students.
+
+## How can I use GCC 7 anyways?
+
+In the chapter's `.travis.yml`, replace `g++-5` and `gcov-5` by `g++-7` and `gcov-7` respectively. 
 
 ## References
 

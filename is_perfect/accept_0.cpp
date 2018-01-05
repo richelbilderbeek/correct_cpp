@@ -21,7 +21,7 @@ std::vector<int> get_proper_divisors(const int i) noexcept
   return v;
 }
 
-int sum(const std::vector<int>& v)
+int sum(const std::vector<int>& v) noexcept
 {
   return std::accumulate(std::begin(v), std::end(v), 0);
 }
@@ -32,7 +32,7 @@ bool is_perfect(const int i) noexcept
   return sum(get_proper_divisors(i)) == i;
 }
 
-void test_get_proper_divisors()
+void test_get_proper_divisors() noexcept
 {
   assert(get_proper_divisors(1) == std::vector<int>() );
   assert(get_proper_divisors(2) == std::vector<int>( {1} ) );
@@ -41,9 +41,11 @@ void test_get_proper_divisors()
   assert(get_proper_divisors(5) == std::vector<int>( {1} ) );
   assert(get_proper_divisors(6) == std::vector<int>( {1, 2, 3} ) );
   assert(get_proper_divisors(7) == std::vector<int>( {1} ) );
+  assert(get_proper_divisors(8) == std::vector<int>( {1, 2, 4} ) );
+  assert(get_proper_divisors(9) == std::vector<int>( {1, 2, 3} ) );
 }
 
-void test_is_perfect()
+void test_is_perfect() noexcept
 {
   assert(!is_perfect(-1));
   assert(!is_perfect(0));
@@ -52,13 +54,13 @@ void test_is_perfect()
   assert(!is_perfect(3));
   assert(!is_perfect(4));
   assert(!is_perfect(5));
-  assert(is_perfect(6));
+  assert( is_perfect(6));
   assert(!is_perfect(7));
   assert(!is_perfect(8));
   assert(is_perfect(28));
 }
 
-int do_main(const std::vector<std::string>& args)
+int do_main(const std::vector<std::string>& args) noexcept
 {
   if (args.size() != 2) return 1;
   try
@@ -71,8 +73,8 @@ int do_main(const std::vector<std::string>& args)
   }
   return 0;
 }
-
-void test_do_main()
+ 
+void test_do_main() noexcept
 {
   assert(do_main( { "is_perfect" } ) == 1);
   assert(do_main( { "is_perfect", "1" } ) == 0);
@@ -80,7 +82,7 @@ void test_do_main()
   assert(do_main( { "is_perfect", "1", "2" } ) == 1);
 }
 
-void test()
+void test() noexcept
 {
   test_get_proper_divisors();
   test_is_perfect();

@@ -50,6 +50,9 @@ void test()
   assert( is_prime(2));
   assert( is_prime(3));
   assert(!is_prime(4));
+  assert( is_prime(5));
+  assert(!is_prime(6));
+  assert( is_prime(7));
 }
 
 int main(int argc, char* argv[]) 

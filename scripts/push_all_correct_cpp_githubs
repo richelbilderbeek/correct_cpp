@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd ~/GitHubs
+
+for folder in `ls -d correct_cpp_*`
+do
+  cd $folder
+  git add --all :/
+  git commit -m "Correct C++ update"
+  git pull
+  git push
+  cd ..
+done
