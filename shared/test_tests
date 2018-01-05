@@ -2,6 +2,8 @@
 
 # Tests the test script.
 
+n_errors=0
+
 # Files starting with 'rejected_' should be rejected
 for filename in `ls reject_*.cpp`; do
 
@@ -14,7 +16,7 @@ for filename in `ls reject_*.cpp`; do
   exit_code=`echo $?`
   if [[ ! $exit_code -eq 1 ]]; then
     echo "Incorrect: file with name '"$filename" ' should fail"
-    exit 1
+    ((++n_errors))
   fi
   rm main.cpp
 done
@@ -31,7 +33,7 @@ for filename in `ls accept_*.cpp`; do
   exit_code=`echo $?`
   if [[ ! $exit_code -eq 0 ]]; then
     echo "Incorrect: file with name '"$filename" ' should be accepted"
-    exit 1
+    ((++n_errors))
   fi
   rm main.cpp
 done
@@ -43,3 +45,5 @@ rm Makefile
 rm Makefile.Release
 rm Makefile.Debug
 rm main
+
+exit $n_errors
