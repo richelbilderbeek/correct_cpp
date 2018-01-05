@@ -3,9 +3,9 @@
 #include <string>
 #include <vector>
 
-std::string int_to_word(const int i)
+std::string int_to_word(const int value)
 {
-  switch (i)
+  switch (value)
   {
     case 1: return "one";
     case 2: return "two";
@@ -13,7 +13,7 @@ std::string int_to_word(const int i)
     case 4: return "four";
     case 5: return "five";
     case 6: return "six";
-    default: throw std::invalid_argument("i must be in range [1, 6]");
+    default: throw std::invalid_argument("value must be in range [1, 6]");
   }
 }
 
@@ -22,8 +22,8 @@ int do_main(const std::vector<std::string>& args)
   if (args.size() != 2) return 1;
   try
   {
-    const int i{std::stoi(args[1])};
-    std::cout << int_to_word(i) << '\n';
+    const int value{std::stoi(args[1])};
+    std::cout << int_to_word(value) << '\n';
   }
   catch (const std::exception&)
   {
