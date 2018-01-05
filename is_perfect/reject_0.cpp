@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
       {
         if (value % denominator == 0)
         {
-          proper_divisors.push_back(j);
+          proper_divisors.push_back(denominator);
         }
       }
     }
