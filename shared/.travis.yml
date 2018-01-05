@@ -5,52 +5,29 @@
 language: cpp
 compiler: gcc
 
-before_install:
+install:
   # Get my folder
   - my_github=${PWD##*/}  
-  - echo $my_github
   - chapter_folder=`echo $my_github | sed 's/correct_cpp_//'`  
-  - echo $chapter_folder
   - test_path=https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/$chapter_folder/test
-  - echo $test_path
-  # GCC 5, GCC 7
-  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - sudo apt-get update -qq
-  # Codecov
-  - sudo pip install codecov
-  # OCLint
-  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install_oclint
-  - chmod +x install_oclint 
-  - ./install_oclint
-
-install: 
-  # GCC5 
-  - sudo apt-get install -qq g++-5
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
-  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
-  # GCC 7
-  # - sudo apt-get install -qq g++-7
-  # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
-  # - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90
-  # cppcheck
-  - sudo apt-get install -qq cppcheck
-
-script: 
-  # cppcheck
-  - cppcheck --quiet --error-exitcode=1 . 
-  # OCLint
-  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/do_oclint
-  - chmod +x do_oclint
-  - ./do_oclint
-  # Build, run and test the release version
-  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
+  # shared install
+  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install
+  - chmod +x install
+  - ./install
+  # test
   - wget $test_path
   - chmod +x test
+
+script: 
+  - cppcheck --quiet --error-exitcode=1 . 
+  - ./do_oclint
   - ./test
 
 after_script:
-  # Get code coverage badge
-  - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/get_code_cov
-  - chmod +x get_code_cov
-  - ./get_code_cov
-  - codecov
+  - ./get_code_cov > /dev/null
+  - codecov > /dev/null
+
+after_failure:
+  - echo $my_github
+  - echo $chapter_folder
+  - echo $test_path
