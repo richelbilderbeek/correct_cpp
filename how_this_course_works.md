@@ -15,6 +15,7 @@ Golden road|Silver road|Chapter
 :white_large_square:|:white_check_mark:|[Do a pull request](do_a_pull_request.md)
 
 Golden road|Silver road
+---|---
 :expressionless: Need to create a Travis CI account (which is free/gratis)|:relaxed: No need for a Travis CI account
 :relaxed: Travis CI works on your GitHub|:expressionless: Pull requests must be created
 :smirk: You can [use the scoreboard](use_the_scoreboard.md)|:unamused: Pull requests will be rejected
