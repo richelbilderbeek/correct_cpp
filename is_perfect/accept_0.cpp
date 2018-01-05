@@ -13,7 +13,7 @@ std::vector<int> get_proper_divisors(const int i) noexcept
   std::vector<int> v;
   for (int j=1; j!=i-1; ++j)
   {
-    if (i % j == 0)
+    if (!(i % j))
     {
       v.push_back(j);
     }
@@ -42,7 +42,7 @@ void test_get_proper_divisors() noexcept
   assert(get_proper_divisors(6) == std::vector<int>( {1, 2, 3} ) );
   assert(get_proper_divisors(7) == std::vector<int>( {1} ) );
   assert(get_proper_divisors(8) == std::vector<int>( {1, 2, 4} ) );
-  assert(get_proper_divisors(9) == std::vector<int>( {1, 2, 3} ) );
+  assert(get_proper_divisors(9) == std::vector<int>( {1, 3} ) );
 }
 
 void test_is_perfect() noexcept
