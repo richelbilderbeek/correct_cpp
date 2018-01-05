@@ -5,9 +5,7 @@ my_files=`ls {*.cpp,*.h}`
 ./oclint-0.10.3/bin/oclint -o oclint.log \
   $my_files \
   -- \
-  -c -std=c++17 \
-  -I/usr/include/c++/7 \
-  -I/usr/include/x86_64-linux-gnu/c++/7
+  -c -std=c++11
 
 # Will be 0 if success
 # Will be 1 if fail
