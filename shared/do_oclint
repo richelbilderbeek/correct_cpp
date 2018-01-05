@@ -1,6 +1,6 @@
 #!/bin/bash
 
-my_files=`ls {*.cpp,*.h}`
+my_files=`ls {*.cpp,*.h} 2>/dev/null`
 
 ./oclint-0.10.3/bin/oclint -o oclint.log \
   $my_files \
