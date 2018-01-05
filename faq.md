@@ -60,9 +60,24 @@ you can use your GitHub account to log in.
 
 ## How to correct my code locally?
 
-The scripts of any chapter, can be found in this GitHub, in a folder
+You will need:
+
+ * its unique `test` script
+ * its shared peripheral scripts
+
+The unique `test` script of any chapter, can be found in this GitHub, in the folder
 with the same name as the chapter. For example, the scripts for 
 chapter `hello_world` are found in the `hello_world` folder.
+Copy the `test` script to your chapter's folder.
+
+The shared peripheral scripts can be found in [the `shared` folder of this GitHub](https://github.com/richelbilderbeek/correct_cpp/tree/master/shared).
+Copy all files in the `shared` folder to your chapter's folder.
+
+The run:
+
+```
+./test
+```
 
 These scripts work on Travis CI, which uses a Ubuntu GNU/Linux distro.
 

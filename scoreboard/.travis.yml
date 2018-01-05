@@ -1,8 +1,8 @@
 # Correct C++ chapter's .travis.yml file for 'correct_cpp_scoreboard'
 
 script: 
-  - n=`cat README.md | egrep "richelbilderbeek" | wc -l`
   - |
+    n=`cat README.md | egrep "richelbilderbeek" | wc -l`
     if [ ! "$n" -eq "0" ]; then
       echo "Incorrect: must replace all 'richelbilderbeek' by your GitHub username"
       exit 1
