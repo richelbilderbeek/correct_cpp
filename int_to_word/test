@@ -186,10 +186,10 @@ make debug
 # Test code coverage
 #####################
 
-n=`gcov-7 -i -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then
   echo "Incorrect: must have 100% code coverage. Current code coverage:"
-  gcov-7 -i -n -o debug main.cpp | head -n 2 | tail -n 1
+  gcov -n -o debug main.cpp | head -n 2 | tail -n 1
   ((++n_errors))
 fi
 

@@ -189,6 +189,11 @@ I this course at:
 
 See [my Travis CI tutorial](https://github.com/richelbilderbeek/travis_cpp_tutorial).
 
+## Why do you use GCC 5?
+
+ * UBSAN is worth the 2 minutes
+ * C++14 and C++17 features are not worth the 7 minutes
+
 ## Why don't you use the latest GCC?
 
 If I like Travis CI install the latest version GCC, my students would have access to the latest and greatest.
@@ -199,6 +204,10 @@ the total 494, which is 88% of the build time.
 Travis CI uses GCC 4.8.4, which does give access to C++11.
 
 I decided to trade off fast results for all my students, over access to the latest and greatest for the few that appreciate (and may even need) it.
+
+## Why don't you use GCC 4.8.4?
+
+As UBSAN is absent there. Installing g++-5 only takes 67 seconds.
 
 ## References
 
