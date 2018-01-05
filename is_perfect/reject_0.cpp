@@ -16,15 +16,12 @@ int main(int argc, char* argv[])
     }
     //Collect the proper divisors
     std::vector<int> proper_divisors;
-    if (value < 2)
-    {
-      //proper_divisors is okay as it is
-    }
-    else if (value == 2)
+    
+    if (value == 2)
     {
       proper_divisors.push_back(1);
     }
-    else
+    else if (value > 2)
     {
       for (int denominator=1; denominator!=value-1; ++denominator)
       {
