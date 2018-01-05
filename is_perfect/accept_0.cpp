@@ -51,9 +51,7 @@ void test_is_perfect() noexcept
   assert(!is_perfect(0));
   assert(!is_perfect(1));
   assert(!is_perfect(2));
-  assert(!is_perfect(3));
   assert(!is_perfect(4));
-  assert(!is_perfect(5));
   assert( is_perfect(6));
   assert(!is_perfect(7));
   assert(!is_perfect(8));
