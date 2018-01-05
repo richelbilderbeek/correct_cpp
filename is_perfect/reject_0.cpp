@@ -9,19 +9,27 @@ int main(int argc, char* argv[])
   try
   {
     const int value{std::stoi(argv[1])};
-    if (value == 0)
-    {
-      std::cout << "false\n";
-      return 0;
-    }
+
+    // Is this a perfect number?
+    // -1: unknown
+    //  0: false
+    //  1: true
+    int is_perfect{-1};
+
+    // Negative values are not perfect
+    if (value < 0) is_perfect = 0;
+
+    // Zero is not perfect
+    if (is_perfect == -1 && value == 0) is_perfect = 0;
+
     //Collect the proper divisors
     std::vector<int> proper_divisors;
     
-    if (value == 2)
+    if (is_perfect == -1 && value == 2)
     {
       proper_divisors.push_back(1);
     }
-    else if (value > 2)
+    else if (is_perfect == -1 && value > 2)
     {
       for (int denominator=1; denominator!=value-1; ++denominator)
       {
@@ -31,13 +39,19 @@ int main(int argc, char* argv[])
         }
       }
     }
-    //sum the proper divisors
+
+    //sum the proper divisors, if not known if number is perfect
     int sum{0};
-    for (const int proper_divisor: proper_divisors) { sum += proper_divisor; }
-    //is it perfect?
-    const bool is_perfect{sum == value};
+    if (is_perfect == -1)
+    {
+      for (const int proper_divisor: proper_divisors) { sum += proper_divisor; }
+    }
+    if (is_perfect == -1 && sum == value) is_perfect = 1;
+    if (is_perfect == -1) is_perfect = 0;
+
     //show
-    if (is_perfect)
+    assert(is_perfect != -1); //Must be known now
+    if (is_perfect == 1)
     {
       std::cout << "true\n";
     }
