@@ -1,11 +1,11 @@
 #!/bin/bash
 
-qmake
+qmake > /dev/null
 
 ##########################################
 # Test release version
 ##########################################
-make release
+make release > /dev/null
 
 n_errors=0
 
@@ -88,7 +88,7 @@ rm created_*.txt
 ##########################################
 # Test debug version
 ##########################################
-make debug
+make debug > /dev/null
 
 ./main
 ./main hello
