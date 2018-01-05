@@ -84,8 +84,9 @@ fi
 
 rm expected_*.txt
 rm created_*.txt
+
 #####################
-# Test misc
+# Test style
 #####################
 
 # Avoid endls
