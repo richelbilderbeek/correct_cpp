@@ -194,6 +194,7 @@ See [my Travis CI tutorial](https://github.com/richelbilderbeek/travis_cpp_tutor
 I had to make a trade-off between all features:
 
 Feature|GCC 4|GCC 5| GCC 7
+---|---|---|---
 Installation time (mins)|0|2|7
 UBSAN|No|Yes|Yes
 C++11|Yes|Yes|Yes
