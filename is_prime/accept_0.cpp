@@ -23,7 +23,7 @@ bool is_prime(const int value) noexcept
   return true;
 }
 
-int do_main(const std::vector<std::string>& args)
+int do_main(const std::vector<std::string>& args) noexcept
 {
   if (args.size() != 2) return 1;
   try
@@ -37,13 +37,17 @@ int do_main(const std::vector<std::string>& args)
   return 0;
 }
 
-void test()
+void test_do_main() noexcept
 {
   assert(do_main( { "is_prime"} ) == 1);
   assert(do_main( { "is_prime", "4"} ) == 0);
   assert(do_main( { "is_prime", "7"} ) == 0);
   assert(do_main( { "is_prime", "nonsense"} ) == 1);
   assert(do_main( { "is_prime", "4", "16" } ) == 1);
+}
+
+void test_is_prime() noexcept
+{
   assert(!is_prime(-1));
   assert(!is_prime(0));
   assert(!is_prime(1));
@@ -53,6 +57,12 @@ void test()
   assert( is_prime(5));
   assert(!is_prime(6));
   assert( is_prime(7));
+}
+
+void test() noexcept
+{
+  test_do_main();
+  test_is_prime();
 }
 
 int main(int argc, char* argv[]) 
