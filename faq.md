@@ -15,6 +15,7 @@ For C++ syntax, there is plenty of material about C++ online, which you'll have 
 
 Next to this, each chapter refers to articles needed. Some of these articles are:
 
+ * [How to set up git](set_up_git.md)
  * [How to fork a chapter](fork_a_chapter.md)
  * [How to clone your fork](clone_your_fork.md)
  * [How to do the exercise](do_the_exercise.md)
