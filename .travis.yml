@@ -17,4 +17,5 @@ script:
   - for filename in `ls *.md`; do proselint $filename; done
   - ./test_tests
   - cd scripts
-  - ./make_book
+  - ./create_title_page
+  - ./create_book
