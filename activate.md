@@ -3,12 +3,9 @@
 After [forking a chapter](fork_a_chapter.md), you must activate Travis CI to check your GitHub.
 
  * Go to [https://travis-ci.org/](https://travis-ci.org/)
-
-![The Travis CI homepage](pics/travis_ci_homepage.png)
-
  * Sign in with your GitHub
 
-![The Travis CI homepage](pics/travis_ci_homepage_sign_in.png)
+![Sign in here](pics/travis_ci_homepage_sign_in.png)
 
  * Go to your accounts
 

@@ -1,6 +1,6 @@
 # Push your code 
 
-After having [done the exercise](do_the_exercise.md), [push your code](push_your_code.md) to let `git` upload your proposed solution.
+After having done the exercise, push your code to let `git` upload your proposed solution.
 
 On your local computer, use `git push` from the command-line to upload your code.
 Before this, you also need to add and commit your proposed changes.
@@ -17,4 +17,4 @@ git push
 
 Your code is uploaded to your GitHub.
 
-Now [correct your code](correct_your_code.md).
+Now [correct your GitHub](correct_your_github.md).
