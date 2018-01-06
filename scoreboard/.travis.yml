@@ -2,9 +2,16 @@
 
 script: 
   - |
-    n=`cat README.md | egrep "richelbilderbeek" | wc -l`
+    n=`cat README.md | egrep "richelbilderbeek/correct_cpp_" | wc -l`
     if [ ! "$n" -eq "0" ]; then
-      echo "Incorrect: must replace all 'richelbilderbeek' by your GitHub username"
+      echo "Incorrect: must replace all 'richelbilderbeek/correct_cpp_' by '[your_github_username]/correct_cpp_'"
       exit 1
     fi
+  - |
+    n=`cat README.md | egrep "richelbilderbeek/correct_cpp\)" | wc -l`
+    if [ "$n" -eq "0" ]; then
+      echo "Incorrect: must keep link to the Correct C++ main GitHub at 'richelbilderbeek/correct_cpp'"
+      exit 1
+    fi
+
 
