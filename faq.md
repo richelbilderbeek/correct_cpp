@@ -181,15 +181,15 @@ bool is_prime(const int i) noexcept
  * [GitHub](https://github.com/)
  * [Travis CI](https://travis-ci.org/)
  * [Codecov](https://codecov.io/)
- * GCC
- * `gcov`
+ * [GCC](https://gcc.gnu.org/)
+ * [gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html)
  * [Qt Creator](https://www.qt.io)
- * OCLint
- * `cppcheck`
- * UBSAN
- * `helgrind`
- * `memcheck`
- * `gprof`
+ * [OCLint](https://github.com/oclint/oclint)
+ * [cppcheck](http://cppcheck.sourceforge.net/)
+ * [UBSAN](https://developers.redhat.com/blog/2014/10/16/gcc-undefined-behavior-sanitizer-ubsan/): GCC's Undefined Behavior Sanitizer 
+ * [valgrind](http://valgrind.org/)'s `helgrind`
+ * [valgrind](http://valgrind.org/)'s `memcheck`
+ * [gprof](https://sourceware.org/binutils/docs/gprof/)
 
 ## How do I view my build status?
 
