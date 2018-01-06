@@ -15,7 +15,7 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
 1|[hello](https://github.com/richelbilderbeek/correct_cpp_hello)|Experience [how this course works](how_this_course_works.md)
 2|[hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
 3|[hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
-:construction:|[cout_argv](https://github.com/richelbilderbeek/correct_cpp_show_args)|Show CLI arguments
+:construction:|[show_args](https://github.com/richelbilderbeek/correct_cpp_show_args)|Show CLI arguments
 4|[is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|Handle exceptions
 5|[bool_to_coin](https://github.com/richelbilderbeek/correct_cpp_bool_to_coin)|Achieve 100% code coverage (easy)
 6|[int_to_word](https://github.com/richelbilderbeek/correct_cpp_int_to_word)|Achieve 100% code coverage (hard)
