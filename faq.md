@@ -143,6 +143,7 @@ imperfections in these solutions.
     * 100% code coverage
     * no memory leaks
     * it should follow the specifications :-)
+    * using tools [6]
  * A student should be able to check if his/her code is correct easily, without a human involved
  * Prefer a learning curve that is too gentle, over one that is too steep
  * The course is pragmatic: an exercise is stated to be correct, when all scripts and tools suggest no improvement. 
@@ -264,4 +265,7 @@ In the chapter's `.travis.yml`, replace `g++-5` and `gcov-5` by `g++-7` and `gco
  * [3] Linus Torvalds. [Re:[PATCH] Don't compare unsigned variable for &lt;0 in sys\_prctl()](http://linux.derkeiler.com/Mailing-Lists/Kernel/2006-11/msg08325.html). 2006-11-28. Retrieved on 2010-09-20. 'Friends don't let friends use [gcc] -W'
  * [4] Bjarne Stroustrup. The C++ Programming Language (4th edition). 2013. ISBN: 978-0-321-56384-2. Page 32, 1.5 'Advice', item 16: 'C++ is not just C with a few extensions'
  * [5] Maureen A. Carey, Jason A. Papin. Ten simple rules for biologists learning to program. 2018. PLOS Computational Biology 14(1): e1005871. https://doi.org/10.1371
+ * [6] [C++ Core Guidelines: P.12: Use supporting tools as appropriate](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p12-use-supporting-tools-as-appropriate)
+
+
 

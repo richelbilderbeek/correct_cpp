@@ -50,7 +50,7 @@ fi
 # Do not use ellipsis
 n=`cat main.cpp | egrep "\(\w*\.\.\.\w*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
-  echo "Incorrect: do not use ellipsis"
+  echo "Incorrect: F.55: Don't use va_arg arguments"
   ((++n_errors))
 fi
 
