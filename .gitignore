@@ -41,3 +41,15 @@ build-*
 debug/
 hello_world/main.cpp
 hello_world/main.pro
+show_args/README.md
+show_args/check_course_guidelines
+show_args/check_cpp_core_guidelines.md
+show_args/check_cpp_core_guidelines
+show_args/clean_test
+show_args/do_oclint
+show_args/get_code_cov
+show_args/install
+show_args/install_oclint
+show_args/main.cpp
+show_args/main.pro
+show_args/test_tests

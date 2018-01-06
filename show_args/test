@@ -57,12 +57,12 @@ if [ ! "$one_word" -eq "1" ]; then
   ((++n_errors))
 fi
 
-if [ ! "$two_words" -eq "2" ]; then
+if [ ! "$two_words" -eq "1" ]; then
   echo "Incorrect: ./show_args with one user argument must display two words"
   ((++n_errors))
 fi
 
-if [ ! "$three_words" -eq "3" ]; then
+if [ ! "$three_words" -eq "1" ]; then
   echo "Incorrect: ./show_args with two user arguments must display three words"
   ((++n_errors))
 fi
