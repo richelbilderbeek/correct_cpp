@@ -88,11 +88,22 @@ if [[ ! $state_course_guidelines -eq 0 ]]; then
 fi
 
 ##########################################
+# Chapter guidelines
+##########################################
+
+# Do not use for
+n=`cat main.cpp | egrep "for\s*\(\s*" | wc -l`
+if [ ! "$n" -eq "0" ]; then
+  echo "Incorrect: do not use a for loop in this chapter"
+  ((++n_errors))
+fi
+
+##########################################
 # Test debug version
 ##########################################
 make debug > /dev/null
 
-./main
+./main > /dev/null
 
 
 #####################
