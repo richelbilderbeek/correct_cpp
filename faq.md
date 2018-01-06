@@ -1,5 +1,7 @@
 # FAQ
 
+For developers, see the Technical FAQ below.
+
 ## How does this course work?
 
 See [how this course works](how_this_course_works.md).
@@ -34,12 +36,13 @@ This file contains the commands that Travis CI needs to run.
 To keep the chapters' GitHubs clean, the scripts to build and test
 are usually downloaded from this GitHub, made excutable and then executed.
 
-## How to correct my code without a pull request?
+## How to correct my code?
 
 There are two ways:
 
  * Correct your code locally, see 'How to test if my code is correct locally?'
  * Let Travis CI correct your GitHub, see 'How to let Travis CI correct my GitHub?'
+ * Do a pull request, see below, 'Do a pull request'
 
 Correcting your code locally is fastest, but only works under GNU/Linux with an Ubuntu-like distro.
 
@@ -74,6 +77,39 @@ The run:
 ```
 
 These scripts work on Travis CI, which uses a Ubuntu GNU/Linux distro.
+
+# Do a pull request
+
+After [pushing your code](push_your_code.md), you can also let Travis CI check your code by a pull request.
+
+[do a pull request](do_a_pull_request.md) is the way that features:
+
+  * No need for a Travis CI account
+  * Pull requests must be created
+  * Pull requests will be rejected
+
+On your fork's GitHub page, click on `Pull request`, which is directly 
+below the green `Clone or download` button.
+
+![Click here to submit a pull request](pics/submit_pull_request_with_frame.png)
+
+One the chapter's (*not* your fork's) GitHub, at Pull Requests (directly
+below the GitHub's title) you can see how well your code did. 
+
+If you are quick, Travis CI is not even detected your pull request:
+
+![A pull request still unnoticed by Travis CI](pics/pull_request_before_travis.png)
+
+After Travis CI notices your pull request, it will correct your work:
+
+![A pull request being correct by Travis CI](pics/pull_request_pending.png)
+
+If there was something corrected, the pull request will fail. Click on the Travis CI icon to view the Travis CI log to find the correction.
+
+![A pull request being correct by Travis CI](pics/pull_request_pending.png)
+
+If your solution was correct, the build status of your pull request will become green. Your code will be rejected 
+with a :+1: (this is a course, remember?).
 
 ## Why do you prefer a command-line interface over an interactive interface?
 
@@ -252,6 +288,64 @@ I think the cost of 7 minutes waiting time for all my students outweight those g
 
 In the chapter's `.travis.yml`, replace `g++-5` and `gcov-5` by `g++-7` and `gcov-7` respectively. 
 
+# FAQ for developers
+
+## How to test if all chapters work locally?
+
+In the main folder, run `test_tests`. 
+This script tests each chapter.
+
+## How to check if Travis CI does accept all accepted answers?
+
+In `scripts`:
+
+ * `./copy_accepted_to_chapters`: copies each chapter's `accept_0.cpp` to each chapter's `main.cpp`.
+ * `./push_all_chapters`: git add, git commit, git push for each chapter
+
+The [Correct C++ scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard) should now turn to all green.
+
+## How to check if Travis CI does reject all reject answers?
+
+In `scripts`:
+
+ * `./copy_rejected_to_chapters`: copies each chapter's `reject_0.cpp` to each chapter's `main.cpp`.
+ * `./push_all_chapters`: git add, git commit, git push for each chapter
+
+The [Correct C++ scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard) should now turn to all red.
+
+## What if a chapter's test fails?
+
+ * Go into the folder, for example `hello_world`:
+
+```
+cd hello_world
+```
+
+ * Copy all tests in `shared` to there
+
+```
+cp ../shared/* .
+```
+
+ * Copy the file that should be accepted or rejected to main.cpp, for example, `accepted_0.cpp`
+
+```
+cp accepted_0.cpp main.cpp
+```
+
+ * Run the tests for that chapter
+
+```
+./test
+```
+
+ * Fix the code or the `test` script 
+ * Clean up
+
+```
+./clean_test
+```
+
 ## References
 
  * [1] Trevor Misfeldt, Gregory Bumgardner, Andrew Gray. The elements of C++ style. 2004. ISBN: 978-0-521-89308-4. Chapter 2.3, page 5: 'Do it right the first time'
@@ -260,6 +354,3 @@ In the chapter's `.travis.yml`, replace `g++-5` and `gcov-5` by `g++-7` and `gco
  * [4] Bjarne Stroustrup. The C++ Programming Language (4th edition). 2013. ISBN: 978-0-321-56384-2. Page 32, 1.5 'Advice', item 16: 'C++ is not just C with a few extensions'
  * [5] Maureen A. Carey, Jason A. Papin. Ten simple rules for biologists learning to program. 2018. PLOS Computational Biology 14(1): e1005871. https://doi.org/10.1371
  * [6] [C++ Core Guidelines: P.12: Use supporting tools as appropriate](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p12-use-supporting-tools-as-appropriate)
-
-
-
