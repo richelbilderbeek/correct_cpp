@@ -1,5 +1,7 @@
 #!/bin/bash
 
+n_errors=0
+
 # Do not use ellipsis
 n=`cat main.cpp | egrep "\(\w*\.\.\.\w*\)" | wc -l`
 if [ ! "$n" -eq "0" ]; then
@@ -7,4 +9,4 @@ if [ ! "$n" -eq "0" ]; then
   ((++n_errors))
 fi
 
-
+exit $n_errors

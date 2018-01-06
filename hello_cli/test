@@ -83,7 +83,20 @@ rm created_*.txt
 ##########################################
 
 ./check_cpp_core_guidelines
+state_core_guidelines=`echo $?`
+
+if [[ ! $state_core_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_cpp_core_guidelines' already does so 
+  ((++n_errors))
+fi
+
 ./check_course_guidelines
+state_course_guidelines=`echo $?`
+
+if [[ ! $state_course_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_course_guidelines' already does so 
+  ((++n_errors))
+fi
 
 ##########################################
 # Test debug version

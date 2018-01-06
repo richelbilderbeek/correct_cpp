@@ -3,13 +3,15 @@
 n_errors=0
 
 for folder in `ls -d */`; do
-  cd $folder
   if [ -f test ]; then 
+    echo $folder
     cp ../shared/test_tests .
     cp ../shared/main.pro .
     cp ../shared/check_cpp_core_guidelines .
     cp ../shared/check_course_guidelines .
+
     ./test_tests > /dev/null
+
     test_exit_state=`echo $?`
     if [[ ! $test_exit_state -eq 0 ]]; then
       echo "Incorrect: tests in folder '"$folder"' fail"
@@ -19,6 +21,8 @@ for folder in `ls -d */`; do
 
     rm test_tests
     rm main.pro
+    rm check_cpp_core_guidelines
+    rm check_course_guidelines
   fi 
   cd ..
 done
