@@ -19,7 +19,7 @@ install:
   - chmod +x test
 
 script: 
-  - cppcheck --quiet --error-exitcode=1 . 
+  - cppcheck --quiet --enable=all --error-exitcode=1 . 
   - ./do_oclint
   - ./test
 
