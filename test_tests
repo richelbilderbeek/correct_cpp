@@ -3,7 +3,13 @@
 n_errors=0
 
 for folder in `ls -d */`; do
-  if [ -f test ]; then 
+
+  echo $folder
+
+  cd $folder
+
+  if [ -f test ]; then
+ 
     echo $folder
     cp ../shared/test_tests .
     cp ../shared/main.pro .
@@ -27,4 +33,4 @@ for folder in `ls -d */`; do
   cd ..
 done
 
-exit $n_errors
+exit $n_errors 

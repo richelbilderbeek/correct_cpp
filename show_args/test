@@ -1,0 +1,109 @@
+#!/bin/bash
+
+qmake > /dev/null
+
+##########################################
+# Test release version
+##########################################
+make release > /dev/null
+
+n_errors=0
+
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels"
+  ((++n_errors))
+fi
+
+#####################
+# Test exit states
+#####################
+
+./main > /dev/null
+state_zero=`echo $?`
+
+./main hello > /dev/null
+state_hello=`echo $?`
+
+./main hello world > /dev/null
+state_hello_world=`echo $?`
+
+if [[ ! $state_zero -eq 0 ]]; then
+  echo "Incorrect: './show_args' must return an exit state of 0"
+  ((++n_errors))
+fi
+
+if [[ ! $state_hello -eq 0 ]]; then
+  echo "Incorrect: './show_args hello' must return an exit state of 0"
+  ((++n_errors))
+fi
+
+if [[ ! $state_hello_world -eq 0 ]]; then
+  echo "Incorrect: './show_args hello world' must return an exit state of 0"
+  ((++n_errors))
+fi
+
+#####################
+# Test output
+#####################
+
+# Create expected result
+one_word=`./main | egrep "main" | wc -l`
+two_words=`./main bye | egrep "main bye" | wc -l`
+three_words=`./main hello goodbye | egrep "main hello goodbye" | wc -l`
+
+
+if [ ! "$one_word" -eq "1" ]; then
+  echo "Incorrect: ./show_args without argument must display the path to show args"
+  ((++n_errors))
+fi
+
+if [ ! "$two_words" -eq "2" ]; then
+  echo "Incorrect: ./show_args with one user argument must display two words"
+  ((++n_errors))
+fi
+
+if [ ! "$three_words" -eq "3" ]; then
+  echo "Incorrect: ./show_args with two user arguments must display three words"
+  ((++n_errors))
+fi
+
+##########################################
+# C++ guidelines
+##########################################
+
+./check_cpp_core_guidelines
+state_core_guidelines=`echo $?`
+
+if [[ ! $state_core_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_cpp_core_guidelines' already does so 
+  ((++n_errors))
+fi
+
+./check_course_guidelines
+state_course_guidelines=`echo $?`
+
+if [[ ! $state_course_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_course_guidelines' already does so 
+  ((++n_errors))
+fi
+
+##########################################
+# Test debug version
+##########################################
+make debug > /dev/null
+
+./main
+
+
+#####################
+# Test code coverage
+#####################
+
+n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Incorrect: must have 100% code coverage. Current code coverage:"
+  gcov -n -o debug main.cpp | head -n 2 | tail -n 1
+  ((++n_errors))
+fi
+
+exit $n_errors
