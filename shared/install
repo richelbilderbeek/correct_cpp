@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This code is run on each chapter's GitHub
+
 # GCC 5, GCC 7
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get update -qq
@@ -33,3 +35,11 @@ chmod +x get_code_cov
 
 # main.pro file
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
+
+# Check guidelines
+wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_cpp_core_guidelines
+chmod +x check_cpp_core_guidelines
+
+wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_course_guidelines
+chmod +x check_course_guidelines
+
