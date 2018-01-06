@@ -2,24 +2,17 @@
 
 # Put all chapters after another and create a booklet
 
-mkdir build
-cp ../*.md build
-cd build
+cd ..
 
-# Remove chapters from booklet
-rm README.md
-
-for filename in `ls *.md` do
+for filename in `ls *.md`; do
   echo $filename
-  cat $filename >> README.md; echo " " >> README.md; echo "\pagebreak" >> README.md; echo " " >> README.md
+  cat $filename >> book.md; echo " " >> book.md; echo "\pagebreak" >> book.md; echo " " >> book.md
 done
 
 # Make book
-pandoc README.md -o correct_cpp.pdf --toc --toc-depth=1 --highlight-style=tango -V geometry:margin=0.5in
+pandoc book.md -o correct_cpp.pdf --toc --toc-depth=1 --highlight-style=tango -V geometry:margin=0.5in
 
 # Make booklet
 bookletimposer -a correct_cpp_book.pdf -o correct_cpp_booklet.pdf
 
-cp correct_cpp_book.pdf ../
-cp correct_cpp_booklet.pdf ../
-rm -rf build
+rm book.md
