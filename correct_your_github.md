@@ -14,7 +14,7 @@ After [pushing your code](push_your_code.md), there are two ways to [correct you
 Go to [https://travis-ci.org/](https://travis-ci.org/) and create an account using your GitHub account.
 It is free/gratis
 
-![The Travis CI homepage](TravisHomepageBordered.png)
+![The Travis CI homepage](pics/TravisHomepageBordered.png)
 
 ## Travis CI works on your GitHub
 

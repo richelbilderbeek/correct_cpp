@@ -16,7 +16,7 @@ If you [know how this course works](how_this_course_works.md), this is easy:
 
 ### Grey build statuses
 
-![Grey build statuses]([pics/scoreboard_grey_build_statuses.png)
+![Grey build statuses](pics/scoreboard_grey_build_statuses.png)
 
 Grey build statuses mean that either:
 
