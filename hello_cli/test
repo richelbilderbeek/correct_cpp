@@ -75,15 +75,15 @@ if ! cmp --silent created_2.txt expected_2.txt; then
   ((++n_errors))
 fi
 
-# Avoid endls
-n=`cat main.cpp | egrep "endl" | wc -l`
-if [ ! "$n" -eq "0" ]; then
-  echo "Error: C++ Core Guidelines: SL.io.50: Avoid endl"
-  ((++n_errors))
-fi
-
 rm expected_*.txt
 rm created_*.txt
+
+##########################################
+# C++ guidelines
+##########################################
+
+./check_cpp_core_guidelines
+./check_course_guidelines
 
 ##########################################
 # Test debug version

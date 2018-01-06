@@ -26,12 +26,12 @@ if ! cmp --silent created.txt expected.txt; then
   ((++n_errors))
 fi
 
-# Avoid endls
-n=`cat main.cpp | egrep "endl" | wc -l`
-if [ ! "$n" -eq "0" ]; then
-  echo "Incorrect: C++ Core Guidelines: SL.io.50: Avoid endl"
-  ((++n_errors))
-fi
+##########################################
+# C++ guidelines
+##########################################
+
+./check_cpp_core_guidelines
+./check_course_guidelines
 
 ##########################################
 # Test debug version

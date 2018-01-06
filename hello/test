@@ -26,11 +26,18 @@ if [[ ! -f main ]]; then
   ((++n_errors))
 fi
 
-./main
+##########################################
+# C++ guidelines
+##########################################
+
+./check_cpp_core_guidelines
+./check_course_guidelines
 
 #####################
 # Test code coverage
 #####################
+
+./main
 
 n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then

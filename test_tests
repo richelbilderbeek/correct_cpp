@@ -7,6 +7,8 @@ for folder in `ls -d */`; do
   if [ -f test ]; then 
     cp ../shared/test_tests .
     cp ../shared/main.pro .
+    cp ../shared/check_cpp_core_guidelines .
+    cp ../shared/check_course_guidelines .
     ./test_tests > /dev/null
     test_exit_state=`echo $?`
     if [[ ! $test_exit_state -eq 0 ]]; then
