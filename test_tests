@@ -4,13 +4,14 @@ n_errors=0
 
 for folder in `ls -d */`; do
 
-  echo $folder
+  # echo $folder
 
   cd $folder
 
   if [ -f test ]; then
  
-    echo $folder
+    # echo $folder
+
     cp ../shared/test_tests .
     cp ../shared/main.pro .
     cp ../shared/check_cpp_core_guidelines .
