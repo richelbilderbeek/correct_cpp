@@ -19,3 +19,7 @@ Type this at a terminal:
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=36000'
 ```
+
+## External links
+
+ * [Video 'Set up git'](richelbilderbeek.nl/correct_cpp_set_up_git.mp4)
