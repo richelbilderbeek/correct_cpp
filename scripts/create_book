@@ -20,3 +20,6 @@ bookletimposer -a correct_cpp.pdf -o correct_cpp_booklet.pdf
 
 rm book.md
 rm text.pdf
+
+mv correct_cpp.pdf ../
+mv correct_cpp_booklet.pdf ../
