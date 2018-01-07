@@ -15,4 +15,4 @@ After [forking a chapter](fork_a_chapter.md), you must activate Travis CI to che
 
 ![Your Travis CI account](pics/travis_ci_accounts_sync_accented.png)
 
- * Activate your accounts by clicking the slider to the right. In the example above, 'AminoAcidFighter' is activated, where 'Android' is not
+ * Activate your accounts by clicking the slider to the right
