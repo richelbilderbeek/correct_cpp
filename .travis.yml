@@ -12,6 +12,8 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
   # proselint
   - sudo pip install proselint
+  # Creating a booklet
+  - sudo pip install pandoc pdfunite bookletimposer
 
 script: 
   # proselint
