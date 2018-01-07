@@ -110,6 +110,8 @@ I chose to keep it out, as Qt Creator is not the most used C++ IDE around.
 
 ## My code 'just works', but is rejected
 
+[![xkcd #1695: code quality #2](pics/xkcd_code_quality_2.png)](https://xkcd.com/1695/)
+
 'it just works' is not good enough for this course.
 Your code will be corrected in many ways.
 For example, your code will compiled with maximum warning levels.

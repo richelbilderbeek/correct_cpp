@@ -13,7 +13,7 @@ install:
   # proselint
   - sudo pip install proselint
   # Creating a booklet
-  - sudo pip install pandoc pdfunite bookletimposer
+  - sudo apt-get install pandoc pdfunite bookletimposer
 
 script: 
   # proselint
