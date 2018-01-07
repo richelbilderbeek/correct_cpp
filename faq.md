@@ -22,11 +22,11 @@ Next to [how this course works](how_this_course_works.md), there are some articl
 
 ## Do I need a GitHub account?
 
-Yes. These are free/gratis.
+Yes. This is free/gratis.
 
 ## Do I need a Travis CI account?
 
-No. My Travis CI account will correct your exercises.
+Yes. You can use your GitHub account to sign in.
 
 ## How is the code corrected?
 
@@ -42,7 +42,6 @@ There are two ways:
 
  * Correct your code locally, see 'How to test if my code is correct locally?'
  * Let Travis CI correct your GitHub, see 'How to let Travis CI correct my GitHub?'
- * Do a pull request, see below, 'Do a pull request'
 
 Correcting your code locally is fastest, but only works under GNU/Linux with an Ubuntu-like distro.
 
@@ -68,9 +67,17 @@ chapter `hello_world` are found in the `hello_world` folder.
 Copy the `test` script to your chapter's folder.
 
 The shared peripheral scripts can be found in [the `shared` folder of this GitHub](https://github.com/richelbilderbeek/correct_cpp/tree/master/shared).
-Copy all files in the `shared` folder to your chapter's folder.
 
-The run:
+
+Copy all files in the `shared` folder to your chapter's folder:
+
+```
+cp path_to_correct_cpp/shared/* .
+```
+
+This will copy all files in the `shared` folder to your current location (the dot). 
+
+Run your tests:
 
 ```
 ./test
@@ -78,38 +85,11 @@ The run:
 
 These scripts work on Travis CI, which uses a Ubuntu GNU/Linux distro.
 
-# Do a pull request
+To clean up:
 
-After [pushing your code](push_your_code.md), you can also let Travis CI check your code by a pull request.
-
-[do a pull request](do_a_pull_request.md) is the way that features:
-
-  * No need for a Travis CI account
-  * Pull requests must be created
-  * Pull requests will be rejected
-
-On your fork's GitHub page, click on `Pull request`, which is directly 
-below the green `Clone or download` button.
-
-![Click here to submit a pull request](pics/submit_pull_request_with_frame.png)
-
-One the chapter's (*not* your fork's) GitHub, at Pull Requests (directly
-below the GitHub's title) you can see how well your code did. 
-
-If you are quick, Travis CI is not even detected your pull request:
-
-![A pull request still unnoticed by Travis CI](pics/pull_request_before_travis.png)
-
-After Travis CI notices your pull request, it will correct your work:
-
-![A pull request being correct by Travis CI](pics/pull_request_pending.png)
-
-If there was something corrected, the pull request will fail. Click on the Travis CI icon to view the Travis CI log to find the correction.
-
-![A pull request being correct by Travis CI](pics/pull_request_pending.png)
-
-If your solution was correct, the build status of your pull request will become green. Your code will be rejected 
-with a :+1: (this is a course, remember?).
+```
+./clean_test
+```
 
 ## Why do you prefer a command-line interface over an interactive interface?
 
