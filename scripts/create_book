@@ -9,10 +9,14 @@ for filename in `ls *.md | egrep -v code_of_conduct.md | egrep -v faq.md`; do
   cat $filename >> book.md; echo " " >> book.md; echo "\pagebreak" >> book.md; echo " " >> book.md
 done
 
-# Make book
-pandoc book.md -o correct_cpp.pdf --toc --toc-depth=1 --highlight-style=tango -V geometry:margin=0.5in
+# Convert text of book
+pandoc book.md -o text.pdf --toc --toc-depth=1 --highlight-style=tango -V geometry:margin=0.5in
+
+# Prepend title page
+pdfunite ../scripts/title.pdf text.pdf correct_cpp.pdf
 
 # Make booklet
 bookletimposer -a correct_cpp.pdf -o correct_cpp_booklet.pdf
 
 rm book.md
+rm text.pdf

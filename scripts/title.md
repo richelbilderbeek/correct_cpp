@@ -1,3 +1,3 @@
 # Correct C++
 
-![Correct C++](../pics/correct_cpp.png)
+![Correct C++](../doc/pics/correct_cpp.png)
