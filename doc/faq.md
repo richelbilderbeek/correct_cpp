@@ -160,7 +160,7 @@ imperfections in these solutions.
 
 ## Why so strict?
 
-![[xkcd #1926: bad code](https://xkcd.com/1926)](pics/xkcd_bad_code.png)
+[![xkcd #1926: bad code](pics/xkcd_bad_code.png)](https://xkcd.com/1926)
 
 A student should do it right directly [1,5]. 
 If a student has never learned how to write correct code for simple code, he/she
