@@ -37,6 +37,11 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
  * [set up git](doc/set_up_git.md)
  * [get 100% code coverage](doc/get_100_percent_code_coverage.md)
  * [lower cyclomatic complexity](doc/lower_cyclomatic_complexity.md)
+ * [sync my fork](doc/sync_my_fork.md)
+ * [use the scoreboard](doc/use_the_scoreboard.md)
+ * [run your program with arguments](doc/run_your_program_with_arguments.md)
+ * [view Travis CI status](doc/view_status.md)
+ * [view code coverage](doc/view_status.md)
 
 ## FAQ
 

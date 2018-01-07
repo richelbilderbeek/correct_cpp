@@ -2,6 +2,8 @@
 
 n_errors=0
 
+cd chapters
+
 for folder in `ls -d */`; do
 
   # echo $folder
@@ -12,10 +14,10 @@ for folder in `ls -d */`; do
  
     # echo $folder
 
-    cp ../shared/test_tests .
-    cp ../shared/main.pro .
-    cp ../shared/check_cpp_core_guidelines .
-    cp ../shared/check_course_guidelines .
+    cp ../../shared/test_tests .
+    cp ../../shared/main.pro .
+    cp ../../shared/check_cpp_core_guidelines .
+    cp ../../shared/check_course_guidelines .
 
     ./test_tests > /dev/null
 

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ ! -f test ]; then
+
+  echo "This script is only for cleaning a chapter's folder"
+  echo "Do not use clean_test in other folders"
+
+  exit 1
+
+fi 
+
+rm -rf debug
+rm -rf release
+rm -rf check_*
+rm Makefile
+rm Makefile.*
+rm install
+rm do_oclint
+rm main
+rm main.pro
+rm created_*.txt
+rm expected_*.txt
+rm README.md
+rm test_tests
+rm install_oclint
+rm get_code_cov
+rm gmon.out
+# Also remove itself
+rm clean_test
+
