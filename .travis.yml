@@ -14,8 +14,14 @@ install:
   - sudo pip install proselint
 
 script: 
+  # proselint
   - for filename in `ls *.md`; do proselint $filename; done
+  - cd doc
+  - for filename in `ls *.md`; do proselint $filename; done
+  - cd ..
+  # test if all chapters' tests reject and accept answers correctly
   - ./test_tests
+  # See if the book can be created
   - cd scripts
   - ./create_title_page
   - ./create_book
