@@ -160,6 +160,8 @@ imperfections in these solutions.
 
 ## Why so strict?
 
+![https://xkcd.com/1926](pics/xkcd_bad_code.png)
+
 A student should do it right directly [1,5]. 
 If a student has never learned how to write correct code for simple code, he/she
 will probably not do it for larger code bases either.
