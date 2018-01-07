@@ -9,4 +9,4 @@ for folder in `ls | egrep "correct_cpp_"`; do
   cp ~/GitHubs/correct_cpp/shared/.travis.yml $folder
 done
 
-cp ~/GitHubs/correct_cpp/scoreboard/.travis.yml correct_cpp_scoreboard
+cp ~/GitHubs/correct_cpp/chapters/scoreboard/.travis.yml correct_cpp_scoreboard

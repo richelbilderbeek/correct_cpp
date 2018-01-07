@@ -9,7 +9,7 @@ install:
   # Get my folder
   - my_github=${PWD##*/}  
   - chapter_folder=`echo $my_github | sed 's/correct_cpp_//'`  
-  - test_path=https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/$chapter_folder/test
+  - test_path=https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/chapters/$chapter_folder/test
   # shared install
   - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install
   - chmod +x install
