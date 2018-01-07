@@ -7,12 +7,12 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp.svg?
 
 Correct C++ is a free, libre and open-source course that corrects (hence the name) exercises for both the right results and good practices.
 
-The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), shows [how this course works](how_this_course_works.md).
+The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), shows [how this course works](doc/how_this_course_works.md).
 
 #|Chapter name|Goal
 ---|---|---
-0|[scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)|Experience part of [how this course works](how_this_course_works.md)
-1|[hello](https://github.com/richelbilderbeek/correct_cpp_hello)|Experience [how this course works](how_this_course_works.md)
+0|[scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)|Experience part of [doc/how this course works](how_this_course_works.md)
+1|[hello](https://github.com/richelbilderbeek/correct_cpp_hello)|Experience [how this course works](doc/how_this_course_works.md)
 2|[hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
 3|[hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
 4|[show_args](https://github.com/richelbilderbeek/correct_cpp_show_args)|Show CLI arguments
@@ -26,18 +26,18 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
 
 ## Guides
 
- * [how this course works](how_this_course_works.md)
-    * [fork a chapter](fork_a_chapter.md)
-    * [clone your fork](clone_your_fork.md)
-    * [activate Travis CI](activate_travis.md)
-    * [modify README](modify_readme.md)
-    * [do the exercise](do_the_exercise.md)
-    * [push your code](push_your_code.md)
-    * [correct your GitHub](correct_your_github.md)
- * [set up git](set_up_git.md)
- * [get 100% code coverage](get_100_percent_code_coverage.md)
- * [lower cyclomatic complexity](lower_cyclomatic_complexity.md)
+ * [how this course works](doc/how_this_course_works.md)
+    * [fork a chapter](doc/fork_a_chapter.md)
+    * [clone your fork](doc/clone_your_fork.md)
+    * [activate Travis CI](doc/activate_travis.md)
+    * [modify README](doc/modify_readme.md)
+    * [do the exercise](doc/do_the_exercise.md)
+    * [push your code](doc/push_your_code.md)
+    * [correct your GitHub](doc/correct_your_github.md)
+ * [set up git](doc/set_up_git.md)
+ * [get 100% code coverage](doc/get_100_percent_code_coverage.md)
+ * [lower cyclomatic complexity](doc/lower_cyclomatic_complexity.md)
 
 ## FAQ
 
-See [FAQ](faq.md).
+See [FAQ](doc/faq.md).
