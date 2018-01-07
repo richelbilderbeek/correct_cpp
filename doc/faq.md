@@ -146,6 +146,8 @@ imperfections in these solutions.
 
 ## What is the course's philophy?
 
+[![xkcd #1513: code quality](pics/xkcd_code_quality.png)](https://xkcd.com/1513)
+
  * Follow the best practices of the literature
  * A student should learn how to write code following all best practices from the start [1]:
     * clean compile under high warning levels [2,3]
