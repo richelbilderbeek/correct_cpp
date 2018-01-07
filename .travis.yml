@@ -13,7 +13,7 @@ install:
   # proselint
   - sudo pip install proselint
   # Creating a booklet
-  - sudo apt-get install pandoc bookletimposer poppler-utils texlive-latex-recommended texlive-extra-utils
+  - sudo apt-get install pandoc bookletimposer poppler-utils texlive-latex-recommended texlive-extra-utils texlive-fonts-extra
 
 script: 
   # proselint
