@@ -121,7 +121,7 @@ int main(int argc, char*[])
   assert(get_text(1) == "Program called without arguments");
   assert(get_text(2) == "Program called with arguments");
 
-  // ...
+  // ..
 }
 ```
 

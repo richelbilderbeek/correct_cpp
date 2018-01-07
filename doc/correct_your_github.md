@@ -23,7 +23,7 @@ When you fork a chapter, the status badges display the status of `richelbilderbe
 ```
 Branch|[Travis CI](https://travis-ci.org)|[Codecov](https://www.codecov.io)
 ---|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp_hello[...]
+master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp_hello[..]
 ```
 
 Replace the username `richelbilderbeek` to your username to show the status of your GitHub.

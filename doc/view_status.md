@@ -9,7 +9,7 @@ For example, the [`hello` chapter](https://github.com/richelbilderbeek/correct_c
 ```
 Branch|[Travis CI](https://travis-ci.org)|[Codecov](https://www.codecov.io)
 ---|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp_hello[...]
+master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp_hello[..]
 ```
 
 This shows the status and code coverage of `richelbilderbeek`'s GitHub.

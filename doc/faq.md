@@ -175,7 +175,7 @@ Note that I do allow partial matches in code coverage:
 ```c++
 bool is_prime(const int i) noexcept
 {
-  // ...
+  // ..
   for (int j=2; j!=i-1; ++j)
   {
     if (i % j == 0) //Partial code coverage
@@ -183,7 +183,7 @@ bool is_prime(const int i) noexcept
       return false;
     }
   }
-  // ...
+  // ..
 }
 ```
 
