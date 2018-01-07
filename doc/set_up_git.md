@@ -22,4 +22,4 @@ git config --global credential.helper 'cache --timeout=36000'
 
 ## External links
 
- * [Video 'Set up git'](www.richelbilderbeek.nl/correct_cpp_set_up_git.mp4)
+ * [Video 'Set up git'](http://www.richelbilderbeek.nl/correct_cpp_set_up_git.mp4)
