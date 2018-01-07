@@ -13,7 +13,7 @@ install:
   # proselint
   - sudo pip install proselint
   # Creating a booklet
-  - sudo apt-get install pandoc bookletimposer poppler-utils texlive-latex-recommended texlive-extra-utils texlive-fonts-extra
+  # - sudo apt-get install pandoc bookletimposer poppler-utils texlive-latex-recommended texlive-extra-utils texlive-fonts-extra
 
 script: 
   # proselint
@@ -24,6 +24,6 @@ script:
   # test if all chapters' tests reject and accept answers correctly
   - ./test_tests
   # See if the book can be created
-  - cd scripts
-  - ./create_title_page
-  - ./create_book
+  #- cd scripts
+  #- ./create_title_page
+  #- ./create_book
