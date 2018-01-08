@@ -12,6 +12,8 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
   # proselint
   - sudo pip install proselint
+  # markdown-link-check
+  - sudo npm install -g markdown-link-check
   # Creating a booklet
   # - sudo apt-get install pandoc bookletimposer poppler-utils texlive-latex-recommended texlive-extra-utils texlive-fonts-extra
 
@@ -23,6 +25,9 @@ script:
   - cd ..
   # test if all chapters' tests reject and accept answers correctly
   - ./test_tests
+  # Check dead links
+  - cd scripts
+  - ./check_links
   # See if the book can be created
   #- cd scripts
   #- ./create_title_page
