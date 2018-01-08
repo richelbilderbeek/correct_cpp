@@ -27,7 +27,7 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
  * [how this course works](doc/how_this_course_works.md)
     * [fork a chapter](doc/fork_a_chapter.md)
     * [clone your fork](doc/clone_your_fork.md)
-    * [activate Travis CI](doc/activate_travis.md)
+    * [activate Travis CI](doc/activate.md)
     * [modify README](doc/modify_readme.md)
     * [do the exercise](doc/do_the_exercise.md)
     * [push your code](doc/push_your_code.md)

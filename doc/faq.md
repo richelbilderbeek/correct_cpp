@@ -120,8 +120,8 @@ If you think your code is correct, see 'My correct code is rejected'
 
 ## My correct code is rejected, but should be accepted
 
-If you would like to [contribute](CONTRIBUTING.md) by submitting an example of correct code that is rejected, 
-see [contribute](CONTRIBUTING.md), section 'My correct code is rejected'.
+If you would like to [contribute](../CONTRIBUTING.md) by submitting an example of correct code that is rejected, 
+see [contribute](../CONTRIBUTING.md), section 'My correct code is rejected'.
 
 ## My incorrect code is accepted, but should be rejected
 
@@ -135,8 +135,8 @@ consider sending the example code to the developers of those tools.
 
 ## My incorrect non-evil code is accepted, but should be rejected
 
-If you would like to [contribute](CONTRIBUTING.md) by submitting an example of incorrect non-evil code that is accepted, 
-see [contribute](CONTRIBUTING.md), section 'My incorrect non-evil code is accepted'.
+If you would like to [contribute](../CONTRIBUTING.md) by submitting an example of incorrect non-evil code that is accepted, 
+see [contribute](../CONTRIBUTING.md), section 'My incorrect non-evil code is accepted'.
 
 ## Why the name of the course?
 

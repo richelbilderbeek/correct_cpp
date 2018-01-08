@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ..
+# markdown-link-check README.md
+cd doc
+find . -name \*.md -exec markdown-link-check {} \;

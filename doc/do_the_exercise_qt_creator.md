@@ -2,7 +2,7 @@
 
 You can [do the exercise](do_the_exercise.md) using Qt Creator.
 
-Each chapter uses [the same Qt Creator project file with the name `main.pro`](shared/main.pro). 
+Each chapter uses [the same Qt Creator project file with the name `main.pro`](../shared/main.pro). 
 
 You can:
 
