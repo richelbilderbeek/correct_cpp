@@ -18,6 +18,7 @@ install:
   - wget $test_path
   - chmod +x test
 
+
 script: 
   - ./test
   - cppcheck --quiet --enable=all --error-exitcode=1 . 
