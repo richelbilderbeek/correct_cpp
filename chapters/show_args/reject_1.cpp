@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-/// show_args main function
+
 int main(int argc, char* argv[])
 {
   const std::vector<std::string> args(argv, argv + argc);

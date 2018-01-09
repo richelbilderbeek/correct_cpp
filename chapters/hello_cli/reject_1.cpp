@@ -1,6 +1,5 @@
 #include <iostream>
 
-/// hello_cli main function
 int main(int argc, char* argv[])
 {
   std::cout << "Hello";
