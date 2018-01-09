@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 
-/// Gets the proper divisors of a certain value
 std::vector<int> get_proper_divisors(const int value) noexcept
 {
   if (value < 2) return {};
@@ -22,20 +21,17 @@ std::vector<int> get_proper_divisors(const int value) noexcept
   return proper_divisors;
 }
 
-/// Sums all proper divisors of a certain value
 int sum(const std::vector<int>& values) noexcept
 {
   return std::accumulate(std::begin(values), std::end(values), 0);
 }
 
-/// Checks if a certain value is a perfect number
 bool is_perfect(const int value) noexcept
 {
   if (value == 0) return false;
   return sum(get_proper_divisors(value)) == value;
 }
 
-/// Tests the output of the get_proper_divisors function
 void test_get_proper_divisors() noexcept
 {
   assert(get_proper_divisors(1) == std::vector<int>() );
@@ -49,7 +45,6 @@ void test_get_proper_divisors() noexcept
   assert(get_proper_divisors(9) == std::vector<int>( {1, 3} ) );
 }
 
-/// Tests the output of the is_perfect function
 void test_is_perfect() noexcept
 {
   assert(!is_perfect(-1));
@@ -63,7 +58,6 @@ void test_is_perfect() noexcept
   assert(is_perfect(28));
 }
 
-/// Implementation of is_perfect main function
 int do_main(const std::vector<std::string>& args) noexcept
 {
   if (args.size() != 2) return 1;
@@ -78,7 +72,6 @@ int do_main(const std::vector<std::string>& args) noexcept
   return 0;
 }
  
-/// Tests the exit output of the do_main function
 void test_do_main() noexcept
 {
   assert(do_main( { "is_perfect" } ) == 1);
@@ -87,7 +80,6 @@ void test_do_main() noexcept
   assert(do_main( { "is_perfect", "1", "2" } ) == 1);
 }
 
-/// Runs all tests for this program
 void test() noexcept
 {
   test_get_proper_divisors();
@@ -95,7 +87,6 @@ void test() noexcept
   test_do_main();
 }
 
-/// is_perfect main function, that also tests its implementation
 int main(int argc, char* argv[])
 {
   test();

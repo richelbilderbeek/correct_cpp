@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 
-/// Converts integers to its corresponding string
 std::string int_to_word(const int value)
 {
   switch (value)
@@ -18,7 +17,6 @@ std::string int_to_word(const int value)
   }
 }
 
-/// Implementation of int_to_word main function
 int do_main(const std::vector<std::string>& args)
 {
   if (args.size() != 2) return 1;
@@ -34,7 +32,6 @@ int do_main(const std::vector<std::string>& args)
   return 0;
 }
 
-/// Tests the exit output of the do_main function
 void test_do_main()
 {
   assert(do_main( { "main" } ) == 1);
@@ -44,7 +41,6 @@ void test_do_main()
   assert(do_main( { "main", "7" } ) == 1);
 }
 
-/// Tests the output of the int_to_word function
 void test_int_to_word()
 {
   assert(int_to_word(1) == "one");
@@ -55,14 +51,12 @@ void test_int_to_word()
   assert(int_to_word(6) == "six");
 }
 
-/// Runs all tests for this program
 void test()
 {
   test_do_main();
   test_int_to_word();
 }
 
-/// int_to_word main function, that also tests its implementation
 int main(int argc, char* argv[]) 
 {
   test();

@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 
-/// Checks if a certain value is a prime number
 bool is_prime(const int value) noexcept
 {
   if (value < 2)
@@ -24,7 +23,6 @@ bool is_prime(const int value) noexcept
   return true;
 }
 
-/// Implementation of is_prime main function
 int do_main(const std::vector<std::string>& args) noexcept
 {
   if (args.size() != 2) return 1;
@@ -39,7 +37,6 @@ int do_main(const std::vector<std::string>& args) noexcept
   return 0;
 }
 
-/// Tests the exit output of the do_main function
 void test_do_main() noexcept
 {
   assert(do_main( { "is_prime"} ) == 1);
@@ -49,7 +46,6 @@ void test_do_main() noexcept
   assert(do_main( { "is_prime", "4", "16" } ) == 1);
 }
 
-/// Tests the output of the is_prime function
 void test_is_prime() noexcept
 {
   assert(!is_prime(-1));
@@ -63,14 +59,12 @@ void test_is_prime() noexcept
   assert( is_prime(7));
 }
 
-/// Runs all tests for this program 
 void test() noexcept
 {
   test_do_main();
   test_is_prime();
 }
 
-/// is_prime main function, that also tests its implementation
 int main(int argc, char* argv[]) 
 {
   test();
