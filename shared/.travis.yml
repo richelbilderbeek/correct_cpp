@@ -27,8 +27,3 @@ script:
 after_script:
   - ./get_code_cov > /dev/null
   - codecov > /dev/null
-
-after_failure:
-  - echo $my_github
-  - echo $chapter_folder
-  - echo $test_path
