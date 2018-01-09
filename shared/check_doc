@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# From https://github.com/richelbilderbeek/travis_qmake_gcc_cpp14_doxygen
+
 # Create a file that is read by Doxygen
 ( echo "/** @file */"; cat main.cpp ) > main_tmp.cpp
 
