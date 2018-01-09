@@ -19,9 +19,10 @@ install:
   - chmod +x test
 
 script: 
+  - ./test
   - cppcheck --quiet --enable=all --error-exitcode=1 . 
   - ./do_oclint
-  - ./test
+  - ./check_doc
 
 after_script:
   - ./get_code_cov > /dev/null

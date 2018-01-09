@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Create a file that is read by Doxygen
+( echo "/** @file */"; cat main.cpp ) > main_tmp.cpp
+
+# Generate standard Doxyfile
+doxygen -g > /dev/null
+
+# Show the undocumented lines
+(cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning"
+
+# Count the number of warnings in the STDOUT and STDERR of Doxygen
+exit `(cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning" | wc --lines`

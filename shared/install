@@ -23,7 +23,12 @@ sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
 # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
 # - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90
 # cppcheck
+
+# cppcheck
 sudo apt-get install -qq cppcheck
+
+# Doxygen
+sudo apt-get install -qq doxygen graphviz
 
 # OCLint
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/do_oclint
@@ -39,6 +44,10 @@ wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/share
 # Check guidelines
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_cpp_core_guidelines
 chmod +x check_cpp_core_guidelines
+
+# Check documentation
+wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_doc
+chmod +x check_doc
 
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_course_guidelines
 chmod +x check_course_guidelines

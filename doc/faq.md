@@ -157,7 +157,7 @@ imperfections in these solutions.
     * 100% code coverage
     * no memory leaks
     * it should follow the specifications :-)
-    * using tools [6]
+    * using tools [6], where the tools are always right
  * A student should be able to check if his/her code is correct easily, without a human involved
  * Prefer a learning curve that is too gentle, over one that is too steep
  * The course is pragmatic: an exercise is stated to be correct, when all scripts and tools suggest no improvement. 
