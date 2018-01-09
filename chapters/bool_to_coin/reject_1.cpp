@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 
-/// Implementation of bool_to_coin main function
 int do_main(const std::vector<std::string>& args) 
 {
   if (args.size() != 2) 
@@ -25,8 +24,6 @@ int do_main(const std::vector<std::string>& args)
   return 0;
 }
 
-
-/// bool_to_coin main function, that also tests its implementation
 int main(int argc, char* argv[])
 {
   assert(do_main( { "bool_to_coin" } ) == 1);

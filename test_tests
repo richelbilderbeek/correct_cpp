@@ -18,6 +18,7 @@ for folder in `ls -d */`; do
     cp ../../shared/main.pro .
     cp ../../shared/check_cpp_core_guidelines .
     cp ../../shared/check_course_guidelines .
+    cp ../../shared/check_doc .
 
     ./test_tests > /dev/null
 
@@ -32,6 +33,7 @@ for folder in `ls -d */`; do
     rm main.pro
     rm check_cpp_core_guidelines
     rm check_course_guidelines
+    rm check_doc
   fi 
   cd ..
 done

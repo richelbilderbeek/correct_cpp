@@ -56,3 +56,9 @@ show_args/test_tests
 correct_cpp.pdf
 correct_cpp_booklet.pdf
 scripts/title.pdf
+*/html/
+chapters/bool_to_coin/html/
+chapters/bool_to_coin/latex/
+Doxyfile
+Doxyfile.bak
+main_tmp.cpp
