@@ -98,6 +98,14 @@ if [[ ! $state_course_guidelines -eq 0 ]]; then
   ((++n_errors))
 fi
 
+./check_doc
+state_doc=`echo $?`
+
+if [[ ! $state_doc -eq 0 ]]; then
+  # No need to be verbose here, 'check_doc' already does so 
+  ((++n_errors))
+fi
+
 ##########################################
 # Test debug version
 ##########################################

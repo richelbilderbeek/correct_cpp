@@ -62,3 +62,6 @@ chapters/bool_to_coin/latex/
 Doxyfile
 Doxyfile.bak
 main_tmp.cpp
+html/
+chapters/*/html/
+chapters/*/latex/
