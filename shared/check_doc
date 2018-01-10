@@ -2,6 +2,10 @@
 
 # From https://github.com/richelbilderbeek/travis_qmake_gcc_cpp14_doxygen
 
+if [[ -f main_tmp.cpp ]]; then rm main_tmp.cpp; fi
+if [[ -f Doxyfile ]]; then rm Doxyfile; fi
+if [[ -f Doxyfile.bak ]]; then rm Doxyfile.bak; fi
+
 # Create a file that is read by Doxygen
 ( echo "/** @file */"; cat main.cpp ) > main_tmp.cpp
 
@@ -12,4 +16,17 @@ doxygen -g > /dev/null
 (cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning"
 
 # Count the number of warnings in the STDOUT and STDERR of Doxygen
-exit `(cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning" | wc --lines`
+exit_code=`(cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning" | wc --lines`
+
+if [[ ! $exit_code -eq 0 ]]; then
+  echo "Incorrect: incomplete documentation"
+  (cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen -
+fi
+
+if [[ -f main_tmp.cpp ]]; then rm main_tmp.cpp; fi
+if [[ -f Doxyfile ]]; then rm Doxyfile; fi
+if [[ -f Doxyfile.bak ]]; then rm Doxyfile.bak; fi
+rm -rf html
+rm -rf latex
+
+exit $exit_code
