@@ -15,6 +15,8 @@ install:
   # markdown-link-check
   - sudo apt-get install npm
   - sudo npm install -g markdown-link-check
+  # doxygen
+  - sudo apt-get install -qq doxygen graphviz
   # Creating a booklet
   # - sudo apt-get install pandoc bookletimposer poppler-utils texlive-latex-recommended texlive-extra-utils texlive-fonts-extra
 
