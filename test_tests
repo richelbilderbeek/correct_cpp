@@ -20,7 +20,8 @@ for folder in `ls -d */`; do
     cp ../../shared/check_course_guidelines .
     cp ../../shared/check_doc .
 
-    ./test_tests > /dev/null
+    ./test_tests
+    # ./test_tests > /dev/null
 
     test_exit_state=`echo $?`
     if [[ ! $test_exit_state -eq 0 ]]; then
