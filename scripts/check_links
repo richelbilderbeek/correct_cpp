@@ -8,3 +8,4 @@ markdown-link-check README.md
 cd doc
 find . -name \*.md -exec markdown-link-check {} \; 2>/dev/null | egrep "[✖]"
 # find . -name \*.md -exec markdown-link-check {} \;
+exit 0
