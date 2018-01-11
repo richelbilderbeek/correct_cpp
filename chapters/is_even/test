@@ -64,8 +64,8 @@ fi
 #####################
 
 # Create expected result
-echo "true" > expected_1.txt
-echo "false" > expected_2.txt
+echo "false" > expected_1.txt
+echo "true" > expected_2.txt
 
 # Create the actual result
 ./main 12345678901234567891 > created_1.txt
