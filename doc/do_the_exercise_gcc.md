@@ -1,4 +1,4 @@
-## Do the exercise using GCC
+# Do the exercise using GCC
 
 You can [do the exercise](do_the_exercise.md) using GCC.
 
