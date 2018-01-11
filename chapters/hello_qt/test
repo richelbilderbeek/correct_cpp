@@ -1,0 +1,68 @@
+#!/bin/bash
+
+qmake > /dev/null
+
+##########################################
+# Test release version
+##########################################
+make release > /dev/null
+
+n_errors=0
+
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels in release mode"
+  ((++n_errors))
+fi
+
+./main
+
+##########################################
+# Test debug version
+##########################################
+make debug > /dev/null
+
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels in debug mode"
+  ((++n_errors))
+fi
+
+##########################################
+# C++ guidelines
+##########################################
+
+./check_cpp_core_guidelines
+state_core_guidelines=`echo $?`
+
+if [[ ! $state_core_guidelines -eq 0 ]]; then
+  ((++n_errors))
+fi
+
+./check_course_guidelines
+state_course_guidelines=`echo $?`
+
+if [[ ! $state_course_guidelines -eq 0 ]]; then
+  ((++n_errors))
+fi
+
+./check_doc
+state_doc=`echo $?`
+
+if [[ ! $state_doc -eq 0 ]]; then
+  # No need to be verbose here, 'check_doc' already does so 
+  ((++n_errors))
+fi
+
+#####################
+# Test code coverage
+#####################
+
+./main
+
+n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Incorrect: must have 100% code coverage. Current code coverage:"
+  gcov -n -o debug main.cpp | head -n 2 | tail -n 1
+  ((++n_errors))
+fi
+
+exit $n_errors
