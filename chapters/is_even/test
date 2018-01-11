@@ -54,7 +54,7 @@ if [[ ! $state_nonsense -eq 1 ]]; then
   ((++n_errors))
 fi
 
-if [[ ! $state_two_one -eq 0 ]]; then
+if [[ ! $state_two_one -eq 1 ]]; then
   echo "Incorrect: './is_even 2 1 ' must return an exit state of 1, as there are too many arguments"
   ((++n_errors))
 fi
