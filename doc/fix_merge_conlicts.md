@@ -13,14 +13,14 @@ Imagine two people writing a fairy tale together. They start with this text:
 Once upon a time
 ```
 
-User A modifies this to:
+User A modifies the original text to:
 
 ```
 Once upon a time
 there was a king
 ```
 
-User B modifies this to:
+Simulatenously, user B modifies the original text to:
 
 ```
 Once upon a time
