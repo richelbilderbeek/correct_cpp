@@ -35,27 +35,27 @@ state_two_one=`echo $?`
 
 
 if [[ ! $state_zero -eq 1 ]]; then
-  echo "Incorrect: './is_evend' must return an exit state of 1, as there are too few arguments"
+  echo "Incorrect: './is_even' must return an exit state of 1, as there are too few arguments"
   ((++n_errors))
 fi
 
 if [[ ! $state_one -eq 0 ]]; then
-  echo "Incorrect: './is_evend 1' must return an exit state of 0"
+  echo "Incorrect: './is_even 1' must return an exit state of 0"
   ((++n_errors))
 fi
 
 if [[ ! $state_two -eq 0 ]]; then
-  echo "Incorrect: './is_evend 2' must return an exit state of 0"
+  echo "Incorrect: './is_even 2' must return an exit state of 0"
   ((++n_errors))
 fi
 
 if [[ ! $state_nonsense -eq 1 ]]; then
-  echo "Incorrect: './is_evend nonsense' must return an exit state of 1, as 'nonsense' is no integer"
+  echo "Incorrect: './is_even nonsense' must return an exit state of 1, as 'nonsense' is no integer"
   ((++n_errors))
 fi
 
 if [[ ! $state_two_one -eq 0 ]]; then
-  echo "Incorrect: './is_evend 2 1 ' must return an exit state of 1, as there are too many arguments"
+  echo "Incorrect: './is_even 2 1 ' must return an exit state of 1, as there are too many arguments"
   ((++n_errors))
 fi
 
@@ -73,12 +73,12 @@ echo "true" > expected_2.txt
 
 # Compare results
 if ! cmp --silent created_1.txt expected_1.txt; then
-  echo "Incorrect: 'is_evend 12345678901234567891' should display literally 'true', followed by a newline"
+  echo "Incorrect: 'is_even 12345678901234567891' should display literally 'true', followed by a newline"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_2.txt expected_2.txt; then
-  echo "Incorrect: 'is_evend 12345678901234567892' should display literally 'false', followed by a newline"
+  echo "Incorrect: 'is_even 12345678901234567892' should display literally 'false', followed by a newline"
   ((++n_errors))
 fi
 
