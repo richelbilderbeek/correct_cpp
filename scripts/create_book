@@ -4,7 +4,7 @@
 
 cd ../doc
 
-for filename in `ls *.md | egrep -v code_of_conduct.md | egrep -v faq.md`; do
+for filename in `ls *.md | egrep -v code_of_conduct.md | egrep -v faq.md | sort`; do
   echo $filename
   cat $filename >> book.md; echo " " >> book.md; echo "\pagebreak" >> book.md; echo " " >> book.md
 done
