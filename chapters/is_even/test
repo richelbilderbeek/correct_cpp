@@ -1,0 +1,138 @@
+#!/bin/bash
+
+qmake > /dev/null
+
+##########################################
+# Test release version
+##########################################
+make release > /dev/null
+
+n_errors=0
+
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels"
+  ((++n_errors))
+fi
+
+#####################
+# Test exit states
+#####################
+
+./main > /dev/null
+state_zero=`echo $?`
+
+./main 1 > /dev/null
+state_one=`echo $?`
+
+./main 2 > /dev/null
+state_two=`echo $?`
+
+./main nonsense > /dev/null
+state_nonsense=`echo $?`
+
+./main 2 1 > /dev/null
+state_two_one=`echo $?`
+
+
+if [[ ! $state_zero -eq 1 ]]; then
+  echo "Incorrect: './is_evend' must return an exit state of 1, as there are too few arguments"
+  ((++n_errors))
+fi
+
+if [[ ! $state_one -eq 0 ]]; then
+  echo "Incorrect: './is_evend 1' must return an exit state of 0"
+  ((++n_errors))
+fi
+
+if [[ ! $state_two -eq 0 ]]; then
+  echo "Incorrect: './is_evend 2' must return an exit state of 0"
+  ((++n_errors))
+fi
+
+if [[ ! $state_nonsense -eq 1 ]]; then
+  echo "Incorrect: './is_evend nonsense' must return an exit state of 1, as 'nonsense' is no integer"
+  ((++n_errors))
+fi
+
+if [[ ! $state_two_one -eq 0 ]]; then
+  echo "Incorrect: './is_evend 2 1 ' must return an exit state of 1, as there are too many arguments"
+  ((++n_errors))
+fi
+
+#####################
+# Test output
+#####################
+
+# Create expected result
+echo "true" > expected_1.txt
+echo "false" > expected_2.txt
+
+# Create the actual result
+./main 12345678901234567891 > created_1.txt
+./main 12345678901234567892 > created_2.txt
+
+# Compare results
+if ! cmp --silent created_1.txt expected_1.txt; then
+  echo "Incorrect: 'is_evend 12345678901234567891' should display literally 'true', followed by a newline"
+  ((++n_errors))
+fi
+
+if ! cmp --silent created_2.txt expected_2.txt; then
+  echo "Incorrect: 'is_evend 12345678901234567892' should display literally 'false', followed by a newline"
+  ((++n_errors))
+fi
+
+rm expected_*.txt
+rm created_*.txt
+
+##########################################
+# C++ guidelines
+##########################################
+
+./check_cpp_core_guidelines
+state_core_guidelines=`echo $?`
+
+if [[ ! $state_core_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_cpp_core_guidelines' already does so 
+  ((++n_errors))
+fi
+
+./check_course_guidelines
+state_course_guidelines=`echo $?`
+
+if [[ ! $state_course_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_course_guidelines' already does so 
+  ((++n_errors))
+fi
+
+./check_doc
+state_doc=`echo $?`
+
+if [[ ! $state_doc -eq 0 ]]; then
+  # No need to be verbose here, 'check_doc' already does so 
+  ((++n_errors))
+fi
+
+##########################################
+# Test debug version
+##########################################
+make debug > /dev/null
+
+./main
+./main 1234567890123456789012345678901
+./main 1234567890123456789012345678902
+./main nonsense
+./main 1 2
+
+#####################
+# Test code coverage
+#####################
+
+n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Incorrect: must have 100% code coverage. Current code coverage:"
+  gcovs -n -o debug main.cpp | head -n 2 | tail -n 1
+  ((++n_errors))
+fi
+
+exit $n_errors

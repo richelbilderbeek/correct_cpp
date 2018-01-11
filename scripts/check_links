@@ -6,4 +6,5 @@ markdown-link-check README.md
 
 # doc
 cd doc
-find . -name \*.md -exec markdown-link-check {} \;
+find . -name \*.md -exec markdown-link-check {} \; 2>/dev/null | egrep "[✖]"
+# find . -name \*.md -exec markdown-link-check {} \;
