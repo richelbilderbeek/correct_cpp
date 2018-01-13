@@ -1,9 +1,9 @@
 # Files
 SOURCES += main.cpp
 
-# C++14
-CONFIG += c++14
-QMAKE_CXXFLAGS += -std=c++14
+# C++11. Must be C++11 due to g++-5
+CONFIG += c++11
+QMAKE_CXXFLAGS += -std=c++11
 
 # High warnings levels
 QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
