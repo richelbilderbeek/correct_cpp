@@ -1,9 +1,9 @@
 # Files
 SOURCES += main.cpp
 
-# C++11
-CONFIG += c++11
-QMAKE_CXXFLAGS += -std=c++11
+# C++14
+CONFIG += c++14
+QMAKE_CXXFLAGS += -std=c++14
 
 # High warnings levels
 QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
@@ -37,3 +37,10 @@ CONFIG(release, debug|release) {
   QMAKE_LFLAGS += -pg
 }
 
+# Use SFML, detected by test script
+CONFIG(sfml) {
+
+  message(sfml here)
+  # SFML
+  LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+}
