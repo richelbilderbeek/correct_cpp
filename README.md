@@ -41,6 +41,10 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
  * [view Travis CI status](doc/view_status.md)
  * [view code coverage](doc/view_status.md)
 
+## Videos
+
+ * [Correct C++ YouTube playlist](https://www.youtube.com/playlist?list=PLu8_ZyzXyRDGrht1eWbzjbAC1NxG1jN1T)
+
 ## FAQ
 
 See [FAQ](doc/faq.md).
