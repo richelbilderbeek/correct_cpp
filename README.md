@@ -43,6 +43,7 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
 
 ## Videos
 
+ * [Correct C++ videos (downloadable)](https://github.com/richelbilderbeek/correct_cpp_videos)
  * [Correct C++ YouTube playlist](https://www.youtube.com/playlist?list=PLu8_ZyzXyRDGrht1eWbzjbAC1NxG1jN1T)
 
 ## FAQ
