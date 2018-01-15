@@ -4,7 +4,7 @@
 
 cd ~/GitHubs
 
-for folder in `ls | egrep "correct_cpp_"`; do
+for folder in `ls | egrep "correct_cpp_" | egrep -v "video"`; do
   echo $folder
   cp ~/GitHubs/correct_cpp/shared/.travis.yml $folder
 done
