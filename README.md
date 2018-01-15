@@ -56,4 +56,6 @@ See [FAQ](doc/faq.md).
 ---|---|---
 5.5 |euler_1|Multiples of 3 and 5, Project Euler 1
 9.5 |[is_even](https://github.com/richelbilderbeek/correct_cpp_is_even)|Use a regular expression
+? |[hello_sfml](https://github.com/richelbilderbeek/correct_cpp_hello_sfml)|Use SFML
+? |[hello_qt](https://github.com/richelbilderbeek/correct_cpp_hello_qt)|Use SFML
 ?|to_morse|Convert a std::string to morse
