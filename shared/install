@@ -38,9 +38,6 @@ chmod +x do_oclint
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/get_code_cov
 chmod +x get_code_cov
 
-# main.pro file
-wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
-
 # Check guidelines
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_cpp_core_guidelines
 chmod +x check_cpp_core_guidelines
@@ -49,6 +46,17 @@ chmod +x check_cpp_core_guidelines
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_doc
 chmod +x check_doc
 
+# Check course guidelines
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_course_guidelines
 chmod +x check_course_guidelines
 
+# Get correct .pro file
+if [[ `echo $PWD | egrep "_sfml" | wc --lines` > 0 ]] ; 
+then 
+  echo "SFML detected" 
+  wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main_sfml.pro
+  mv main_sfml.pro main.pro
+else
+  # main.pro file
+  wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
+fi

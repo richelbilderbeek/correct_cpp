@@ -11,16 +11,17 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
 
 #|Chapter name|Goal
 ---|---|---
-0|[scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)|Experience part of [how this course works](doc/how_this_course_works.md)
-1|[hello](https://github.com/richelbilderbeek/correct_cpp_hello)|Experience [how this course works](doc/how_this_course_works.md)
-2|[hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
-3|[hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
-4|[show_args](https://github.com/richelbilderbeek/correct_cpp_show_args)|Show CLI arguments
-5|[is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|Handle exceptions
-6|[bool_to_coin](https://github.com/richelbilderbeek/correct_cpp_bool_to_coin)|Achieve 100% code coverage (easy)
-7|[int_to_word](https://github.com/richelbilderbeek/correct_cpp_int_to_word)|Achieve 100% code coverage (hard)
-8|[is_prime](https://github.com/richelbilderbeek/correct_cpp_is_prime)|Lower code complexity (easy)
-9|[is_perfect](https://github.com/richelbilderbeek/correct_cpp_is_perfect)|Lower code complexity (hard)
+ 0|[scoreboard](https://github.com/richelbilderbeek/correct_cpp_scoreboard)|Experience part of [how this course works](doc/how_this_course_works.md)
+ 1|[hello](https://github.com/richelbilderbeek/correct_cpp_hello)|Experience [how this course works](doc/how_this_course_works.md)
+ 2|[hello_world](https://github.com/richelbilderbeek/correct_cpp_hello_world)|Create a Hello world program
+ 3|[hello_cli](https://github.com/richelbilderbeek/correct_cpp_hello_cli)|Create a CLI application
+ 4|[show_args](https://github.com/richelbilderbeek/correct_cpp_show_args)|Show CLI arguments
+ 5|[is_odd](https://github.com/richelbilderbeek/correct_cpp_is_odd)|Handle exceptions
+ 6|[bool_to_coin](https://github.com/richelbilderbeek/correct_cpp_bool_to_coin)|Achieve 100% code coverage (easy)
+ 7|[int_to_word](https://github.com/richelbilderbeek/correct_cpp_int_to_word)|Achieve 100% code coverage (hard)
+ 8|[is_prime](https://github.com/richelbilderbeek/correct_cpp_is_prime)|Lower code complexity (easy)
+ 9|[is_perfect](https://github.com/richelbilderbeek/correct_cpp_is_perfect)|Lower code complexity (hard)
+10|[is_even](https://github.com/richelbilderbeek/correct_cpp_is_even)|Use a regular expression
 
 ## Guides
 
@@ -55,7 +56,6 @@ See [FAQ](doc/faq.md).
 #|Chapter name|Goal
 ---|---|---
 5.5 |euler_1|Multiples of 3 and 5, Project Euler 1
-9.5 |[is_even](https://github.com/richelbilderbeek/correct_cpp_is_even)|Use a regular expression
 ? |[hello_sfml](https://github.com/richelbilderbeek/correct_cpp_hello_sfml)|Use SFML
 ? |[hello_qt](https://github.com/richelbilderbeek/correct_cpp_hello_qt)|Use SFML
 ?|to_morse|Convert a std::string to morse
