@@ -51,6 +51,7 @@ wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/share
 chmod +x check_course_guidelines
 
 # Use console .pro file as basis, will be overwritten if needed
+if [[ -f main.pro ]]; then rm main.pro; fi
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
 
 # Get correct .pro file
@@ -62,6 +63,7 @@ then
   sudo apt-get install libsfml-dev
 
   # main.pro file
+  rm main.pro
   wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main_sfml.pro
   mv main_sfml.pro main.pro
 fi
