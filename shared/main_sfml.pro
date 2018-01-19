@@ -37,8 +37,5 @@ CONFIG(release, debug|release) {
   QMAKE_LFLAGS += -pg
 }
 
-CONFIG(sfml) {
-
-  # SFML
-  LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-}
+# SFML
+LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
