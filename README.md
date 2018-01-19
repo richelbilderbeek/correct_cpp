@@ -55,7 +55,8 @@ See [FAQ](doc/faq.md).
 
 #|Chapter name|Goal
 ---|---|---
-5.5 |euler_1|Multiples of 3 and 5, Project Euler 1
+? |[euler_1](https://github.com/richelbilderbeek/correct_cpp_euler_1)|Multiples of 3 and 5, Project Euler 1
+? |[euler_2](https://github.com/richelbilderbeek/correct_cpp_euler_2)|Even Fibonacci numbers
 ? |[hello_sfml](https://github.com/richelbilderbeek/correct_cpp_hello_sfml)|Use SFML
 ? |[hello_qt](https://github.com/richelbilderbeek/correct_cpp_hello_qt)|Use SFML
-?|to_morse|Convert a std::string to morse
+? |to_morse|Convert a std::string to morse
