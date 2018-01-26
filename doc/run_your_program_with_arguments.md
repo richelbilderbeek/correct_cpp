@@ -6,3 +6,4 @@ Some examples:
 
  * [using GCC/`g++`](run_your_program_with_arguments_gcc.md).
  * [using Qt Creator](run_your_program_with_arguments_qt_creator.md).
+ * [using Visual Studio](run_your_program_with_arguments_vs.md).
