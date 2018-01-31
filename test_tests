@@ -15,7 +15,6 @@ for folder in `ls -d */`; do
     # echo $folder
 
     cp ../../shared/test_tests .
-    cp ../../shared/main.pro .
     cp ../../shared/check_cpp_core_guidelines .
     cp ../../shared/check_course_guidelines .
     cp ../../shared/check_doc .
@@ -31,7 +30,6 @@ for folder in `ls -d */`; do
     fi
 
     rm test_tests
-    rm main.pro
     rm check_cpp_core_guidelines
     rm check_course_guidelines
     rm check_doc
