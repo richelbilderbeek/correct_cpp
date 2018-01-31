@@ -50,7 +50,7 @@ chmod +x check_doc
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_course_guidelines
 chmod +x check_course_guidelines
 
-if [[ -f main.pro ]]; then 
+if [[ ! -f main.pro ]]; then 
   echo "main.pro absent"
   exit 1 
 fi
