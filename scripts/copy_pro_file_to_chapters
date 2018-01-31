@@ -6,10 +6,10 @@ cd ..
 cd chapters
 
 for chapter in `ls -d */ | egrep -v "scoreboard"`; do
-  echo $chapter
-  to="~/GitHubs/correct_cpp_"$chapter
-  echo $to
+  echo "chapter: "$chapter
+  to="/home/richel/GitHubs/correct_cpp_"$chapter"main.pro"
+  echo "to: "$to
   cd $chapter
-  # cp main.pro $to
+  cp main.pro $to
   cd ..
 done
