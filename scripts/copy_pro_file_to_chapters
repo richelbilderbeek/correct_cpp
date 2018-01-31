@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Copy the main.pro files to all Correct C++ chapters
+
+cd ..
+cd chapters
+
+for chapter in `ls -d */ | egrep -v "scoreboard"`; do
+  echo $chapter
+  to="~/GitHubs/correct_cpp_"$chapter
+  echo $to
+  cd $chapter
+  # cp main.pro $to
+  cd ..
+done

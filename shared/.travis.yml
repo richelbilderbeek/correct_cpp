@@ -10,6 +10,7 @@ install:
   - my_github=${PWD##*/}  
   - chapter_folder=`echo $my_github | sed 's/correct_cpp_//'`  
   - test_path=https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/chapters/$chapter_folder/test
+  - pro_file_path=https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/chapters/$chapter_folder/main.pro
   # shared install
   - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install
   - chmod +x install
@@ -17,6 +18,7 @@ install:
   # test
   - wget $test_path
   - chmod +x test
+  - wget $pro_file_path
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
