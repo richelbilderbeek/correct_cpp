@@ -50,25 +50,5 @@ chmod +x check_doc
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_course_guidelines
 chmod +x check_course_guidelines
 
-if [[ ! -f main.pro ]]; then 
-  echo "main.pro absent"
-  exit 1 
-fi
+# Don't check for main.pro, it will be downloaded by .travis.yml
 
-#  # Use console .pro file as basis, will be overwritten if needed
-#  if [[ -f main.pro ]]; then rm main.pro; fi
-#  wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
-
-#  # Get correct .pro file
-#  if [[ `echo $PWD | egrep "_sfml" | wc --lines` > 0 ]] ; 
-#  then 
-#    echo "SFML detected" 
-#
-#    # Install SFML libraries
-#    sudo apt-get install libsfml-dev
-#
-#    # main.pro file
-#    rm main.pro
-#    wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main_sfml.pro
-#    mv main_sfml.pro main.pro
-#  fi
