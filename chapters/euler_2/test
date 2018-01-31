@@ -1,0 +1,93 @@
+#!/bin/bash
+
+qmake > /dev/null
+
+##########################################
+# Test release version
+##########################################
+make release > /dev/null
+
+n_errors=0
+
+if [[ ! -f main ]]; then 
+  echo "Incorrect: code does not compile cleanly with high warning levels"
+  ((++n_errors))
+fi
+
+#####################
+# Test exit states
+#####################
+
+./main > /dev/null
+state_zero=`echo $?`
+
+if [[ ! $state_zero -eq 0 ]]; then
+  echo "Incorrect: './euler_2' must always return an exit state of 0"
+  ((++n_errors))
+fi
+
+#####################
+# Test output
+#####################
+
+# Create expected result
+echo "4613732" > expected.txt
+
+# Create the actual result
+./main > created.txt
+
+# Compare results
+if ! cmp --silent created.txt expected.txt; then
+  echo "Incorrect: './euler_2' should display the correct value, followed by a newline"
+  ((++n_errors))
+fi
+
+rm expected.txt
+rm created.txt
+
+##########################################
+# C++ guidelines
+##########################################
+
+./check_cpp_core_guidelines
+state_core_guidelines=`echo $?`
+
+if [[ ! $state_core_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_cpp_core_guidelines' already does so 
+  ((++n_errors))
+fi
+
+./check_course_guidelines
+state_course_guidelines=`echo $?`
+
+if [[ ! $state_course_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_course_guidelines' already does so 
+  ((++n_errors))
+fi
+
+./check_doc
+state_doc=`echo $?`
+
+if [[ ! $state_doc -eq 0 ]]; then
+  # No need to be verbose here, 'check_doc' already does so 
+  ((++n_errors))
+fi
+
+##########################################
+# Test debug version
+##########################################
+make debug > /dev/null
+./main
+
+#####################
+# Test code coverage
+#####################
+
+n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+if [ ! "$n" -eq "1" ]; then
+  echo "Incorrect: must have 100% code coverage. Current code coverage:"
+  gcov -n -o debug main.cpp | head -n 2 | tail -n 1
+  ((++n_errors))
+fi
+
+exit $n_errors

@@ -12,7 +12,7 @@ for folder in `ls -d */`; do
 
   if [ -f test ]; then
  
-    # echo $folder
+    echo $folder
 
     cp ../../shared/test_tests .
     cp ../../shared/check_cpp_core_guidelines .
