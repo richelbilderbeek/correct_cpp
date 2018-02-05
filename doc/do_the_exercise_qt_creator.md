@@ -2,12 +2,7 @@
 
 You can [do the exercise](do_the_exercise.md) using Qt Creator.
 
-Each chapter uses [the same Qt Creator project file with the name `main.pro`](../shared/main.pro). 
-
-You can:
-
- * In your browser, open [the main.pro file](https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro). Use 'save as' to save it in the chapter's folder  
- * From a terminal, in the folder of the chapter, use `wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro` to download it
+Each chapter has a Qt Creator project file with the name `main.pro` that you can just use.
 
 ![Location of the main.pro file](pics/pro_file.png)
 
