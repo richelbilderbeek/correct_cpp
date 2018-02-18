@@ -57,9 +57,13 @@ fi
 #####################
 
 # Start and kill program
+echo "Start program"
 ./main &
 pid=$!
+echo "PID: "$pid
+echo "Sleep three seconds"
 sleep 3
+echo "Kill program"
 kill $pid
 
 n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`

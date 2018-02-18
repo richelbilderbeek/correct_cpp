@@ -22,6 +22,8 @@ rm install
 rm do_oclint
 if [[ -f main     ]]; then rm main    ; fi
 if [[ -f main.cpp ]]; then rm main.cpp; fi
+if [[ -f main.pro.user ]]; then rm main.pro.user; fi
+if [[ -f .qmake.stash ]]; then rm .qmake.stash; fi
 rm created_*.txt
 rm expected_*.txt
 rm README.md

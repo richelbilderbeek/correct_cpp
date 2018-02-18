@@ -70,3 +70,5 @@ chapters/hello_qt/Makefile.Debug
 chapters/hello_qt/Makefile.Release
 chapters/hello_qt/main
 chapters/hello_qt/release/
+chapters/hello_qt/.qmake.stash
+.qmake.stash

@@ -51,7 +51,7 @@ CONFIG(release, debug|release) {
 
 QT += core gui widgets
 
-# TEMPLATE = app
+TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
