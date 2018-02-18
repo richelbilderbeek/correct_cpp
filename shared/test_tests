@@ -39,10 +39,10 @@ done
 
 rm -rf debug
 rm -rf release
-rm gmon.out
+if [[ -f gmon.out ]]; then rm gmon.out; fi
 rm Makefile
 rm Makefile.Release
 rm Makefile.Debug
-rm main
+if [[ -f main ]]; then rm main; fi
 
 exit $n_errors

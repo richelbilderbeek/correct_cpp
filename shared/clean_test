@@ -20,7 +20,7 @@ if [[ -f Makefile.Debug ]]; then rm Makefile.Debug; fi
 if [[ -f Makefile.Release ]]; then rm Makefile.Release; fi
 rm install
 rm do_oclint
-if [[ -f main     ]]; then rm main    ; fi
+if [[ -f main ]]; then rm main; fi
 if [[ -f main.cpp ]]; then rm main.cpp; fi
 if [[ -f main.pro.user ]]; then rm main.pro.user; fi
 if [[ -f .qmake.stash ]]; then rm .qmake.stash; fi
