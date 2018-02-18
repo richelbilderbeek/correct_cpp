@@ -18,8 +18,7 @@ install:
   # test
   - wget $test_path
   - chmod +x test
-  - if [[ -f main.pro ]] ; then rm main.pro; fi 
-  - wget $pro_file_path
+  - wget $pro_file_path -O main.pro
   - if [[ ! -f main.pro ]] ; then echo "main.pro could not be found" ; fi 
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/

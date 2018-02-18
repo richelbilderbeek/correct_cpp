@@ -17,7 +17,6 @@ rm Makefile.*
 rm install
 rm do_oclint
 rm main
-rm main.pro
 rm created_*.txt
 rm expected_*.txt
 rm README.md
