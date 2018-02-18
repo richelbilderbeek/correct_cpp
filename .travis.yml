@@ -17,6 +17,8 @@ install:
   - sudo npm install -g markdown-link-check
   # doxygen
   - sudo apt-get install -qq doxygen graphviz
+  # SFML
+  - sudo apt-get install libsfml-dev
   # Creating a booklet
   # - sudo apt-get install pandoc bookletimposer poppler-utils texlive-latex-recommended texlive-extra-utils texlive-fonts-extra
 
