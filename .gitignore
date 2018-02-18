@@ -65,3 +65,8 @@ main_tmp.cpp
 html/
 chapters/*/html/
 chapters/*/latex/
+chapters/hello_qt/Makefile
+chapters/hello_qt/Makefile.Debug
+chapters/hello_qt/Makefile.Release
+chapters/hello_qt/main
+chapters/hello_qt/release/
