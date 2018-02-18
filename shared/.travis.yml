@@ -18,8 +18,11 @@ install:
   # test
   - wget $test_path
   - chmod +x test
+  # Project file
   - wget $pro_file_path -O main.pro
   - if [[ ! -f main.pro ]] ; then echo "main.pro could not be found" ; fi 
+  # SFML
+  - if [[ `echo $my_github | egrep "_sfml" | wc --lines` -eq 1 ]]; then sudo apt-get install libsfml-dev; fi
 
 # Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
 before_script:
