@@ -10,11 +10,10 @@ make release > /dev/null
 n_errors=0
 
 if [[ ! -f main ]]; then 
+  make release
   echo "Incorrect: code does not compile cleanly with high warning levels in release mode"
-  ((++n_errors))
+  exit 1
 fi
-
-./main
 
 ##########################################
 # Test debug version
@@ -22,8 +21,9 @@ fi
 make debug > /dev/null
 
 if [[ ! -f main ]]; then 
+  make debug
   echo "Incorrect: code does not compile cleanly with high warning levels in debug mode"
-  ((++n_errors))
+  exit 1
 fi
 
 ##########################################
@@ -56,7 +56,11 @@ fi
 # Test code coverage
 #####################
 
-./main
+# Start and kill program
+./main &
+pid=$!
+sleep 3
+kill $pid
 
 n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then
