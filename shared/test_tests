@@ -31,6 +31,7 @@ for filename in `ls accept_*.cpp`; do
   exit_code=`echo $?`
   if [[ ! $exit_code -eq 0 ]]; then
     echo "Incorrect: file with name '"$filename" ' should be accepted"
+    ./test
     ((++n_errors))
   fi
   rm main.cpp
