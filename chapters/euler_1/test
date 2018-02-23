@@ -31,7 +31,7 @@ fi
 #####################
 
 # Create expected result
-echo "234168" > expected.txt
+echo "233168" > expected.txt
 
 # Create the actual result
 ./main > created.txt
