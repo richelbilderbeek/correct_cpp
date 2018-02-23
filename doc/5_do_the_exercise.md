@@ -1,6 +1,7 @@
-# Do the exercise
+# 5. Do the exercise
 
-After having [cloned your fork](clone_your_fork.md), it is time to [do the exercise](do_the_exercise.md).
+After having [modified the README](4_modify_readme.md), 
+it is time to [do the exercise](5_do_the_exercise.md).
 
 Each chapter describes an exercise (in `README.md`) 
 and has a file called `main.cpp`. 
@@ -20,8 +21,8 @@ You can use any editor or IDE to build and run your code.
 
 Some examples:
 
- * [Using GCC/`g++` from the command line](do_the_exercise_gcc.md)
- * [Using Qt Creator](do_the_exercise_qt_creator.md)
+ * [Using GCC/`g++` from the command line](5_do_the_exercise_gcc.md)
+ * [Using Qt Creator](5_do_the_exercise_qt_creator.md)
 
 For some exercises, you will also need to:
 
@@ -29,4 +30,4 @@ For some exercises, you will also need to:
  * [get 100% code coverage](get_100_percent_code_coverage.md)
  * [get a lower cyclomatic complexity](lower_cyclomatic_complexity.md)
 
-After having [done the exercise](do_the_exercise.md), [push your code](push_your_code.md) to let `git` upload your proposed solution.
+After having [done the exercise](5_do_the_exercise.md), [push your code](6_push_your_code.md) to let `git` upload your proposed solution.

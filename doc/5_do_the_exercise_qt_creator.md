@@ -1,6 +1,6 @@
-# Do the exercise using Qt Creator
+# 5. Do the exercise using Qt Creator
 
-You can [do the exercise](do_the_exercise.md) using Qt Creator.
+You can [do the exercise](5_do_the_exercise.md) using Qt Creator.
 
 Each chapter has a Qt Creator project file with the name `main.pro` that you can just use.
 
@@ -23,4 +23,4 @@ Then click the drop-down arrow on 'Sources' to view the source files. Double-cli
 
 ![Qt Creator editing main.cpp](pics/qt_creator_main.png)
 
-Think you are done with the exercise? Time to [push your code](push_your_code.md)!
+Think you are done with the exercise? Time to [push your code](6_push_your_code.md)!

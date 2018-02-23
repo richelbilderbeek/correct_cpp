@@ -1,6 +1,6 @@
 # Run your program with arguments
 
-To [do the exercises](do_the_exercise.md) will need to run your programs with arguments.
+To [do the exercises](5_do_the_exercise.md) will need to run your programs with arguments.
 
 Some examples:
 

@@ -1,4 +1,4 @@
-# Fork a chapter
+# 1. Fork a chapter
 
  * Log in to GitHub. No Github account? Create one, its free/gratis
  * Go to the repository of the chapter (for example [hello](https://github.com/richelbilderbeek/correct_cpp)) 
@@ -10,5 +10,5 @@
 
 ![GitHub busy forking a repo](pics/fork-a-repo.gif)
 
-Next step is [cloning your fork](clone_your_fork.md).
+Next step is [cloning your fork](2_clone_your_fork.md).
 

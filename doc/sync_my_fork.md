@@ -1,6 +1,6 @@
 # Sync my fork
 
-In this course, you need to [fork a chapter](fork_a_chapter.md), as that is [how this course works](how_this_course_works.md).
+In this course, you need to [fork a chapter](1_fork_a_chapter.md), as that is [how this course works](how_this_course_works.md).
 Sometimes, the original GitHub, one that you forked, changes.
 If you care about those changes, you will need to:
 

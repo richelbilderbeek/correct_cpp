@@ -1,6 +1,7 @@
 # [Run your program with arguments](run_your_program_with_arguments.md), using Qt Creator
 
-After [doing the exercise using Qt Creator](do_the_exercise_qt_creator.md) you run your application from Qt Creator with arguments.
+After [doing the exercise using Qt Creator](5_do_the_exercise_qt_creator.md) 
+you run your application from Qt Creator with arguments.
 
  * On the left main bar, click on 'Projects' to open the 'Project Settings'
  * In the 'Project Settings' go to the 'Build & Run' tab
