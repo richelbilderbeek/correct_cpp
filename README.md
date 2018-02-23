@@ -22,6 +22,8 @@ The first chapter, [hello](https://github.com/richelbilderbeek/correct_cpp), sho
  8|[is_prime](https://github.com/richelbilderbeek/correct_cpp_is_prime)|Lower code complexity (easy)
  9|[is_perfect](https://github.com/richelbilderbeek/correct_cpp_is_perfect)|Lower code complexity (hard)
 10|[is_even](https://github.com/richelbilderbeek/correct_cpp_is_even)|Use a regular expression
+11|[euler_1](https://github.com/richelbilderbeek/correct_cpp_euler_1)|Multiples of 3 and 5, Project Euler 1
+12|[euler_2](https://github.com/richelbilderbeek/correct_cpp_euler_2)|Even Fibonacci numbers
 
 ## Guides
 
@@ -55,8 +57,6 @@ See [FAQ](doc/faq.md).
 
 #|Chapter name|Goal
 ---|---|---
-? |[euler_1](https://github.com/richelbilderbeek/correct_cpp_euler_1)|Multiples of 3 and 5, Project Euler 1
-? |[euler_2](https://github.com/richelbilderbeek/correct_cpp_euler_2)|Even Fibonacci numbers
 ? |[hello_sfml](https://github.com/richelbilderbeek/correct_cpp_hello_sfml)|Use SFML
 ? |[hello_qt](https://github.com/richelbilderbeek/correct_cpp_hello_qt)|Use SFML
 ? |to_morse|Convert a std::string to morse
