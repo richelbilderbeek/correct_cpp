@@ -166,7 +166,8 @@ imperfections in these solutions.
 
 [![xkcd #1926: bad code](pics/xkcd_bad_code.png)](https://xkcd.com/1926)
 
-A student should do it right directly [1,5]. 
+Tools are our best teaching weapons [7]. A student should do it right directly [1,5]. 
+
 If a student has never learned how to write correct code for simple code, he/she
 will probably not do it for larger code bases either.
 
@@ -340,3 +341,4 @@ cp accepted_0.cpp main.cpp
  * [4] Bjarne Stroustrup. The C++ Programming Language (4th edition). 2013. ISBN: 978-0-321-56384-2. Page 32, 1.5 'Advice', item 16: 'C++ is not just C with a few extensions'
  * [5] Maureen A. Carey, Jason A. Papin. Ten simple rules for biologists learning to program. 2018. PLOS Computational Biology 14(1): e1005871. https://doi.org/10.1371
  * [6] [C++ Core Guidelines: P.12: Use supporting tools as appropriate](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p12-use-supporting-tools-as-appropriate)
+ * [7] Louis Brandy. Curiously Recurring C++ Bugs at Facebook. [YouTube](https://youtu.be/3MB2iiCkGxg)
