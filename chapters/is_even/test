@@ -73,12 +73,12 @@ echo "true" > expected_2.txt
 
 # Compare results
 if ! cmp --silent created_1.txt expected_1.txt; then
-  echo "Incorrect: 'is_even 12345678901234567891' should display literally 'true', followed by a newline"
+  echo "Incorrect: 'is_even 12345678901234567891' should display literally 'false', followed by a newline"
   ((++n_errors))
 fi
 
 if ! cmp --silent created_2.txt expected_2.txt; then
-  echo "Incorrect: 'is_even 12345678901234567892' should display literally 'false', followed by a newline"
+  echo "Incorrect: 'is_even 12345678901234567892' should display literally 'true', followed by a newline"
   ((++n_errors))
 fi
 
