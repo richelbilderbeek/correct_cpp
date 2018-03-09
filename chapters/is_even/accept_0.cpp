@@ -22,7 +22,7 @@ int do_main(const std::vector<std::string>& args)
   if (args.size() != 1) return 1;
   const std::string word{args.back()};
   if (!is_int(word)) return 1;
-  const std::regex even("-?[[:digit:]]+(0|2|4|6|8)");
+  const std::regex even("-?[[:digit:]]?(0|2|4|6|8)");
   std::cout << std::boolalpha << std::regex_match(word, even) << '\n';
   return 0;
 }
