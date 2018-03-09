@@ -64,20 +64,44 @@ fi
 #####################
 
 # Create expected result
-echo "false" > expected_1.txt
-echo "true" > expected_2.txt
+echo "false" > false.txt
+echo "true" > true.txt
 
 # Create the actual result
-./main 12345678901234567891 > created_1.txt
-./main 12345678901234567892 > created_2.txt
+./main -1 > created_minus_1.txt
+./main 0 > created_0.txt
+./main 1 > created_1.txt
+./main 2 > created_2.txt
+./main 12345678901234567891 > created_12345678901234567891.txt
+./main 12345678901234567892 > created_12345678901234567892.txt
 
 # Compare results
-if ! cmp --silent created_1.txt expected_1.txt; then
+if ! cmp --silent created_minus_1.txt false.txt; then
+  echo "Incorrect: 'is_even -1' should display literally 'false', followed by a newline"
+  ((++n_errors))
+fi
+
+if ! cmp --silent created_0.txt true.txt; then
+  echo "Incorrect: 'is_even 0' should display literally 'true', followed by a newline"
+  ((++n_errors))
+fi
+
+if ! cmp --silent created_1.txt false.txt; then
+  echo "Incorrect: 'is_even 1' should display literally 'false', followed by a newline"
+  ((++n_errors))
+fi
+
+if ! cmp --silent created_2.txt true.txt; then
+  echo "Incorrect: 'is_even 2' should display literally 'true', followed by a newline"
+  ((++n_errors))
+fi
+
+if ! cmp --silent created_12345678901234567891.txt false.txt; then
   echo "Incorrect: 'is_even 12345678901234567891' should display literally 'false', followed by a newline"
   ((++n_errors))
 fi
 
-if ! cmp --silent created_2.txt expected_2.txt; then
+if ! cmp --silent created_12345678901234567892.txt true.txt; then
   echo "Incorrect: 'is_even 12345678901234567892' should display literally 'true', followed by a newline"
   ((++n_errors))
 fi
