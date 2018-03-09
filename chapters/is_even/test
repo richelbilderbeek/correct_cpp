@@ -106,8 +106,8 @@ if ! cmp --silent created_12345678901234567892.txt true.txt; then
   ((++n_errors))
 fi
 
-rm expected_*.txt
-rm created_*.txt
+rm true.txt
+rm false.txt
 
 ##########################################
 # C++ guidelines

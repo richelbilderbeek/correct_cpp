@@ -4,6 +4,16 @@
 #include <string>
 #include <vector>
 
+/// Checks if a word is an even integer. The integer can be
+/// an length, and may also be negative. Floating-point
+/// values are not integer.
+/// @param word the string to see if it is an even integer
+bool is_even(const std::string& word)
+{
+  const std::regex even("-?[[:digit:]]*(0|2|4|6|8)");
+  return std::regex_match(word, even);
+}
+
 /// Checks if a word is an integer. The integer can be
 /// an length, and may also be negative. Floating-point
 /// values are not integer.
@@ -22,9 +32,24 @@ int do_main(const std::vector<std::string>& args)
   if (args.size() != 1) return 1;
   const std::string word{args.back()};
   if (!is_int(word)) return 1;
-  const std::regex even("-?[[:digit:]]?(0|2|4|6|8)");
-  std::cout << std::boolalpha << std::regex_match(word, even) << '\n';
+  std::cout << std::boolalpha << is_even(word) << '\n';
   return 0;
+}
+
+/// Test if 'is_even' is correct
+void test_is_even() noexcept
+{
+  assert( is_even("-12"));
+  assert(!is_even("-11"));
+  assert( is_even("-2"));
+  assert(!is_even("-1"));
+  assert( is_even("0"));
+  assert(!is_even("1"));
+  assert( is_even("2"));
+  assert(!is_even("111"));
+  assert( is_even("112"));
+  assert(!is_even("123456789012345678901"));
+  assert( is_even("123456789012345678902"));
 }
 
 /// Test if 'is_int' is correct
@@ -52,6 +77,7 @@ void test() noexcept
 {
   test_do_main();
   test_is_int();
+  test_is_even();
 }
 
 /// is_even main function
