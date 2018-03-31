@@ -36,6 +36,3 @@ script:
   #- cd scripts
   #- ./create_title_page
   #- ./create_book
-
-after_failure:
-  - apt-cache search g++-7
