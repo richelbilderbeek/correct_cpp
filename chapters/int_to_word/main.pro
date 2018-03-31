@@ -1,5 +1,6 @@
 # Files
-SOURCES += main.cpp
+SOURCES += *.cpp
+HEADERS += *.h
 
 # C++11. Must be C++11 due to g++-5
 CONFIG += c++11

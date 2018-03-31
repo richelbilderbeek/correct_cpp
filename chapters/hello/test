@@ -5,6 +5,8 @@ qmake > /dev/null
 ##########################################
 # Test release version
 ##########################################
+rm -f main
+
 make release > /dev/null
 
 n_errors=0
@@ -14,11 +16,11 @@ if [[ ! -f main ]]; then
   ((++n_errors))
 fi
 
-./main
-
 ##########################################
 # Test debug version
 ##########################################
+rm -f main
+
 make debug > /dev/null
 
 if [[ ! -f main ]]; then 
@@ -56,13 +58,19 @@ fi
 # Test code coverage
 #####################
 
-./main
+if [[ -f main ]]; then 
+  ./main
 
-n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
-if [ ! "$n" -eq "1" ]; then
-  echo "Incorrect: must have 100% code coverage. Current code coverage:"
-  gcov -n -o debug main.cpp | head -n 2 | tail -n 1
-  ((++n_errors))
+  cp *.cpp debug
+
+  n=`gcov -n -d -o debug *.cpp|tail -n 1 | egrep "100\.00\%" | wc -l`
+  if [ ! "$n" -eq "1" ]; then
+    echo "Incorrect: must have 100% code coverage. Current code coverage:"
+    gcov -n -o debug *.cpp | head -n 2 | tail -n 1
+    ((++n_errors))
+  fi
+else
+  echo "Cannot do code coverage if main is absent"
 fi
 
 exit $n_errors

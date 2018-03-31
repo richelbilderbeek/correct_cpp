@@ -9,14 +9,21 @@ if [ ! -f test ]; then
 
 fi 
 
+rm -rf html
+rm -rf latex
 rm -rf debug
 rm -rf release
 rm -rf check_*
-rm Makefile
-rm Makefile.*
+
+if [[ -f Makefile ]]; then rm Makefile; fi
+if [[ -f Makefile.Debug ]]; then rm Makefile.Debug; fi
+if [[ -f Makefile.Release ]]; then rm Makefile.Release; fi
 rm install
 rm do_oclint
 if [[ -f main ]]; then rm main; fi
+if [[ -f main.cpp ]]; then rm main.cpp; fi
+if [[ -f main.pro.user ]]; then rm main.pro.user; fi
+if [[ -f .qmake.stash ]]; then rm .qmake.stash; fi
 rm created_*.txt
 rm expected_*.txt
 rm README.md
@@ -24,6 +31,6 @@ rm test_tests
 rm install_oclint
 rm get_code_cov
 if [[ -f gmon.out ]]; then rm gmon.out; fi
+
 # Also remove itself
 rm clean_test
-

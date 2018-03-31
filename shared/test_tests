@@ -4,45 +4,48 @@
 
 n_errors=0
 
-# Files starting with 'rejected_' should be rejected
-for filename in `ls reject_*.cpp`; do
+# Folders starting with 'rejected_' should contain files to be rejected
+for foldername in `ls -d -- reject_*/`; do
 
-  # Remove main iff present
-  if [[ -f main ]]; then rm main; fi
+  rm -f *.cpp; rm -f *.h; rm -f *.ui; rm -f main
 
-  cp $filename main.cpp
+  cp $foldername/*.* .
   ./test &> /dev/null
   exit_code=`echo $?`
   if [[ $exit_code -eq 0 ]]; then
-    echo "Incorrect: file with name '"$filename" ' should fail"
+    echo "Incorrect: folder with name '"$foldername" ' should fail"
     ((++n_errors))
   fi
-  rm main.cpp
+
+  rm -f *.cpp; rm -f *.h; rm -f *.ui; rm -f main
+
 done
 
 # Files starting with 'accepted_' should be rejected
-for filename in `ls accept_*.cpp`; do
+for foldername in `ls -d -- accept_*/`; do
 
-  # Remove main iff present
-  if [[ -f main ]]; then rm main; fi
+  rm -f *.cpp; rm -f *.h; rm -f *.ui; rm -f main
 
-  cp $filename main.cpp
+  cp $foldername/*.* .
+
   ./test &> /dev/null
   exit_code=`echo $?`
   if [[ ! $exit_code -eq 0 ]]; then
-    echo "Incorrect: file with name '"$filename" ' should be accepted"
+    echo "Incorrect: folder with name '"$foldername" ' should be accepted"
     ./test
     ((++n_errors))
   fi
-  rm main.cpp
+
+  rm -f *.cpp; rm -f *.h; rm -f *.ui; rm -f main
+
 done
 
 rm -rf debug
 rm -rf release
-if [[ -f gmon.out ]]; then rm gmon.out; fi
-rm Makefile
-rm Makefile.Release
-rm Makefile.Debug
-if [[ -f main ]]; then rm main; fi
+rm -f gmon.out
+rm -f Makefile
+rm -f Makefile.Release
+rm -f Makefile.Debug
+rm -f main
 
 exit $n_errors

@@ -106,8 +106,8 @@ if ! cmp --silent created_12345678901234567892.txt true.txt; then
   ((++n_errors))
 fi
 
-rm true.txt
-rm false.txt
+rm *.txt
+rm *.txt
 
 ##########################################
 # C++ guidelines
@@ -152,10 +152,10 @@ make debug > /dev/null
 # Test code coverage
 #####################
 
-n=`gcov -n -o debug main.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
+n=`gcov -n -o debug *.cpp| head -n 2 | tail -n 1 | egrep "100\.00\%" | wc -l`
 if [ ! "$n" -eq "1" ]; then
   echo "Incorrect: must have 100% code coverage. Current code coverage:"
-  gcovs -n -o debug main.cpp | head -n 2 | tail -n 1
+  gcov -n -o debug *.cpp | head -n 2 | tail -n 1
   ((++n_errors))
 fi
 

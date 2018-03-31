@@ -1,16 +1,8 @@
 # Files
-SOURCES += \
-  main.cpp \
-  dialog.cpp
-
-HEADERS += \
-  dialog.h
-
-FORMS += \
-  dialog.ui
-
-RESOURCES += \
-  correct_cpp_hello_qt.qrc
+SOURCES += *.cpp
+HEADERS += *.h
+FORMS += *.ui
+RESOURCES += *.qrc
 
 # High warning levels
 # -Weffc++ goes bad with Qt

@@ -1,5 +1,6 @@
 # Files
-SOURCES += main.cpp
+SOURCES += *.cpp
+HEADERS += *.h
 
 # High warning levels
 QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror

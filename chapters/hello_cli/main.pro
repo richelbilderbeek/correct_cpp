@@ -1,5 +1,6 @@
 # Files
-SOURCES += main.cpp
+SOURCES += *.cpp
+HEADERS += *.h
 
 # C++11. Must be C++11 due to g++-5
 CONFIG += c++11
@@ -35,12 +36,4 @@ CONFIG(release, debug|release) {
   # gprof
   QMAKE_CXXFLAGS += -pg
   QMAKE_LFLAGS += -pg
-}
-
-# Use SFML, detected by test script
-CONFIG(sfml) {
-
-  message(sfml here)
-  # SFML
-  LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 }

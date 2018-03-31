@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This code is run on each chapter's GitHub
+
 # GCC 5, GCC 7
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get update -qq
@@ -21,7 +23,12 @@ sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
 # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
 # - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90
 # cppcheck
+
+# cppcheck
 sudo apt-get install -qq cppcheck
+
+# Doxygen
+sudo apt-get install -qq doxygen graphviz
 
 # OCLint
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/do_oclint
@@ -31,5 +38,17 @@ chmod +x do_oclint
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/get_code_cov
 chmod +x get_code_cov
 
-# main.pro file
-wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/main.pro
+# Check guidelines
+wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_cpp_core_guidelines
+chmod +x check_cpp_core_guidelines
+
+# Check documentation
+wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_doc
+chmod +x check_doc
+
+# Check course guidelines
+wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/check_course_guidelines
+chmod +x check_course_guidelines
+
+# Don't check for main.pro, it will be downloaded by .travis.yml
+
