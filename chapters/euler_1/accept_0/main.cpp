@@ -64,8 +64,7 @@ int sum_multiples(
 )
 {
   const auto answer = create_multiples(multiples, max);
-  const int sum = std::accumulate(std::begin(answer), std::end(answer), 0);
-  return sum;
+  return std::accumulate(std::begin(answer), std::end(answer), 0);
 }
 
 /// Test create_multiples for 3
