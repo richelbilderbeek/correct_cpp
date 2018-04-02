@@ -1,3 +1,13 @@
+/** @file */
+/** @file */
+/** @file */
+/** @file */
+/** @file */
+/** @file */
+/** @file */
+/** @file */
+/** @file */
+/** @file */
 #include "dialog.h"
 #include "ui_dialog.h"
 

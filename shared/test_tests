@@ -47,5 +47,8 @@ rm -f Makefile
 rm -f Makefile.Release
 rm -f Makefile.Debug
 rm -f main
+rm -f .qmake.stash
+rm -f *.qrc
+rm -f TravisCi.png
 
 exit $n_errors

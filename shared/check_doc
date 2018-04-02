@@ -6,17 +6,24 @@ rm -f main_tmp.cpp
 rm -f Doxyfile
 rm -f Doxyfile.bak
 
-# Create a file that is read by Doxygen
-( echo "/** @file */"; cat main.cpp ) > main_tmp.cpp
+# Make all .cpp files be read by Doxygen
+for cpp_file in `find . | egrep '\.cpp'`; 
+do 
+  ( echo "/** @file */"; cat $cpp_file ) > tmp.cpp
+  mv tmp.cpp $cpp_file
+done
+
+# Because EXLUDE_PATTERNS does not work well, remove all files starting with ui_
+rm ui_*.*
 
 # Generate standard Doxyfile
 doxygen -g > /dev/null
 
 # Show the undocumented lines
-(cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning"
+(cat Doxyfile ; echo "EXCLUDE_PATTERNS += ui_*.*" ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning"
 
 # Count the number of warnings in the STDOUT and STDERR of Doxygen
-exit_code=`(cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning" | wc --lines`
+exit_code=`(cat Doxyfile ; echo "EXCLUDE_PATTERNS += ui_*.*" ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen - 2>&1 | egrep "warning" | wc --lines`
 
 if [[ ! $exit_code -eq 0 ]]; then
   echo "Incorrect: incomplete documentation"
