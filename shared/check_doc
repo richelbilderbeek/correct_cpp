@@ -7,14 +7,15 @@ rm -f Doxyfile
 rm -f Doxyfile.bak
 
 # Make all .cpp files be read by Doxygen
-for cpp_file in `find . | egrep '\.cpp'`; 
+for cpp_file in `ls *.cpp`; 
 do 
   ( echo "/** @file */"; cat $cpp_file ) > tmp.cpp
   mv tmp.cpp $cpp_file
 done
 
-# Because EXLUDE_PATTERNS does not work well, remove all files starting with ui_
-rm ui_*.*
+# Because I cannot get EXCLUDE_PATTERNS to work,
+# as a workaround: remove all files starting with ui_
+rm -f ui_*.*
 
 # Generate standard Doxyfile
 doxygen -g > /dev/null
