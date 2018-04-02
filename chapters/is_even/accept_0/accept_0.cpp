@@ -38,13 +38,18 @@ int do_main(const std::vector<std::string>& args)
   return 0;
 }
 
-/// Test if 'is_even' is correct
-void test_is_even() noexcept
+/// Test if 'is_even' is correct for negative values
+void test_is_even_negative() noexcept
 {
   assert( is_even("-12"));
   assert(!is_even("-11"));
   assert( is_even("-2"));
   assert(!is_even("-1"));
+}
+
+/// Test if 'is_even' is correct for positive values
+void test_is_even_positive() noexcept
+{
   assert( is_even("0"));
   assert(!is_even("1"));
   assert( is_even("2"));
@@ -52,6 +57,13 @@ void test_is_even() noexcept
   assert( is_even("112"));
   assert(!is_even("123456789012345678901"));
   assert( is_even("123456789012345678902"));
+}
+
+/// Test if 'is_even' is correct
+void test_is_even() noexcept
+{
+  test_is_even_negative();
+  test_is_even_positive();
 }
 
 /// Test if 'is_int' is correct
