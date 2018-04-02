@@ -5,26 +5,12 @@ qmake > /dev/null
 ##########################################
 # Test release version
 ##########################################
-rm -f main
-
 make release > /dev/null
 
 n_errors=0
 
 if [[ ! -f main ]]; then 
-  echo "Incorrect: code does not compile cleanly with high warning levels in release mode"
-  ((++n_errors))
-fi
-
-##########################################
-# Test debug version
-##########################################
-rm -f main
-
-make debug > /dev/null
-
-if [[ ! -f main ]]; then 
-  echo "Incorrect: code does not compile cleanly with high warning levels in debug mode"
+  echo "Incorrect: code does not compile cleanly with high warning levels"
   ((++n_errors))
 fi
 
@@ -36,6 +22,7 @@ fi
 state_core_guidelines=`echo $?`
 
 if [[ ! $state_core_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_cpp_core_guidelines' already does so 
   ((++n_errors))
 fi
 
@@ -43,6 +30,7 @@ fi
 state_course_guidelines=`echo $?`
 
 if [[ ! $state_course_guidelines -eq 0 ]]; then
+  # No need to be verbose here, 'check_course_guidelines' already does so 
   ((++n_errors))
 fi
 
@@ -53,6 +41,12 @@ if [[ ! $state_doc -eq 0 ]]; then
   # No need to be verbose here, 'check_doc' already does so 
   ((++n_errors))
 fi
+
+##########################################
+# Test debug version
+##########################################
+make debug > /dev/null
+./main
 
 #####################
 # Test code coverage
