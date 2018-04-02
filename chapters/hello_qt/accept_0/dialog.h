@@ -7,11 +7,14 @@ namespace Ui {
   class Dialog;
 }
 
+/// Main dialog
 class Dialog : public QDialog
 {
   Q_OBJECT
 
 public:
+
+  /// Construction. Optionally assign a parent to delete this dialog
   explicit Dialog(QWidget *parent = 0);
   Dialog(const Dialog&) = delete;
   Dialog& operator=(const Dialog&) = delete;
