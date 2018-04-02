@@ -13,6 +13,7 @@ n_errors=0
 if [[ ! -f main ]]; then 
   make release
   echo "Incorrect: code does not compile cleanly with high warning levels in release mode"
+  g++ -v
   exit 1
 fi
 

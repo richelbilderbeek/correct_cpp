@@ -6,15 +6,16 @@ RESOURCES += *.qrc
 
 # High warning levels
 # -Weffc++ goes bad with Qt
-QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Werror
+# -Werror goes bad with Qt and resources
+QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
 
 # Workaround for 
 #   qrc_correct_cpp_hello_qt.cpp:399:44: error: 'qInitResources_correct_cpp_hello_qt__init_variable__' defined but not used
-QMAKE_CXXFLAGS += -Wno-unused-variable
+QMAKE_CXXFLAGS += -Wno-unused-variable -Eno-unused-variable
 
-# C++11
-CONFIG += c++11
-QMAKE_CXXFLAGS += -std=c++11
+# C++17
+CONFIG += c++17
+QMAKE_CXXFLAGS += -std=c++17
 
 # Allow debug and release mode
 CONFIG += debug_and_release
@@ -53,7 +54,7 @@ TEMPLATE = app
 # any feature of Qt which as been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
-DEFINES += QT_DEPRECATED_WARNINGS
+#DEFINES += QT_DEPRECATED_WARNINGS
 
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
