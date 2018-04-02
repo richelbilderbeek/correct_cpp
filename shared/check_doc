@@ -2,7 +2,7 @@
 
 # From https://github.com/richelbilderbeek/travis_qmake_gcc_cpp14_doxygen
 
-rm -f main_tmp.cpp
+rm -f tmp.cpp
 rm -f Doxyfile
 rm -f Doxyfile.bak
 
@@ -31,7 +31,7 @@ if [[ ! $exit_code -eq 0 ]]; then
   (cat Doxyfile ; echo "EXCLUDE=README.md" ; echo "QUIET = YES") | doxygen -
 fi
 
-rm -f main_tmp.cpp
+rm -f tmp.cpp
 rm -f Doxyfile
 rm -f Doxyfile.bak
 rm -rf html
