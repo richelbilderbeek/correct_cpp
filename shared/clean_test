@@ -35,7 +35,6 @@ rm -f gmon.out
 rm -f *.h
 rm -f *.cpp
 rm -f *.ui
-rm -f *.pro
 rm -f *.qrc
 
 # Also remove itself
