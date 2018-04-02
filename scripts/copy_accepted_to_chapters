@@ -7,5 +7,5 @@ cd ~/GitHubs
 for folder in `ls | egrep "correct_cpp_" | egrep -v "video"`; do
   echo $folder
   chapter=`echo $folder | sed 's/correct_cpp_//'`
-  cp ~/GitHubs/correct_cpp/chapters/$chapter/accept_0.cpp $folder/main.cpp
+  cp ~/GitHubs/correct_cpp/chapters/$chapter/accept_0/*.* $folder
 done
