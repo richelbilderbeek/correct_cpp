@@ -32,6 +32,11 @@ rm -f test_tests
 rm -f install_oclint
 rm -f get_code_cov
 rm -f gmon.out
+rm -f *.h
+rm -f *.cpp
+rm -f *.ui
+rm -f *.pro
+rm -f *.qrc
 
 # Also remove itself
 rm clean_test

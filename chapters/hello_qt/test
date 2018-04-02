@@ -44,14 +44,11 @@ if [[ ! $state_course_guidelines -eq 0 ]]; then
   ((++n_errors))
 fi
 
-if [[ 1 -eq 2 ]]; then
-  ./check_doc
-  state_doc=`echo $?`
+./check_doc
+state_doc=`echo $?`
 
-  if [[ ! $state_doc -eq 0 ]]; then
-    # No need to be verbose here, 'check_doc' already does so 
-    ((++n_errors))
-  fi
+if [[ ! $state_doc -eq 0 ]]; then
+  ((++n_errors))
 fi
 
 #####################
