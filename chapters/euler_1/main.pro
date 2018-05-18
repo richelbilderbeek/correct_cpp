@@ -6,7 +6,7 @@ HEADERS += *.h
 #CONFIG += c++11
 #QMAKE_CXXFLAGS += -std=c++11
 # Use gold linker with C++11
-QMAKE_LFLAGS += -fuse-ld=gold
+#QMAKE_LFLAGS += -fuse-ld=gold
 # C++14. Can be C++14 due to g++-7
 CONFIG += c++14
 QMAKE_CXXFLAGS += -std=c++14
