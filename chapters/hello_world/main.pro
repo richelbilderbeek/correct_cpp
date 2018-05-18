@@ -3,9 +3,9 @@ SOURCES += *.cpp
 HEADERS += *.h
 
 # g++-5
-CONFIG += c++11 and gold linker
-QMAKE_CXXFLAGS += -std=c++11
-QMAKE_LFLAGS += -fuse-ld=gold
+#CONFIG += c++11 and gold linker
+#QMAKE_CXXFLAGS += -std=c++11
+#QMAKE_LFLAGS += -fuse-ld=gold
 # g++-6: use C++14 and gold linker
 CONFIG += c++14
 QMAKE_CXXFLAGS += -std=c++14
