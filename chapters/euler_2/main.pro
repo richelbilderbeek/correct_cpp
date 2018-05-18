@@ -3,15 +3,16 @@ SOURCES += *.cpp
 HEADERS += *.h
 
 # g++-5
-#CONFIG += c++11
+#CONFIG += c++11 and gold linker
 #QMAKE_CXXFLAGS += -std=c++11
-# g++-6: use C++14 and gold linker
-CONFIG += c++14
-QMAKE_CXXFLAGS += -std=c++14
 #QMAKE_LFLAGS += -fuse-ld=gold
-# g++-7: use C++14
+# g++-6: use C++14 and gold linker
 #CONFIG += c++14
 #QMAKE_CXXFLAGS += -std=c++14
+#QMAKE_LFLAGS += -fuse-ld=gold
+# g++-7: use C++17
+CONFIG += c++17
+QMAKE_CXXFLAGS += -std=c++17
 
 # High warnings levels
 QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
