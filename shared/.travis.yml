@@ -6,7 +6,6 @@ language: cpp
 compiler: gcc
 
 install:
-  - g++ -v
   # Get my folder
   - my_github=${PWD##*/}  
   - chapter_folder=`echo $my_github | sed 's/correct_cpp_//'`  
