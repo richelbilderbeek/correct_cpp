@@ -2,12 +2,15 @@
 SOURCES += *.cpp
 HEADERS += *.h
 
-# High warning levels
-QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
-
 # C++11
 CONFIG += c++11
 QMAKE_CXXFLAGS += -std=c++11
+
+# Use gold linker
+QMAKE_LFLAGS += -fuse-ld=gold
+
+# High warning levels
+QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
 
 # Allow debug and release mode
 CONFIG += debug_and_release
