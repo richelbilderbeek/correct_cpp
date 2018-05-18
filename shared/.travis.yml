@@ -14,6 +14,7 @@ install:
   # shared install
   - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install
   - chmod +x install
+  # Use 'apt install' these days
   - sudo ./install
   - g++ -v
   # test
