@@ -10,9 +10,10 @@ HEADERS += *.h
 #CONFIG += c++14
 #QMAKE_CXXFLAGS += -std=c++14
 #QMAKE_LFLAGS += -fuse-ld=gold
-# g++-7: use C++17
+# g++-7: use C++17 and gold linker
 CONFIG += c++17
 QMAKE_CXXFLAGS += -std=c++17
+QMAKE_LFLAGS += -fuse-ld=gold
 
 # High warnings levels
 QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
