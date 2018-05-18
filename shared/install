@@ -4,7 +4,7 @@
 
 # GCC 5, GCC 6, GCC 7
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update -qq
+sudo apt update -qq
 
 # Codecov
 sudo pip install codecov
@@ -15,23 +15,23 @@ chmod +x install_oclint
 ./install_oclint
 
 # GCC5 
-#sudo apt-get install -qq g++-5
+#sudo apt install -qq g++-5
 #sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 #sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
 # GCC 6
-- sudo apt-get install -qq g++-6
+- sudo apt install -qq g++-6
 - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
 - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90
 # GCC 7
-#- sudo apt-get install -qq g++-7
+#- sudo apt install -qq g++-7
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
 #- sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90
 
 # cppcheck
-sudo apt-get install -qq cppcheck
+sudo apt install -qq cppcheck
 
 # Doxygen
-sudo apt-get install -qq doxygen graphviz
+sudo apt install -qq doxygen graphviz
 
 # OCLint
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/do_oclint
