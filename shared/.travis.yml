@@ -15,6 +15,7 @@ install:
   - wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install
   - chmod +x install
   - sudo ./install
+  - g++ -v
   # test
   - wget $test_path
   - chmod +x test
