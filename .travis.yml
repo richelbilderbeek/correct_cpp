@@ -7,6 +7,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
+  - g++ -v
   # C++17
   - sudo apt-get install -qq g++-7
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
