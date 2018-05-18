@@ -19,13 +19,13 @@ chmod +x install_oclint
 #sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 #sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
 # GCC 6
-- sudo apt install -qq g++-6
-- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
-- sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90
+sudo apt install -qq g++-6
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-6 90
 # GCC 7
-#- sudo apt install -qq g++-7
-#- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
-#- sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90
+#sudo apt install -qq g++-7
+#sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
+#sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90
 
 # cppcheck
 sudo apt install -qq cppcheck
