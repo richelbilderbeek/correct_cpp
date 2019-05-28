@@ -3,7 +3,10 @@
 # Do not edit by hand
 
 language: cpp
-compiler: gcc
+dist: xenial
+compiler:
+  - gcc
+  # - clang 
 
 install:
   # Get my folder
@@ -24,11 +27,8 @@ install:
   # SFML
   - if [[ `echo $my_github | egrep "_sfml" | wc --lines` -eq 1 ]]; then sudo apt-get install libsfml-dev; fi
 
-# Start virtual X server, from https://docs.travis-ci.com/user/gui-and-headless-browsers/
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+services:
+ - xvfb
 
 script: 
   - ./test
