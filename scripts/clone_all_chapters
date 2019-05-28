@@ -19,7 +19,7 @@ for folder in \
   correct_cpp_euler_1 \
   correct_cpp_euler_2
 do
-  git clone $folder
+  git clone https://github.com/richelbilderbeek/$folder
   cd $folder
   git checkout develop
   cd ..
