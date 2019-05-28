@@ -17,9 +17,6 @@ QMAKE_CXXFLAGS += -Wno-unused-variable
 CONFIG += c++17
 QMAKE_CXXFLAGS += -std=c++17
 
-# Use gold linker
-QMAKE_LFLAGS += -fuse-ld=gold
-
 # Allow debug and release mode
 CONFIG += debug_and_release
 
