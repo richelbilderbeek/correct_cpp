@@ -1,5 +1,4 @@
 /** @file */
-/** @file */
 #include <cassert>
 #include <iostream>
 #include <regex>
