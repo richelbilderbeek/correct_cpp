@@ -4,19 +4,6 @@ HEADERS += *.h
 FORMS += *.ui
 RESOURCES += *.qrc
 
-# g++-5
-#CONFIG += c++11 and gold linker
-#QMAKE_CXXFLAGS += -std=c++11
-#QMAKE_LFLAGS += -fuse-ld=gold
-# g++-6: use C++14 and gold linker
-#CONFIG += c++14
-#QMAKE_CXXFLAGS += -std=c++14
-#QMAKE_LFLAGS += -fuse-ld=gold
-# g++-7: use C++17 and gold linker
-CONFIG += c++17
-QMAKE_CXXFLAGS += -std=c++17
-QMAKE_LFLAGS += -fuse-ld=gold
-
 # High warning levels
 # -Weffc++ goes bad with Qt
 # -Werror goes bad with Qt and resources
@@ -25,6 +12,10 @@ QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
 # Workaround for 
 #   qrc_correct_cpp_hello_qt.cpp:399:44: error: 'qInitResources_correct_cpp_hello_qt__init_variable__' defined but not used
 QMAKE_CXXFLAGS += -Wno-unused-variable
+
+# C++14
+CONFIG += c++14
+QMAKE_CXXFLAGS += -std=c++14
 
 # Allow debug and release mode
 CONFIG += debug_and_release

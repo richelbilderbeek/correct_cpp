@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Push all chapters to GitHub
+
+cd ~/GitHubs
+
+for folder in \
+  correct_cpp_scoreboard \
+  correct_cpp_hello \
+  correct_cpp_hello_world \
+  correct_cpp_hello_cli \
+  correct_cpp_show_args \
+  correct_cpp_is_odd \
+  correct_cpp_bool_to_coin \
+  correct_cpp_int_to_word \
+  correct_cpp_is_prime \
+  correct_cpp_is_perfect \
+  correct_cpp_is_even \
+  correct_cpp_euler_1 \
+  correct_cpp_euler_2
+do
+  git clone https://github.com/richelbilderbeek/$folder
+  cd $folder
+  git checkout develop
+  cd ..
+done
