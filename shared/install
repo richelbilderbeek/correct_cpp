@@ -2,10 +2,6 @@
 
 # This code is run on each chapter's GitHub
 
-# GCC 5, GCC 7
-sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update -qq
-
 # Codecov
 sudo pip install codecov
 
@@ -13,15 +9,6 @@ sudo pip install codecov
 wget https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/shared/install_oclint
 chmod +x install_oclint 
 ./install_oclint
-
-# GCC5 
-#sudo apt-get install -qq g++-5
-#sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
-#sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
-# GCC 7
-sudo apt-get install -qq g++-8
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 90
-sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-8 90
 
 # cppcheck
 sudo apt-get install -qq cppcheck
