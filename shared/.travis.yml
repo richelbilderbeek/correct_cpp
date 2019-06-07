@@ -46,8 +46,8 @@ after_success:
   - echo "Success!"
 
 after_failure:
+  - ls
   - cat main.cpp
   - cat main.pro
   - cat test
   - cat install
-  - ./test --verbose
