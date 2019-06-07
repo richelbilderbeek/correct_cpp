@@ -11,7 +11,7 @@ compiler:
 install:
   # Get my folder
   - my_github=${PWD##*/}  
-  - chapter_folder=`echo $my_github | sed 's/correct_cpp_//'`  
+  - chapter_folder=$(echo $my_github | sed 's/correct_cpp_//')
   - test_path=https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/chapters/$chapter_folder/test
   - pro_file_path=https://raw.githubusercontent.com/richelbilderbeek/correct_cpp/master/chapters/$chapter_folder/main.pro
   # shared install
@@ -25,7 +25,7 @@ install:
   - wget $pro_file_path -O main.pro
   - if [[ ! -f main.pro ]] ; then echo "main.pro could not be found" ; fi 
   # SFML
-  - if [[ `echo $my_github | egrep "_sfml" | wc --lines` -eq 1 ]]; then sudo apt-get install libsfml-dev; fi
+  - if [[ $(echo $my_github | egrep "_sfml" | wc --lines) -eq 1 ]]; then sudo apt-get install libsfml-dev; fi
 
 services:
  - xvfb
@@ -39,3 +39,9 @@ script:
 after_script:
   - ./get_code_cov > /dev/null
   - codecov > /dev/null
+
+after_success:
+  - echo "Success!"
+
+after_failure:
+  - ./test --verbose
