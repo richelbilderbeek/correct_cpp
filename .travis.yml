@@ -9,9 +9,10 @@ install:
   - sudo apt-get install -qq qt5-qmake qt5-default
   # proselint
   - sudo pip install proselint
-  # markdown-link-check, commented out due to Issue #11
-  #- sudo apt-get install npm
-  #- sudo npm install -g markdown-link-check
+  # Check dead links
+  - sudo apt-get install -qq npm
+  - npm config set strict-ssl false
+  - sudo npm install -g markdown-link-check
   # doxygen
   - sudo apt-get install -qq doxygen graphviz
   # SFML
@@ -31,7 +32,7 @@ script:
   # test if all chapters' tests reject and accept answers correctly
   - ./test_tests
   # Check dead links, commented out due to Issue #11
-  #- cd scripts; ./check_links
+  - cd scripts; ./check_links
   # See if the book can be created
   #- cd scripts
   #- ./create_title_page
