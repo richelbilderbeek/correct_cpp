@@ -13,9 +13,9 @@ QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
 #   qrc_correct_cpp_hello_qt.cpp:399:44: error: 'qInitResources_correct_cpp_hello_qt__init_variable__' defined but not used
 QMAKE_CXXFLAGS += -Wno-unused-variable
 
-# C++14
-CONFIG += c++14
-QMAKE_CXXFLAGS += -std=c++14
+# C++17
+CONFIG += c++17
+QMAKE_CXXFLAGS += -std=c++17
 
 # Allow debug and release mode
 CONFIG += debug_and_release
