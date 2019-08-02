@@ -3,7 +3,7 @@
 # Do not edit by hand
 
 language: cpp
-dist: xenial
+dist: bionic
 compiler:
   - gcc
   # - clang 
